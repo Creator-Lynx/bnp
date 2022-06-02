@@ -2,25 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class WindMover : MonoBehaviour
 {
-    enum conType
-    {
-        characterController
-    }
+
     [SerializeField]
-    conType type;
-    IControlable controller;
-    // Start is called before the first frame update
+    float speed = 5f;
+    //IControlable controller;
+    [SerializeField]
+    Vector3 forceDeltaDirection = Vector3.forward;
+
+    Rigidbody rig;
     void Start()
     {
-        if (type == 0)
-            controller = GetComponent<CharacterControllBehavior>();
+        //controller = GetComponent<IControlable>();
+        rig = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //controller.Move(transform.forward * speed * Time.deltaTime);
+    }
 
+    public void CreateWindByPos(Vector3 pos)
+    {
+        rig.AddForceAtPosition(forceDeltaDirection * speed, pos, ForceMode.Acceleration);
     }
 }
