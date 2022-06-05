@@ -8,12 +8,15 @@ public class WaterSimulation : MonoBehaviour
     [SerializeField] float WaterDensity = 10f;
 
     [SerializeField] Vector3 forceDirection = Vector3.up;
+
     Rigidbody rig;
 
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
     }
+
+
     void FixedUpdate()
     {
         float divePercent = -transform.position.y + transform.localScale.x * 0.5f;
@@ -23,5 +26,8 @@ public class WaterSimulation : MonoBehaviour
         rig.AddForce(forceDirection * divePercent * WaterDensity);
         rig.drag = divePercent * 2f;
         rig.angularDrag = divePercent * 2f;
+
+
+
     }
 }

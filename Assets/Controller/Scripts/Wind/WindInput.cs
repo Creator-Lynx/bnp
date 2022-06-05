@@ -15,7 +15,7 @@ public class WindInput : MonoBehaviour
 
     void CastRay(Ray ray)
     {
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.blue, 10f);
+        Debug.DrawRay(ray.origin, ray.direction * 30, Color.blue, 5f);
         RaycastHit hit;
         Physics.Raycast(ray, out hit, Mathf.Infinity, raycastLayerMask);
         mover.CreateWindByPos(hit.point);
