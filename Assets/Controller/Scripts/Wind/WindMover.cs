@@ -22,19 +22,25 @@ public class WindMover : MonoBehaviour
     }
 
     float targetRotation = 0f;
+    float rotSign = 0f;
     void FixedUpdate()
     {
-        //controller.Move(transform.forward * speed * Time.deltaTime);
         rig.centerOfMass = centerOfMass;
-        // transform.Rotate(0f,  * rotateSpeed, 0f);
-    }
 
+        //if (transform.rotation.y > 180) transform.rotation = Quaternion.Euler(transform.rotation.x, -180, transform.rotation.z);
+        //if (transform.rotation.y < -180) transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, targetRotation, 0), rotateSpeed * 0.1f);
+        //transform.Rotate(0f, rotSign * rotateSpeed, 0f);
+    }
+    Vector3 dir = Vector3.zero;
     public void CreateWindByPos(Vector3 pos)
     {
         pos.y = transform.position.y;
-        Vector3 dir = (transform.position - pos).normalized;
+        dir = (transform.position - pos).normalized;
         rig.AddForce(dir * force, ForceMode.Impulse);
-        transform.rotation = Quaternion.Euler(0f, Vector3.SignedAngle(Vector3.forward, dir, Vector3.up), 0f);
-        //targetRotation = Vector3.SignedAngle(Vector3.forward, dir, Vector3.up);
+        targetRotation = Vector3.SignedAngle(Vector3.forward, dir, Vector3.up);
+        rotSign = Mathf.Sign(Mathf.Sin(Vector3.SignedAngle(transform.forward, dir, Vector3.up) * Mathf.Deg2Rad));
+        // transform.rotation = Quaternion.Euler(0f, targetRotation, 0f);
     }
 }
