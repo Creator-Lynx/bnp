@@ -9,6 +9,8 @@ public class WaterSimulation : MonoBehaviour
 
     [SerializeField] Vector3 forceDirection = Vector3.up;
 
+    public Vector3 WaterFlowDirection = Vector3.forward;
+
     Rigidbody rig;
 
     private void Start()
@@ -28,6 +30,6 @@ public class WaterSimulation : MonoBehaviour
         rig.angularDrag = divePercent * 2f;
 
 
-
+        //WaterFlowDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, 1).normalized;
     }
 }
