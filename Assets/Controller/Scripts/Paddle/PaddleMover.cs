@@ -13,13 +13,15 @@ public class PaddleMover : MonoBehaviour
     [SerializeField] Transform paddle;
     Vector3 moveByFlowDirection;
     WaterSimulation water;
+    Rigidbody rig;
     void Start()
     {
         water = GetComponent<WaterSimulation>();
+        rig = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        HandleDirection(0);
+        HandleDirection(Input.GetAxis("Horizontal"));
     }
 
     /// <summary>
@@ -29,7 +31,7 @@ public class PaddleMover : MonoBehaviour
     public void HandleDirection(float Y)
     {
         Y = Y / 2 + 0.5f;
-        //angleRotation = Mathf.SmoothStep(-angleClamp, angleClamp, Y);
+        angleRotation = Mathf.SmoothStep(-angleClamp, angleClamp, Y);
         float radAngle = angleRotation * Mathf.Deg2Rad;
         /*
         rotating vector by angle, where x and y - coords of original vector
@@ -50,13 +52,17 @@ public class PaddleMover : MonoBehaviour
 
     void ForceMoveByCurrentDirection()
     {
-
+        rig.AddForce(moveByFlowDirection * moveSpeed, ForceMode.Force);
     }
     void RotationByCurrentDirection()
     {
         Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg, 0);
         Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg, 0);
+        Debug.Log("forward Asin " + Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg);
+        Debug.Log("invert Asin " + -Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f);
-        if (paddle != null) paddle.transform.rotation = Quaternion.Slerp(transform.rotation, invertTargetRotation, rotateSpeed * 0.2f);
+        if (paddle != null) paddle.transform.localRotation =
+        Quaternion.Slerp(paddle.transform.localRotation, invertTargetRotation, rotateSpeed * 0.4f);
+
     }
 }
