@@ -29,7 +29,8 @@ public class SailMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        HandleDirection(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis());
+        //HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Debug.DrawRay(transform.position + Vector3.up, handledDirection * 10, Color.white);
     }
     bool isChanged = false;
