@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(WaterSimulation))]
 public class SailMover : MonoBehaviour
 {
-    [SerializeField] float angleRotation = 0f;
+
     [SerializeField] float moveSpeedFlow = 2.5f, windForce = 2.5f, rotateSpeed = 0.5f;
 
     [SerializeField] int randomizeWindTimer = 5;
