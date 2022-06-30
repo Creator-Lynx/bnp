@@ -31,7 +31,7 @@ public class TextShower : MonoBehaviour
     {
         for (int i = 0; i < text.Length; i++)
         {
-            yield return new WaitForSeconds(timeToShowSimbol + UnityEngine.Random.Range(0, timeToShowSimbol));
+            yield return new WaitForSeconds(timeToShowSimbol + UnityEngine.Random.Range(0f, 2f * timeToShowSimbol));
             textComponent.text = textComponent.text + text[i];
             audioSource.Play();
         }
@@ -53,10 +53,8 @@ public class TextShower : MonoBehaviour
         {
             progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,
             ((sceneLoading.progress + sceneLoading1.progress)) / 0.9f, 0.05f);
-            Debug.Log("load 0 " + sceneLoading.progress);
-            Debug.Log("load 1 " + sceneLoading1.progress);
-            Debug.Log("load all " + sceneLoading.progress + sceneLoading1.progress);
-            if (sceneLoading.progress / 0.9f > 0.9f && sceneLoading1.progress / 0.9f > 0.9f && endLoadingText != null)
+
+            if (sceneLoading.progress / 0.9f > 0.9f && endLoadingText != null)
                 endLoadingText.SetActive(true);
         }
 
