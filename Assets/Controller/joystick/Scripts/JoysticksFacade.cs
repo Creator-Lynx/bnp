@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class JoystiksFacade : MonoBehaviour
+public class JoysticksFacade : MonoBehaviour
 {
     static JoystickInfo[] _joysticks;
     [SerializeField] JoystickInfo[] Joysticks;
 
     void Start()
     {
+        if (_joysticks != null)
+            Debug.LogError("There has two joysticksFacade object in the scene. Check it out!");
         _joysticks = Joysticks;
         for (int i = 0; i < _joysticks.Length; i++)
         {

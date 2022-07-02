@@ -23,7 +23,7 @@ public class PaddleMover : MonoBehaviour
     {
         HandleDirection(Input.GetAxis("Horizontal"));
         if (Input.GetAxis("Horizontal") == 0)
-            HandleDirection(JoystickInput.GetHorizontalAxis());
+            HandleDirection(JoysticksFacade.GetJoystick(JoystickName.left).GetHorizontalAxis());
     }
 
     /// <summary>

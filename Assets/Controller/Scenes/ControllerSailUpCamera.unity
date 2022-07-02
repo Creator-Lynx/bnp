@@ -3865,7 +3865,7 @@ PrefabInstance:
     - target: {fileID: 2835122865498313027, guid: 4b93eabd0e8b1674c99078f825d6e190,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2835122865498313027, guid: 4b93eabd0e8b1674c99078f825d6e190,
         type: 3}
@@ -3880,7 +3880,7 @@ PrefabInstance:
     - target: {fileID: 2835122865498313027, guid: 4b93eabd0e8b1674c99078f825d6e190,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2835122865498313027, guid: 4b93eabd0e8b1674c99078f825d6e190,
         type: 3}
@@ -3905,7 +3905,7 @@ PrefabInstance:
     - target: {fileID: 2835122865498313027, guid: 4b93eabd0e8b1674c99078f825d6e190,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2835122867076699519, guid: 4b93eabd0e8b1674c99078f825d6e190,
         type: 3}
@@ -7147,14 +7147,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699323012}
-  m_LocalRotation: {x: 0.24189748, y: -0.34353116, z: 0.09204893, w: 0.9027729}
-  m_LocalPosition: {x: 6.11, y: 8.56, z: -7.61}
+  m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
+  m_LocalPosition: {x: 14.97, y: 10.55, z: 5.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 751388373}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 30, y: -41.667, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: -90, z: 0}
 --- !u!81 &1699323014
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7217,7 +7217,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0.00000047683716}
+  m_ConnectedAnchor: {x: 0, y: 0, z: -0.00000047683716}
   serializedVersion: 2
   m_Spring: 12.67
   m_Damper: 1.61
@@ -7701,7 +7701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803837558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.11, y: 8.56, z: -7.6100006}
+  m_LocalPosition: {x: 14.97, y: 10.55, z: 5.3200006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

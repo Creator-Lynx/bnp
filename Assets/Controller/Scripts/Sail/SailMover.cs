@@ -29,9 +29,15 @@ public class SailMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleDirection(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis());
+
         //HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Debug.DrawRay(transform.position + Vector3.up, handledDirection * 10, Color.white);
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        {
+            HandleDirection(
+                JoysticksFacade.GetJoystick(JoystickName.left).GetHorizontalAxis(),
+                JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
+        }
+
     }
     bool isChanged = false;
     void FixedUpdate()
@@ -60,6 +66,7 @@ public class SailMover : MonoBehaviour
     {
         if (X == 0 && Z == 0) return;
         Vector3 tmp = new Vector3(X, 0, Z).normalized;
+        Debug.DrawRay(transform.position + Vector3.up, tmp * 8, Color.white);
         handledDirection = Vector3.SlerpUnclamped(handledDirection, tmp, 0.2f);
         handledDirection.Normalize();
 
