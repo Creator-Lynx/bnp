@@ -22,6 +22,8 @@ public class PaddleMover : MonoBehaviour
     void Update()
     {
         HandleDirection(Input.GetAxis("Horizontal"));
+        if (Input.GetAxis("Horizontal") == 0)
+            HandleDirection(JoystickInput.GetHorizontalAxis());
     }
 
     /// <summary>
@@ -58,11 +60,8 @@ public class PaddleMover : MonoBehaviour
     {
         Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg, 0);
         Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg, 0);
-        Debug.Log("forward Asin " + Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg);
-        Debug.Log("invert Asin " + -Mathf.Asin(moveByFlowDirection.x) * Mathf.Rad2Deg);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f);
         if (paddle != null) paddle.transform.localRotation =
         Quaternion.Slerp(paddle.transform.localRotation, invertTargetRotation, rotateSpeed * 0.4f);
-
     }
 }

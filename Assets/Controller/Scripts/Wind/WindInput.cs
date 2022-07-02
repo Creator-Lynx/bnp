@@ -7,6 +7,7 @@ public class WindInput : MonoBehaviour
 {
 
     [SerializeField] LayerMask raycastLayerMask;
+    [SerializeField] float inputDelay = 0.5f;
     WindMover mover;
     private void Start()
     {
@@ -20,22 +21,32 @@ public class WindInput : MonoBehaviour
         Physics.Raycast(ray, out hit, Mathf.Infinity, raycastLayerMask);
         mover.CreateWindByPos(hit.point);
     }
+
+    bool readyForGetInput = true;
     void Update()
     {
-
-        //if (Input.touchCount > 0)
-        //  {
-        //     Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-        //     CastRay(ray);
-        // }
-
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (readyForGetInput)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            CastRay(ray);
+            if (Input.touchCount > 0)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+                CastRay(ray);
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                CastRay(ray);
+            }
+            readyForGetInput = false;
+            StartCoroutine(InputDelay());
         }
+    }
 
-
+    IEnumerator InputDelay()
+    {
+        yield return new WaitForSeconds(inputDelay);
+        readyForGetInput = true;
     }
 }

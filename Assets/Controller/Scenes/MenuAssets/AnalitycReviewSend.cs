@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AnalitycReviewSend : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI textComponent;
+    [SerializeField] TextMeshProUGUI inputTextComponent;
     public void SendReviewViaAnalityc()
     {
 

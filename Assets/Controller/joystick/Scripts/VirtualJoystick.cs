@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField] private Image JoystickLayout;
     [SerializeField] private Image Joystick;
-    public Vector2 JoystickInput { get { return joystickInput; } }
-    private Vector2 joystickInput;
-    private Vector2 joystickInputRaw;
-    
+    public Vector2 JoystickOutput { get { return joystickOutput; } }
+    private Vector2 joystickOutput;
+    private Vector2 joystickOutputRaw;
+
     private void Update()
     {
-        Joystick.rectTransform.localPosition = joystickInputRaw;
+        Joystick.rectTransform.localPosition = joystickOutputRaw;
         //Debug.Log(joystickInput);
     }
 
@@ -25,31 +25,31 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
                 JoystickLayout.rectTransform,
                 eventData.position,
                 eventData.pressEventCamera,
-                out joystickInputRaw
+                out joystickOutputRaw
             ))
         {
             var radius = JoystickLayout.rectTransform.sizeDelta.x / 2;
-            var x = joystickInputRaw.x;
-            var y = joystickInputRaw.y;
+            var x = joystickOutputRaw.x;
+            var y = joystickOutputRaw.y;
 
             if (x * x + y * y > radius * radius)
             {
-                joystickInputRaw = joystickInputRaw.normalized * radius;
+                joystickOutputRaw = joystickOutputRaw.normalized * radius;
             }
 
-            joystickInput.x = joystickInputRaw.x / radius;
-            joystickInput.y = joystickInputRaw.y / radius;            
+            joystickOutput.x = joystickOutputRaw.x / radius;
+            joystickOutput.y = joystickOutputRaw.y / radius;
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        joystickInput = Vector2.zero;
-        joystickInputRaw = Vector2.zero;
+        joystickOutput = Vector2.zero;
+        joystickOutputRaw = Vector2.zero;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        
+
     }
 }

@@ -74,6 +74,7 @@ public class SailMover : MonoBehaviour
         Vector3 resultForceDirection = handledDirection * modifiedDot;
         Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
+        rig.AddForce(water.WaterFlowDirection * moveSpeedFlow, ForceMode.Force);
     }
 
     void RotationByCurrentDirection()
