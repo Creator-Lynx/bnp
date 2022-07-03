@@ -20,6 +20,8 @@ public class WindInput : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(ray, out hit, Mathf.Infinity, raycastLayerMask);
         mover.CreateWindByPos(hit.point);
+        readyForGetInput = false;
+        StartCoroutine(InputDelay());
     }
 
     bool readyForGetInput = true;
@@ -39,8 +41,7 @@ public class WindInput : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 CastRay(ray);
             }
-            readyForGetInput = false;
-            StartCoroutine(InputDelay());
+
         }
     }
 

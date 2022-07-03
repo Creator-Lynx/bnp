@@ -25,6 +25,7 @@ public class TextShower : MonoBehaviour
         sceneLoading.allowSceneActivation = false;
         sceneLoading1 = SceneManager.LoadSceneAsync(sceneNameToLoad1, LoadSceneMode.Additive);
         sceneLoading1.allowSceneActivation = false;
+
     }
 
     IEnumerator TextShow()
