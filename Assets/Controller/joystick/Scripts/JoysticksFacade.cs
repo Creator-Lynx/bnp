@@ -10,8 +10,6 @@ public class JoysticksFacade : MonoBehaviour
 
     void Start()
     {
-        if (_joysticks != null)
-            Debug.LogError("There has two joysticksFacade object in the scene. Check it out!");
         _joysticks = Joysticks;
         for (int i = 0; i < _joysticks.Length; i++)
         {

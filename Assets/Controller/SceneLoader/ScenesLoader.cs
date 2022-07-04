@@ -6,37 +6,52 @@ using UnityEngine.UI;
 
 public class ScenesLoader : MonoBehaviour
 {
-    bool isGamePlayScene = false;
     [SerializeField]
-    int menuBGsceneIndex = 1,
+    bool isSceneLoading = false;
+    [SerializeField]
+    int menuBGSceneIndex = 1,
     menuSceneIndex = 2;
 
-    [SerializeField] Image progressBar;
-    [SerializeField] GameObject endLoadingText;
+    static int currentActiveScene = 1;
 
+    [SerializeField]
+    Image progressBar;
+    [SerializeField]
+    GameObject endLoadingText;
+    [SerializeField]
     Animator fadeScreen;
 
-    AsyncOperation sceneLoading, sceneLoading1;
+    AsyncOperation sceneLoading, sceneUnloading;
 
+
+    void Start()
+    {
+        currentActiveScene = 1;
+    }
     public void LoadScene(int sceneID)
     {
-        SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
-        isGamePlayScene = true;
+        sceneUnloading = SceneManager.UnloadSceneAsync(currentActiveScene);
+        //sceneUnloading.allowSceneActivation = false;
+        currentActiveScene = sceneID;
+        sceneLoading = SceneManager.LoadSceneAsync(currentActiveScene, LoadSceneMode.Additive);
+        sceneLoading.allowSceneActivation = false;
+        fadeScreen.SetTrigger("Hide");
+        progressBar.fillAmount = 0;
+        isSceneLoading = true;
     }
 
     public void OnButtonExit()
     {
-        if (isGamePlayScene)
+        if (currentActiveScene != menuBGSceneIndex)
             ExitToMenu();
         else
             ExitGame();
     }
     public void ExitToMenu()
     {
-        sceneLoading = SceneManager.LoadSceneAsync(menuBGsceneIndex);
-        sceneLoading.allowSceneActivation = false;
-
-        //sceneLoading1.allowSceneActivation = false;
+        currentActiveScene = menuBGSceneIndex;
+        SceneManager.LoadScene(menuBGSceneIndex);
+        SceneManager.LoadScene(menuSceneIndex, LoadSceneMode.Additive);
     }
     public void ExitGame()
     {
@@ -45,33 +60,41 @@ public class ScenesLoader : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKey || Input.touchCount > 0)
-            if (sceneLoading != null)
+        if (isSceneLoading)
+        {
+            if (progressBar.gameObject.activeSelf)
             {
-                sceneLoading.allowSceneActivation = true;
-                sceneLoading1.allowSceneActivation = true;
+                if (progressBar != null && sceneLoading != null)
+                {
+                    progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,
+                    (sceneLoading.progress) / 0.9f, 0.05f);
+
+                    if (sceneLoading.progress / 0.9f > 0.9f && endLoadingText != null)
+                    {
+                        endLoadingText.SetActive(true);
+                    }
+
+                }
             }
 
 
+            if (Input.anyKey || Input.touchCount > 0)
+                if (sceneLoading != null)
+                {
+                    sceneLoading.allowSceneActivation = true;
+                }
 
-        if (progressBar != null && sceneLoading != null && sceneLoading1 != null)
-        {
-            progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount,
-            ((sceneLoading.progress + sceneLoading1.progress)) / 0.9f, 0.05f);
-
-            if (sceneLoading.progress / 0.9f > 0.9f && endLoadingText != null)
-                endLoadingText.SetActive(true);
+            if (sceneLoading.isDone)
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
+                isSceneLoading = false;
+                fadeScreen.SetTrigger("Show");
+                endLoadingText.SetActive(false);
+            }
         }
+
+
     }
 
 }
 
-//[System.Serializable]
-public enum SceneName
-{
-    wind = 3,
-    paddle = 4,
-    paddleUp = 5,
-    sail = 6,
-    sailUp = 7
-}
