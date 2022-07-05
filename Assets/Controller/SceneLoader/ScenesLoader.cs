@@ -19,14 +19,14 @@ public class ScenesLoader : MonoBehaviour
     [SerializeField]
     GameObject endLoadingText;
     [SerializeField]
-    Animator fadeScreen;
+    Animator fadeScreen, canvasMenu;
 
     AsyncOperation sceneLoading, sceneUnloading;
 
 
     void Start()
     {
-        currentActiveScene = 1;
+        currentActiveScene = menuBGSceneIndex;
     }
     public void LoadScene(int sceneID)
     {
@@ -36,6 +36,7 @@ public class ScenesLoader : MonoBehaviour
         sceneLoading = SceneManager.LoadSceneAsync(currentActiveScene, LoadSceneMode.Additive);
         sceneLoading.allowSceneActivation = false;
         fadeScreen.SetTrigger("Hide");
+        canvasMenu.SetTrigger("Inactive");
         progressBar.fillAmount = 0;
         isSceneLoading = true;
     }
@@ -43,9 +44,15 @@ public class ScenesLoader : MonoBehaviour
     public void OnButtonExit()
     {
         if (currentActiveScene != menuBGSceneIndex)
+        {
             ExitToMenu();
+        }
         else
+        {
+            Debug.Log("Exit");
             ExitGame();
+        }
+
     }
     public void ExitToMenu()
     {

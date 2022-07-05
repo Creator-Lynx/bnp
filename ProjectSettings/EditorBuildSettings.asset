@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/Controller/Scenes/Menu.unity
     guid: 5c173b6b91b80f247b7759693dc3f8f1
   - enabled: 1
-    path: Assets/Controller/Scenes/Loading.unity
-    guid: 7b5c670071be19743bed9ef631919e6a
+    path: Assets/Controller/Scenes/ControllerWind.unity
+    guid: 158330eba7b10e647adafe90b53fa099
+  - enabled: 1
+    path: Assets/Controller/Scenes/ControllerPaddle.unity
+    guid: 5bcab70b026008c46b51e3d8638c9285
+  - enabled: 1
+    path: Assets/Controller/Scenes/ControllerPaddleUpCamera.unity
+    guid: 3aae9c81b93eb7149bfb5e5831b4a419
+  - enabled: 1
+    path: Assets/Controller/Scenes/ControllerSail.unity
+    guid: 8b5b17fa54e83a94d980914acec37567
+  - enabled: 1
+    path: Assets/Controller/Scenes/ControllerSailUpCamera.unity
+    guid: 70e96ab0de20d8d4dbdf2668b4f9afea
   m_configObjects: {}
