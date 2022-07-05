@@ -30,6 +30,13 @@ public class ScenesLoader : MonoBehaviour
     }
     public void LoadScene(int sceneID)
     {
+#if UNITY_EDITOR 
+#else
+        AnalyticsProtoSendler.SendAnalitics(
+            sceneID, SceneManager.GetSceneByBuildIndex(sceneID).name,
+            currentActiveScene, SceneManager.GetSceneByBuildIndex(currentActiveScene).name
+        );
+#endif
         sceneUnloading = SceneManager.UnloadSceneAsync(currentActiveScene);
         //sceneUnloading.allowSceneActivation = false;
         currentActiveScene = sceneID;
@@ -38,6 +45,7 @@ public class ScenesLoader : MonoBehaviour
         fadeScreen.SetTrigger("Hide");
         canvasMenu.SetTrigger("Inactive");
         progressBar.fillAmount = 0;
+        fixedTouchOneFrameDelay = false;
         isSceneLoading = true;
     }
 
@@ -56,6 +64,13 @@ public class ScenesLoader : MonoBehaviour
     }
     public void ExitToMenu()
     {
+#if UNITY_EDITOR
+#else
+        AnalyticsProtoSendler.SendAnalitics(
+           menuBGSceneIndex, SceneManager.GetSceneByBuildIndex(menuBGSceneIndex).name,
+           currentActiveScene, SceneManager.GetSceneByBuildIndex(currentActiveScene).name
+       );
+#endif
         currentActiveScene = menuBGSceneIndex;
         SceneManager.LoadScene(menuBGSceneIndex);
         SceneManager.LoadScene(menuSceneIndex, LoadSceneMode.Additive);
@@ -65,6 +80,7 @@ public class ScenesLoader : MonoBehaviour
         Application.Quit();
     }
 
+    bool fixedTouchOneFrameDelay = false;
     void Update()
     {
         if (isSceneLoading)
@@ -85,7 +101,7 @@ public class ScenesLoader : MonoBehaviour
             }
 
 
-            if (Input.anyKey || Input.touchCount > 0)
+            if (Input.anyKey || (Input.touchCount > 0 && fixedTouchOneFrameDelay))
                 if (sceneLoading != null)
                 {
                     sceneLoading.allowSceneActivation = true;
@@ -98,6 +114,7 @@ public class ScenesLoader : MonoBehaviour
                 fadeScreen.SetTrigger("Show");
                 endLoadingText.SetActive(false);
             }
+            fixedTouchOneFrameDelay = true;
         }
 
 
