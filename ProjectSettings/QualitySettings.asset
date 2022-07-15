@@ -191,17 +191,17 @@ QualitySettings:
     pixelLightCount: 4
     shadows: 2
     shadowResolution: 2
-    shadowProjection: 0
+    shadowProjection: 1
     shadowCascades: 2
     shadowDistance: 150
     shadowNearPlaneOffset: 3
-    shadowCascade2Split: 0.50772864
+    shadowCascade2Split: 0.06814675
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
-    shadowmaskMode: 1
+    shadowmaskMode: 0
     skinWeights: 4
     textureQuality: 0
-    anisotropicTextures: 2
-    antiAliasing: 4
+    anisotropicTextures: 0
+    antiAliasing: 0
     softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 1

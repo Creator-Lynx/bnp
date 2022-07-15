@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "com.unity.ide.vscode": "1.2.5",
+    "com.unity.postprocessing": "3.2.2",
     "com.unity.recorder": "2.5.7",
+    "com.unity.services.analytics": "4.0.1",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
     "com.unity.ugui": "1.0.0",
@@ -35,7 +37,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.unity.services.analytics": "4.0.1"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
