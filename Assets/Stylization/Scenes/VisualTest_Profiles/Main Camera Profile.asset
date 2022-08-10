@@ -1332,19 +1332,19 @@ MonoBehaviour:
     value: 1
   depthThreshold:
     overrideState: 1
-    value: 19.8
+    value: 127.21
   normalThreshold:
     overrideState: 1
-    value: 0.6
+    value: 0
   depthNormalThreshold:
-    overrideState: 1
-    value: 0.003
+    overrideState: 0
+    value: 0
   depthNormalThresholdScale:
-    overrideState: 1
-    value: 7
+    overrideState: 0
+    value: 63.47
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1430,7 +1430,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 3.51
+    value: 4
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1454,7 +1454,7 @@ MonoBehaviour:
     value: 0
   radius:
     overrideState: 1
-    value: 0.73
+    value: 0.01
   quality:
     overrideState: 1
     value: 4
