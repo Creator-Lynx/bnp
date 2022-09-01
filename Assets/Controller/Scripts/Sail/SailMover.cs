@@ -84,11 +84,11 @@ public class SailMover : MonoBehaviour
 
     void RotationByCurrentDirection()
     {
-        float boatAngle = Mathf.Asin(water.WaterFlowDirection.x) * Mathf.Rad2Deg;
-        if (Mathf.Sign(water.WaterFlowDirection.z) < 0)
-            boatAngle = 180 - boatAngle;
-        Quaternion boatRotation = Quaternion.Euler(0, boatAngle, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, boatRotation, rotateSpeed * 0.1f);
+        //float boatAngle = Mathf.Asin(water.WaterFlowDirection.x) * Mathf.Rad2Deg;
+        //if (Mathf.Sign(water.WaterFlowDirection.z) < 0)
+        //    boatAngle = 180 - boatAngle;
+        //Quaternion boatRotation = Quaternion.Euler(0, boatAngle, 0);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, boatRotation, rotateSpeed * 0.1f);
 
 
         float sailAngle = Mathf.Asin(handledDirection.x) * Mathf.Rad2Deg;
@@ -96,7 +96,7 @@ public class SailMover : MonoBehaviour
             sailAngle = 180 - sailAngle;
         Quaternion sailRotation = Quaternion.Euler(0, sailAngle, 0);
         if (sail != null)
-            sail.transform.rotation = Quaternion.Slerp(sail.transform.rotation, sailRotation, rotateSpeed * 0.1f);
+            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, rotateSpeed * 0.1f);
     }
 
     void RandomizeWindDirection()
