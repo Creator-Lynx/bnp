@@ -14,39 +14,34 @@ public class CameraSciptableFollow : MonoBehaviour
     void Update()
     {
 
-        transform.position = GetPositionBetweenTwoPointsByHandler(points[0].position, points[1].position, player.position);
+        for (int i = 1; i < points.Length; i++)
+        {
+            float t = GetLerpBetweenTwoPointsByHandler(points[i - 1].position, points[i].position, player.position);
+            if (t <= 1 && t >= 0)
+            {
+                SetPositionAndRotationWithLerping(points[i - 1], points[i], t);
+                break;
+            }
+        }
+
 
 
     }
 
-    Vector3 GetPositionBetweenTwoPointsByHandler(Vector3 point0, Vector3 point1, Vector3 handler)
+    float GetLerpBetweenTwoPointsByHandler(Vector3 point0, Vector3 point1, Vector3 handler)
     {
 
         Vector3 railVec = point1 - point0;
         Vector3 hadlerLocationAtRailStart = handler - point0;
 
-        Vector3 pos = Vector3.Project(hadlerLocationAtRailStart, railVec);
-        //Vector3 pos = Vector3.Dot(hadlerLocationAtRailStart, railVec) * railVec;
+        //Vector3 pos = Vector3.Project(hadlerLocationAtRailStart, railVec);
+        float dotPos = Vector3.Dot(hadlerLocationAtRailStart, railVec.normalized);
 
-        return pos;
+        return dotPos / Vector3.Magnitude(railVec);
     }
-    void SetPositionAndRotationWithLerping()
+    void SetPositionAndRotationWithLerping(Transform point0, Transform point1, float dotPos)
     {
-        Vector3 pos = GetPositionBetweenTwoPointsByHandler(points[0].position, points[1].position, player.position);
-        transform.position = Vector3.Lerp(points[0].position, points[1].position,
-        Vector3.Distance(pos, points[0].position) /
-        Vector3.Distance(points[1].position, points[0].position)
-        );
-
-        transform.rotation = Quaternion.Lerp(points[0].rotation, points[1].rotation,
-        Vector3.Distance(pos, points[0].position) /
-        Vector3.Distance(points[1].position, points[0].position)
-        );
-        //transform.position = Vector3.Lerp(points[0].position, points[1].position,
-        //(player.position.z - points[0].position.z) /
-        //(points[1].position.z - points[0].position.z));
-        //transform.rotation = Quaternion.Lerp(points[0].rotation, points[1].rotation,
-        //(player.position.z - points[0].position.z) /
-        //(points[1].position.z - points[0].position.z));
+        transform.position = Vector3.Lerp(point0.position, point1.position, dotPos);
+        transform.rotation = Quaternion.Lerp(point0.rotation, point1.rotation, dotPos);
     }
 }
