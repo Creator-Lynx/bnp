@@ -49,18 +49,23 @@ public static class Bezie
 
         return dotPos / Vector3.Magnitude(railVec);
     }
-    public static float GetLerpBetweenFourPointsByHandler(Vector3[] p, Vector3 handler)
+    public static float GetClosestTByThreeVectors(Vector3[] p, Vector3 handler)
     {
         float t = 0;
         int k = 0;
+        float minSqrMagnitude = float.MaxValue;
         for (int i = 0; i < p.Length - 1; i++)
         {
-            t = GetLerpBetweenTwoPointsByHandler(p[i], p[i + 1], handler);
-            if (t >= 0 && t <= 1)
+            float temp = GetLerpBetweenTwoPointsByHandler(p[i], p[i + 1], handler);
+            Vector3 point = (p[i + 1] - p[i]) * temp + p[i];
+            float sqrMag = (handler - point).sqrMagnitude;
+            if (sqrMag < minSqrMagnitude)
             {
                 k = i;
-                break;
+                t = temp;
+                minSqrMagnitude = sqrMag;
             }
+
         }
         float dist = 0;
         for (int i = 0; i < k; i++)
@@ -74,5 +79,24 @@ public static class Bezie
             dist2 += Vector3.Magnitude(p[i + 1] - p[i]);
         }
         return dist / dist2;
+    }
+
+    public static float GetClosestTOnCurveByPosition(Vector3[] p, Vector3 handler, int accuracy)
+    {
+        float minT = float.MaxValue;
+        float dt = 1f / accuracy;
+        float minSqrDst = float.MaxValue;
+        for (int i = 0; i < accuracy; i++)
+        {
+            Vector3 point = GetPoint(p[0], p[1], p[2], p[3], i * dt);
+
+            float sqrDist = (handler - point).sqrMagnitude;
+            if (sqrDist < minSqrDst)
+            {
+                minSqrDst = sqrDist;
+                minT = i * dt;
+            }
+        }
+        return minT;
     }
 }
