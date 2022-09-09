@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: ed3bb6093ef0e5b49b0423868537f516,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f14f6172c145fe642b7ce722f5c8de71,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -760,6 +760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonPlay (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244470019863299512, guid: 68c68edaed4c24449a449210a115e413,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244470019863299513, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
@@ -4165,12 +4170,13 @@ PrefabInstance:
     - target: {fileID: 8244470019390011490, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
       propertyPath: m_text
-      value: "\u0441\u043E\u0437\u0434\u0430\u0432\u0430\u0442\u044C \u0432\u0435\u0442\u0435\u0440"
+      value: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
+        0. \u0420\u0435\u043B\u044C\u0441\u043E\u0432\u0430\u044F \u043A\u0430\u043C\u0435\u0440\u0430."
       objectReference: {fileID: 0}
     - target: {fileID: 8244470019390011490, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
       propertyPath: m_fontSize
-      value: 49.84
+      value: 40.85
       objectReference: {fileID: 0}
     - target: {fileID: 8244470019390011490, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
@@ -4998,6 +5004,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 349301708}
     m_Modifications:
+    - target: {fileID: 8244470019390011488, guid: 68c68edaed4c24449a449210a115e413,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8244470019390011490, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
       propertyPath: m_text
@@ -5068,6 +5079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonPlay (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244470019863299512, guid: 68c68edaed4c24449a449210a115e413,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244470019863299513, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
@@ -7181,6 +7197,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonPlay (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8244470019863299512, guid: 68c68edaed4c24449a449210a115e413,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8244470019863299513, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7764,6 +7785,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonPlay (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244470019863299512, guid: 68c68edaed4c24449a449210a115e413,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244470019863299513, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}

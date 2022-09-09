@@ -9,6 +9,7 @@ public class GameCurve : MonoBehaviour
     Transform[] points;
     [SerializeField]
     int segmentsNumber = 2, accuracy = 20;
+    public int SegmentsNumber { get { return segmentsNumber; } }
     [SerializeField]
     [Range(0, 1)]
     float autoControlLength = 0.5f;

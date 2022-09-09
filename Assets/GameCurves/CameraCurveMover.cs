@@ -26,7 +26,7 @@ public class CameraCurveMover : MonoBehaviour
         BezieSegment seg = curve.GetSegmentByT(t);
         Transform a = seg.points[0], b = seg.points[3];
         Quaternion targetRotation = Quaternion.Slerp(a.rotation, b.rotation, curve.GetLocalTbyT(t));
-        rotatedObject.rotation = Quaternion.Lerp(rotatedObject.rotation, targetRotation, 1 / secondsToDestination * Time.deltaTime);
+        rotatedObject.rotation = Quaternion.Lerp(rotatedObject.rotation, targetRotation, 1 / (secondsToDestination * Time.deltaTime * 4f));
         rotatedObject.localEulerAngles = new Vector3(rotatedObject.localEulerAngles.x, rotatedObject.localEulerAngles.y, 0f);
     }
     void SelfMoving()
@@ -36,7 +36,7 @@ public class CameraCurveMover : MonoBehaviour
         float dotDist = Vector3.Dot(tptr, dir);
         if (dotDist > offset)
         {
-            t = Mathf.Lerp(t, t + findStep, (1f / secondsToDestination) * Time.deltaTime);
+            t = Mathf.Lerp(t, t + (findStep / curve.SegmentsNumber), 1f / (secondsToDestination * Time.deltaTime));
         }
 
         //transform.position = curve.GetPointByT(t) + Vector3.back * 6f + Vector3.up * 4f;
