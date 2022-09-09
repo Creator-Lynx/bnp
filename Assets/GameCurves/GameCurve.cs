@@ -48,6 +48,7 @@ public class GameCurve : MonoBehaviour
     public Vector3 GetPointByT(float t)
     {
         int i = Mathf.FloorToInt(t * segmentsNumber);
+        if (i < 0) i = 0;
         if (i == segmentsNumber) i--;
         float dt = t * segmentsNumber - i;
         return Bezie.GetPoint(segments[i].GetPoints(), dt);
