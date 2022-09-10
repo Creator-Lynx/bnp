@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class fpsToggler : MonoBehaviour
 {
+    public static bool isPP = true;
     FPSCounter counter;
     private void Awake()
     {
+        isPP = PlayerPrefs.GetInt("IsPP", 1) == 1;
         counter = FindObjectOfType<FPSCounter>();
     }
     void Start()
@@ -20,4 +22,15 @@ public class fpsToggler : MonoBehaviour
             counter.gameObject.SetActive(toggle);
     }
 
+    public void TogglePostProcessing(bool toggle)
+    {
+        if (ppEnabler.instance != null)
+            ppEnabler.instance.TurnPPEnabled(toggle);
+        isPP = toggle;
+        PlayerPrefs.SetInt("IsPP", toggle ? 1 : 0);
+
+
+
+    }
 }
+
