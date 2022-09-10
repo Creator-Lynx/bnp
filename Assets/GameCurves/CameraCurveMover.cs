@@ -10,7 +10,7 @@ public class CameraCurveMover : MonoBehaviour
     [SerializeField]
     Transform target, followObject, rotatedObject;
     [SerializeField]
-    float lerpSpeed = 0.5f, findStep = 0.05f, offset = 0.5f;
+    float lerpSpeed = 0.5f, findStep = 0.05f, offset = 0.5f, rotationLerpSpeed;
     [SerializeField]
     GameCurve curve;
     void Start()
@@ -26,7 +26,7 @@ public class CameraCurveMover : MonoBehaviour
         BezieSegment seg = curve.GetSegmentByT(t);
         Transform a = seg.points[0], b = seg.points[3];
         Quaternion targetRotation = Quaternion.Slerp(a.rotation, b.rotation, curve.GetLocalTbyT(t));
-        rotatedObject.rotation = Quaternion.Lerp(rotatedObject.rotation, targetRotation, Time.deltaTime * lerpSpeed);
+        rotatedObject.rotation = Quaternion.Lerp(rotatedObject.rotation, targetRotation, Time.deltaTime * rotationLerpSpeed);
         rotatedObject.localEulerAngles = new Vector3(rotatedObject.localEulerAngles.x, rotatedObject.localEulerAngles.y, 0f);
     }
     void SelfMoving()
