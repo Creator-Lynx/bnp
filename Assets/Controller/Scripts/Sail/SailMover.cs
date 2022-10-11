@@ -43,21 +43,21 @@ public class SailMover : MonoBehaviour
         ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
 
-
-        if (Time.time > 1)
-            if ((int)Time.time % randomizeWindTimer == 0)
-            {
-                if (!isChanged)
-                {
-                    RandomizeWindDirection();
-                    isChanged = true;
-                }
-
-            }
-            else
-            {
-                isChanged = false;
-            }
+        WindDirection = WindCurveHandler.WindVector;
+        //if (Time.time > 1)
+        //    if ((int)Time.time % randomizeWindTimer == 0)
+        //    {
+        //        if (!isChanged)
+        //        {
+        //            RandomizeWindDirection();
+        //            isChanged = true;
+        //        }
+        //
+        //    }
+        //    else
+        //    {
+        //        isChanged = false;
+        //    }
     }
 
     public void HandleDirection(float X, float Z)
