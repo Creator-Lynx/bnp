@@ -57,7 +57,7 @@ public class ScenesLoader : MonoBehaviour
         }
         else
         {
-            Debug.Log("Exit");
+            //Debug.Log("Exit");
             ExitGame();
         }
 

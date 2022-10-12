@@ -64,7 +64,7 @@ public class SailMover : MonoBehaviour
     {
         if (X == 0 && Z == 0) return;
         Vector3 tmp = new Vector3(X, 0, Z).normalized;
-        Debug.DrawRay(transform.position + Vector3.up, tmp * 8, Color.white);
+        //Debug.DrawRay(transform.position + Vector3.up, tmp * 8, Color.white);
         handledDirection = Vector3.SlerpUnclamped(handledDirection, tmp, 0.2f);
         handledDirection.Normalize();
 
@@ -74,10 +74,10 @@ public class SailMover : MonoBehaviour
     {
         //rig.AddForce(water.WaterFlowDirection * moveSpeedFlow, ForceMode.Force);
         float dot = Vector3.Dot(WindDirection, handledDirection);
-        Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
+        //Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
         float modifiedDot = dot >= 0 ? dot : 0f;
         Vector3 resultForceDirection = handledDirection * modifiedDot;
-        Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
+        //Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
 
     }

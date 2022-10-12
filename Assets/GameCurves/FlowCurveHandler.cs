@@ -47,7 +47,7 @@ public class FlowCurveHandler : MonoBehaviour
         }
         float dist = (target.position - targetPos).magnitude;
         dist = (-dist + maxFlowDistance) / maxFlowDistance;
-        if (dist < 0f) dist = 0f;
+        if (dist < .1f) dist = .1f;
         WaterVector = dir.normalized * targetPos.y * dist;
     }
 

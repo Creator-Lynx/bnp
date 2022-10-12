@@ -32,7 +32,7 @@ public class PaddleMover : MonoBehaviour
     /// <param name="Y - handle Y rotation parameter from -1 to 1, changing to angle of moving"></param>
     public void HandleDirection(float Y)
     {
-        Y = Y / 2 + 0.5f;
+        Y = Y / 2f + 0.5f;
         angleRotation = Mathf.SmoothStep(-angleClamp, angleClamp, Y);
         float radAngle = angleRotation * Mathf.Deg2Rad;
         /*
@@ -41,8 +41,8 @@ public class PaddleMover : MonoBehaviour
         ry = y cos α + x sin α
         */
         moveByFlowDirection = new Vector3(
-        water.WaterFlowDirection.x * Mathf.Cos(radAngle) + water.WaterFlowDirection.normalized.z * Mathf.Sin(radAngle), 0f,
-        water.WaterFlowDirection.z * Mathf.Cos(radAngle) - water.WaterFlowDirection.normalized.x * Mathf.Sin(radAngle));
+        water.WaterFlowDirection.normalized.x * Mathf.Cos(radAngle) + water.WaterFlowDirection.normalized.z * Mathf.Sin(radAngle), 0f,
+        water.WaterFlowDirection.normalized.z * Mathf.Cos(radAngle) - water.WaterFlowDirection.normalized.x * Mathf.Sin(radAngle));
         Debug.DrawRay(transform.position, moveByFlowDirection * 10, Color.blue);
     }
 
@@ -58,7 +58,9 @@ public class PaddleMover : MonoBehaviour
     }
     void RotationByCurrentDirection()
     {
-        Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
+        float mag = water.WaterFlowDirection.magnitude;
+        mag = mag > 1f ? 1f : mag;
+        Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg * mag, 0);
         //Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
         Quaternion invertTargetRotation = Quaternion.Euler(0, -angleRotation, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f);

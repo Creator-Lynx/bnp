@@ -26,7 +26,7 @@ public class AnalyticsProtoSendler : MonoBehaviour
             {"SceneID", loadingSceneIndex},
             {"SceneName", loadingSceneName}
         });
-        Debug.Log("StartedLevel " + loadingSceneIndex + " " + analyticsResult);
+        //Debug.Log("StartedLevel " + loadingSceneIndex + " " + analyticsResult);
     }
 
     void SendTimeOnLevel(int endedSceneIndex, string endedSceneName)
@@ -38,7 +38,7 @@ public class AnalyticsProtoSendler : MonoBehaviour
             {"SceneName", endedSceneName},
             {"Time", time}
         });
-        Debug.Log("EndedLevel " + endedSceneName + " " + analyticsResult + "\nTime " + time);
+        //Debug.Log("EndedLevel " + endedSceneName + " " + analyticsResult + "\nTime " + time);
     }
 
     //for review send button
@@ -49,13 +49,13 @@ public class AnalyticsProtoSendler : MonoBehaviour
         TextMeshProUGUI[] txts = textArea.GetComponentsInChildren<TextMeshProUGUI>();
         TextMeshProUGUI text = txts[1],
         subText = txts[0];
-        Debug.Log("text " + text.name + "\nsubText " + subText.name);
+        //Debug.Log("text " + text.name + "\nsubText " + subText.name);
         string message = text.text;
         AnalyticsResult analyticsResult = Analytics.CustomEvent("Review_r", new Dictionary<string, object>{
             {"Message", message}
         });
         textArea.GetComponentInParent<TMP_InputField>().text = string.Empty;
-        Debug.Log("review message = " + message);
+        //Debug.Log("review message = " + message);
         subText.text = analyticsResult.ToString();
         if (analyticsResult == AnalyticsResult.Ok) subText.text += "\nГотово, можешь отправлять еще, всё прочитаю";
 #endif
