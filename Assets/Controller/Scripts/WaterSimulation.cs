@@ -21,6 +21,9 @@ public class WaterSimulation : MonoBehaviour
 
     void FixedUpdate()
     {
+        WaterFlowDirection = FlowCurveHandler.WaterVector;
+
+
         float divePercent = -transform.position.y + transform.localScale.x * 0.5f;
         divePercent = Mathf.Clamp(divePercent, 0f, 1f);
 
@@ -28,8 +31,5 @@ public class WaterSimulation : MonoBehaviour
         rig.AddForce(forceDirection * divePercent * WaterDensity);
         rig.drag = divePercent * 2f;
         rig.angularDrag = divePercent * 2f;
-
-
-        //WaterFlowDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0f, 1).normalized;
     }
 }
