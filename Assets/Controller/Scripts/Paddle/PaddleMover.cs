@@ -59,7 +59,8 @@ public class PaddleMover : MonoBehaviour
     void RotationByCurrentDirection()
     {
         Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
-        Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
+        //Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
+        Quaternion invertTargetRotation = Quaternion.Euler(0, -angleRotation, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f);
         if (paddle != null) paddle.transform.localRotation =
         Quaternion.Slerp(paddle.transform.localRotation, invertTargetRotation, rotateSpeed * 0.4f);

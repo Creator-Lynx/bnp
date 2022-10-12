@@ -12,6 +12,8 @@ public class FlowCurveHandler : MonoBehaviour
     [SerializeField]
     float lerpSpeed = 0.5f, findStep = 0.05f, offset = 0.5f;
     [SerializeField]
+    float maxFlowDistance = 2f;
+    [SerializeField]
     GameCurve curve;
     Quaternion currentRotation;
     public static Vector3 WaterVector;
@@ -43,9 +45,10 @@ public class FlowCurveHandler : MonoBehaviour
         {
             t = Mathf.Lerp(t, t + (findStep / curve.SegmentsNumber), Time.deltaTime * lerpSpeed);
         }
-
-
-        WaterVector = dir.normalized * targetPos.y;
+        float dist = (target.position - targetPos).magnitude;
+        dist = (-dist + maxFlowDistance) / maxFlowDistance;
+        if (dist < 0f) dist = 0f;
+        WaterVector = dir.normalized * targetPos.y * dist;
     }
 
     void OnDrawGizmos()

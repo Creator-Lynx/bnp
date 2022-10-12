@@ -6,7 +6,7 @@ using UnityEngine;
 public class SailMover : MonoBehaviour
 {
 
-    [SerializeField] float moveSpeedFlow = 2.5f, windForce = 2.5f, rotateSpeed = 0.5f;
+    [SerializeField] float windForce = 2.5f, rotateSpeed = 0.5f;
 
     [SerializeField] int randomizeWindTimer = 5;
 
@@ -30,7 +30,7 @@ public class SailMover : MonoBehaviour
     void Update()
     {
 
-        HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        //HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         HandleDirection(
             JoysticksFacade.GetJoystick(JoystickName.left).GetHorizontalAxis(),
             JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
@@ -79,7 +79,7 @@ public class SailMover : MonoBehaviour
         Vector3 resultForceDirection = handledDirection * modifiedDot;
         Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
-        rig.AddForce(water.WaterFlowDirection * moveSpeedFlow, ForceMode.Force);
+
     }
 
     void RotationByCurrentDirection()
