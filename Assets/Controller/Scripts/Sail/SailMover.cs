@@ -8,12 +8,10 @@ public class SailMover : MonoBehaviour
 
     [SerializeField] float windForce = 2.5f, rotateSpeed = 0.5f;
 
-    [SerializeField] int randomizeWindTimer = 5;
 
     [Space(30)]
     [SerializeField] Transform sail;
 
-    WaterSimulation water;
     Rigidbody rig;
 
 
@@ -22,7 +20,6 @@ public class SailMover : MonoBehaviour
     public Vector3 WindDirection = Vector3.forward;
     void Start()
     {
-        water = GetComponent<WaterSimulation>();
         rig = GetComponent<Rigidbody>();
     }
 
@@ -37,27 +34,12 @@ public class SailMover : MonoBehaviour
 
 
     }
-    bool isChanged = false;
     void FixedUpdate()
     {
         ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
 
         WindDirection = WindCurveHandler.WindVector;
-        //if (Time.time > 1)
-        //    if ((int)Time.time % randomizeWindTimer == 0)
-        //    {
-        //        if (!isChanged)
-        //        {
-        //            RandomizeWindDirection();
-        //            isChanged = true;
-        //        }
-        //
-        //    }
-        //    else
-        //    {
-        //        isChanged = false;
-        //    }
     }
 
     public void HandleDirection(float X, float Z)
@@ -72,7 +54,6 @@ public class SailMover : MonoBehaviour
 
     void ForceMoveByCurrentDirection()
     {
-        //rig.AddForce(water.WaterFlowDirection * moveSpeedFlow, ForceMode.Force);
         float dot = Vector3.Dot(WindDirection, handledDirection);
         //Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
         float modifiedDot = dot >= 0 ? dot : 0f;
@@ -84,13 +65,6 @@ public class SailMover : MonoBehaviour
 
     void RotationByCurrentDirection()
     {
-        //float boatAngle = Mathf.Asin(water.WaterFlowDirection.x) * Mathf.Rad2Deg;
-        //if (Mathf.Sign(water.WaterFlowDirection.z) < 0)
-        //    boatAngle = 180 - boatAngle;
-        //Quaternion boatRotation = Quaternion.Euler(0, boatAngle, 0);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, boatRotation, rotateSpeed * 0.1f);
-
-
         float sailAngle = Mathf.Asin(handledDirection.x) * Mathf.Rad2Deg;
         if (Mathf.Sign(handledDirection.z) < 0)
             sailAngle = 180 - sailAngle;
@@ -98,11 +72,4 @@ public class SailMover : MonoBehaviour
         if (sail != null)
             sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, rotateSpeed * 0.1f);
     }
-
-    void RandomizeWindDirection()
-    {
-        Vector3 tmp = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, UnityEngine.Random.Range(-1f, 1f));
-        WindDirection = tmp.normalized;
-    }
-
 }

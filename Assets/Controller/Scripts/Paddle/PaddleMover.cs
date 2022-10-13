@@ -7,7 +7,7 @@ public class PaddleMover : MonoBehaviour
 {
     [SerializeField] float angleRotation = 0f;
     [SerializeField] float angleClamp = 30f;
-    [SerializeField] float moveSpeed = 5f, rotateSpeed = 0.5f;
+    [SerializeField] float flowForce = 5f, rotateSpeed = 0.5f;
 
     [Space(30)]
     [SerializeField] Transform paddle;
@@ -54,7 +54,7 @@ public class PaddleMover : MonoBehaviour
 
     void ForceMoveByCurrentDirection()
     {
-        rig.AddForce(moveByFlowDirection * moveSpeed * water.WaterFlowDirection.magnitude, ForceMode.Force);
+        rig.AddForce(moveByFlowDirection * flowForce * water.WaterFlowDirection.magnitude, ForceMode.Force);
     }
     void RotationByCurrentDirection()
     {
