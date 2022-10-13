@@ -58,9 +58,10 @@ public class PaddleMover : MonoBehaviour
     }
     void RotationByCurrentDirection()
     {
-        float mag = water.WaterFlowDirection.magnitude;
-        mag = mag > 1f ? 1f : mag;
-        Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg * mag, 0);
+        Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
+        Quaternion onlyFlowRotation = Quaternion.Euler(0, Mathf.Asin(water.WaterFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
+        float t = Mathf.InverseLerp(0, .8f, FlowCurveHandler.ToFlowDistance);
+        targetRotation = Quaternion.Lerp(onlyFlowRotation, targetRotation, t);
         //Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
         Quaternion invertTargetRotation = Quaternion.Euler(0, -angleRotation, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f);
