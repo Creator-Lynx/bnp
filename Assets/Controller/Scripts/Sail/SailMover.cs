@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(WaterSimulation))]
@@ -51,7 +49,7 @@ public class SailMover : MonoBehaviour
         handledDirection.Normalize();
 
     }
-
+    [SerializeField] Vector3 currentVel;
     void ForceMoveByCurrentDirection()
     {
         float dot = Vector3.Dot(WindDirection, handledDirection);
@@ -59,6 +57,8 @@ public class SailMover : MonoBehaviour
         float modifiedDot = dot >= 0 ? dot : 0f;
         Vector3 resultForceDirection = handledDirection * modifiedDot;
         //Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
+        currentVel = Vector3.Project(rig.velocity, transform.forward);
+        if (currentVel.z < 0f) return;
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
 
     }
