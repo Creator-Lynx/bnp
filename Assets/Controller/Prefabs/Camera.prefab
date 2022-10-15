@@ -306,7 +306,7 @@ MonoBehaviour:
   minSqrDelta: 0
   maxSqrDelta: 0.31
   minFOV: 80
-  maxFOV: 88
+  maxFOV: 90
   target: {fileID: 0}
   testSqrDelta: 0
 --- !u!1001 &7872314201227235200
