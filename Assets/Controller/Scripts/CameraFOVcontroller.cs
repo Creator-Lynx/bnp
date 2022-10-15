@@ -9,7 +9,7 @@ public class CameraFOVcontroller : MonoBehaviour
     float minSqrDelta, maxSqrDelta;
     [Space(20)]
     [SerializeField]
-    float minFOV, maxFOV;
+    float minFOV, maxFOV, FOVLerpSpeed = 1f;
     Vector3 prevPosition;
     Vector3 prevForward;
     [SerializeField]
@@ -35,7 +35,7 @@ public class CameraFOVcontroller : MonoBehaviour
         float sqrDelta = deltaV.sqrMagnitude;
         testSqrDelta = sqrDelta;
         float t = Mathf.InverseLerp(minSqrDelta, maxSqrDelta, sqrDelta);
-        float currentFOV = Mathf.Lerp(minFOV, maxFOV, t);
-        selfCam.fieldOfView = Mathf.Lerp(selfCam.fieldOfView, currentFOV, 0.9f * Time.deltaTime);
+        float targetFOV = Mathf.Lerp(minFOV, maxFOV, t);
+        selfCam.fieldOfView = Mathf.Lerp(selfCam.fieldOfView, targetFOV, FOVLerpSpeed * Time.deltaTime);
     }
 }

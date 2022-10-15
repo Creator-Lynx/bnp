@@ -304,9 +304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSqrDelta: 0
-  maxSqrDelta: 0.31
+  maxSqrDelta: 0.15
   minFOV: 80
-  maxFOV: 90
+  maxFOV: 86
+  FOVLerpSpeed: 0.6
   target: {fileID: 0}
   testSqrDelta: 0
 --- !u!1001 &7872314201227235200
