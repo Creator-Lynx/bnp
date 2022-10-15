@@ -21,8 +21,8 @@ public class PaddleMover : MonoBehaviour
     }
     void Update()
     {
-        HandleDirection(Input.GetAxis("Horizontal"));
-        if (Input.GetAxis("Horizontal") == 0)
+        HandleDirection(Input.GetAxis("AltHorizontal"));
+        if (Input.GetAxis("AltHorizontal") == 0)
             HandleDirection(JoysticksFacade.GetJoystick(JoystickName.right).GetHorizontalAxis());
     }
 

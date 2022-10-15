@@ -25,10 +25,11 @@ public class SailMover : MonoBehaviour
     void Update()
     {
 
-        //HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        HandleDirection(
-            JoysticksFacade.GetJoystick(JoystickName.left).GetHorizontalAxis(),
-            JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
+        HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
+            HandleDirection(
+                JoysticksFacade.GetJoystick(JoystickName.left).GetHorizontalAxis(),
+                JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
 
 
     }
