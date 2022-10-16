@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 3770052409976983134}
   - component: {fileID: 3770052409976983129}
   - component: {fileID: 149326997}
+  - component: {fileID: 4269875557532553335}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -192,8 +193,8 @@ Rigidbody:
   m_GameObject: {fileID: 3770052409976983128}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.08
+  m_AngularDrag: 0.25
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -226,12 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3db774ad6d12e439ec2f517406a163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedFlow: 0
   windForce: 10
   rotateSpeed: 0.5
-  randomizeWindTimer: 5
   sail: {fileID: 3770052409860039151}
   WindDirection: {x: 0, y: 0, z: 1}
+  currentVel: {x: 0, y: 0, z: 0}
 --- !u!114 &149326997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,9 +246,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleRotation: 0
   angleClamp: 45
-  moveSpeed: 10
+  flowForce: 5
   rotateSpeed: 0.5
   paddle: {fileID: 454291872238572352}
+--- !u!114 &4269875557532553335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770052409976983128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4477b1d5c9de53e4495ea40b0ab51561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 0}
+  attemptsImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &9058345208311952547
 GameObject:
   m_ObjectHideFlags: 0
