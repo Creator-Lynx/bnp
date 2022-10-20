@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454291872238572352}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: paddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3770052409147683172}
   - component: {fileID: 3770052409147683173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3770052409860039151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,9 +160,9 @@ GameObject:
   - component: {fileID: 3770052409976983129}
   - component: {fileID: 149326997}
   - component: {fileID: 4269875557532553335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3db774ad6d12e439ec2f517406a163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUncontrolled: 0
   windForce: 10
   rotateSpeed: 0.5
   sail: {fileID: 3770052409860039151}
@@ -244,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab13891e66436f40bbb3b8bf328bdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUncontrolled: 0
   angleRotation: 0
   angleClamp: 45
   flowForce: 5
@@ -261,6 +263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4477b1d5c9de53e4495ea40b0ab51561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 10
+  maxHP: 10
+  attempts: 1
   bar: {fileID: 0}
   attemptsImages:
   - {fileID: 0}
@@ -278,7 +283,7 @@ GameObject:
   - component: {fileID: 4344819819656422173}
   - component: {fileID: 5542274962920823881}
   - component: {fileID: 1113374687819690201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,6 +373,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3770052409976983132}
     m_Modifications:
+    - target: {fileID: -8868512458408088907, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
         type: 3}
       propertyPath: m_RootOrder
@@ -438,10 +448,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4dd70ea0a8992b24e9429872c1197be1, type: 2}
+    - target: {fileID: -4395153732986013708, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
         type: 3}
       propertyPath: m_Name
       value: boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4536054379777593256, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
         type: 3}

@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(WaterSimulation))]
 public class SailMover : MonoBehaviour
 {
+    public bool isUncontrolled = false;
 
     [SerializeField] float windForce = 2.5f, rotateSpeed = 0.5f;
 
@@ -11,7 +12,6 @@ public class SailMover : MonoBehaviour
     [SerializeField] Transform sail;
 
     Rigidbody rig;
-
 
     Vector3 handledDirection = Vector3.forward;
 
@@ -24,7 +24,7 @@ public class SailMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isUncontrolled) return;
         HandleDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
             HandleDirection(

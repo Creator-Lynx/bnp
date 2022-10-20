@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(WaterSimulation))]
 public class PaddleMover : MonoBehaviour
 {
+    public bool isUncontrolled = false;
     [SerializeField] float angleRotation = 0f;
     [SerializeField] float angleClamp = 30f;
     [SerializeField] float flowForce = 5f, rotateSpeed = 0.5f;
@@ -21,6 +22,7 @@ public class PaddleMover : MonoBehaviour
     }
     void Update()
     {
+        if (isUncontrolled) return;
         HandleDirection(Input.GetAxis("AltHorizontal"));
         if (Input.GetAxis("AltHorizontal") == 0)
             HandleDirection(JoysticksFacade.GetJoystick(JoystickName.right).GetHorizontalAxis());

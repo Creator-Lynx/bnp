@@ -53,6 +53,18 @@ public class PlayerHitPointsController : MonoBehaviour
     }
     void Death()
     {
-
+        GetComponent<PaddleMover>().isUncontrolled = true;
+        GetComponent<SailMover>().isUncontrolled = true;
+        GetComponent<WaterSimulation>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Animation>().Play("dead");
+        BasicGameManager.LoseLevel();
     }
+    public void CompleteLevel()
+    {
+        GetComponent<PaddleMover>().isUncontrolled = true;
+        GetComponent<SailMover>().isUncontrolled = true;
+    }
+
+
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class WaterSimulation : MonoBehaviour
 {
-    [SerializeField] float WaterDensity = 10f;
+    [SerializeField] public float WaterDensity = 10f;
 
     [SerializeField] Vector3 forceDirection = Vector3.up;
 
