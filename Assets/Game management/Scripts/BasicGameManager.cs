@@ -10,11 +10,12 @@ public class BasicGameManager : MonoBehaviour
     {
         instance = this;
         Animator[] animators = GameObject.FindGameObjectWithTag("Menu")?.GetComponentsInChildren<Animator>();
-        for (int i = 0; i < animators.Length; i++)
-        {
-            if (animators[i]?.name == "LoadScreen") loadScreen = animators?[i];
-            if (animators[i]?.name == "WinAndLose") endScreen = animators?[i];
-        }
+        if (animators != null)
+            for (int i = 0; i < animators.Length; i++)
+            {
+                if (animators[i]?.name == "LoadScreen") loadScreen = animators?[i];
+                if (animators[i]?.name == "WinAndLose") endScreen = animators?[i];
+            }
 
 
     }
