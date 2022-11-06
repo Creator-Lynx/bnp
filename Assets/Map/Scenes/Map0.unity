@@ -10761,7 +10761,7 @@ MonoBehaviour:
   findStep: 0.15
   offset: 0
   maxFlowDistance: 10
-  minForceAtDistanceThreshold: 0.65
+  minForceAtDistanceThreshold: 0.5
   curve: {fileID: 454004187}
   distanceToFlowKoef: 0
   flowArrowPrefab: {fileID: 1569087047075593550, guid: 4a569d222e046a84b80f4079f62b7142,
