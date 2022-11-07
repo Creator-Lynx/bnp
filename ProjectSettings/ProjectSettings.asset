@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Tiny Boat
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.11400856, g: 0.119111, b: 0.13207549, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.07666667, g: 0.09008333, b: 0.092, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 0.5
@@ -41,7 +41,7 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: 4be576e930199fd48942fd73c9eb4c7a, type: 3}
-    duration: 3.22
+    duration: 6
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
