@@ -63,8 +63,8 @@ MonoBehaviour:
   target: {fileID: 0}
   followObject: {fileID: 8447140016963130131}
   rotatedObject: {fileID: 0}
-  lerpSpeed: 5
-  findStep: 0.08
+  lerpSpeed: 6.7
+  findStep: 0.07
   offset: 0.2
   rotationLerpSpeed: 1.06
   curve: {fileID: 0}
