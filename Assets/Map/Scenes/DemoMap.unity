@@ -4046,16 +4046,6 @@ PrefabInstance:
       objectReference: {fileID: 1287269787}
     - target: {fileID: 7872314202615758866, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
-      propertyPath: m_Spring
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872314202615758866, guid: 3db94fbb63f2312449ff46d0c670d594,
-        type: 3}
-      propertyPath: m_MinDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872314202615758866, guid: 3db94fbb63f2312449ff46d0c670d594,
-        type: 3}
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 433855711}
@@ -21127,24 +21117,9 @@ PrefabInstance:
       objectReference: {fileID: 1850606449}
     - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
         type: 3}
-      propertyPath: offset
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
-        type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1637504160}
-    - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
-        type: 3}
-      propertyPath: findStep
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
-        type: 3}
-      propertyPath: lerpSpeed
-      value: 6.7
-      objectReference: {fileID: 0}
     - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
         type: 3}
       propertyPath: rotatedObject
