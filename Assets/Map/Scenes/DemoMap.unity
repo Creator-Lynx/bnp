@@ -34737,7 +34737,7 @@ MonoBehaviour:
   - {fileID: 553616782}
   - {fileID: 839426873}
   - {fileID: 81094980}
-  segmentsNumber: 21
+  segmentsNumber: 22
   accuracy: 100
   autoControlLength: 0.27
   segments:
@@ -34790,6 +34790,11 @@ MonoBehaviour:
     - {fileID: 1504811655}
     - {fileID: 1481837421}
     - {fileID: 1379621628}
+    - {fileID: 1215554810}
+  - points:
+    - {fileID: 1215554810}
+    - {fileID: 368353822}
+    - {fileID: 469138402}
     - {fileID: 1068485263}
   - points:
     - {fileID: 1068485263}
@@ -34805,6 +34810,11 @@ MonoBehaviour:
     - {fileID: 1968388104}
     - {fileID: 2115539901}
     - {fileID: 1541341116}
+    - {fileID: 331945546}
+  - points:
+    - {fileID: 331945546}
+    - {fileID: 427426679}
+    - {fileID: 916322649}
     - {fileID: 199652615}
   - points:
     - {fileID: 199652615}
@@ -34815,6 +34825,11 @@ MonoBehaviour:
     - {fileID: 327271104}
     - {fileID: 1233109445}
     - {fileID: 1594917853}
+    - {fileID: 16624638}
+  - points:
+    - {fileID: 16624638}
+    - {fileID: 1452976321}
+    - {fileID: 1606741254}
     - {fileID: 1058369987}
   - points:
     - {fileID: 1058369987}
