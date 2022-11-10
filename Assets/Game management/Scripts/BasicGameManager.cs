@@ -16,18 +16,26 @@ public class BasicGameManager : MonoBehaviour
                 if (animators[i]?.name == "LoadScreen") loadScreen = animators?[i];
                 if (animators[i]?.name == "WinAndLose") endScreen = animators?[i];
             }
-
+#if PLATFORM_STANDALONE
+        Cursor.visible = false;
+#endif
 
     }
     public static void CompleteLevel()
     {
         Debug.Log("WIn");
         instance.CallMenu(true);
+#if PLATFORM_STANDALONE
+        Cursor.visible = true;
+#endif
     }
     public static void LoseLevel()
     {
         Debug.Log("Lose");
         instance.StartCor();
+#if PLATFORM_STANDALONE
+        Cursor.visible = true;
+#endif
     }
     void StartCor()
     {
