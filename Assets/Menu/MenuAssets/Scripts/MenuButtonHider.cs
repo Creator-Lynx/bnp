@@ -1,37 +1,55 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuButtonHider : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    public bool IsMenuOpen = true;
+
     void Start()
     {
 #if PLATFORM_STANDALONE
-        GetComponent<Button>().enabled = false;
-        GetComponent<Image>().enabled = false;
+        GetComponent<Button>().interactable = false;
 #endif
     }
 
     // Update is called once per frame
     void Update()
     {
+#if PLATFORM_STANDALONE
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.visible = !Cursor.visible;
-            OnButtonESCdown.Invoke();
-        }
+            if (IsMenuOpen)
+            {
+                HideMenu();
+                OnMenuHidding.Invoke();
+            }
+            else
+            {
+                ShowMenu();
+                OnMenuShowing.Invoke();
+            }
 
+        }
+#endif
     }
     public void HideMenu()
     {
+#if PLATFORM_STANDALONE
         Cursor.visible = false;
+#endif
+        IsMenuOpen = false;
     }
     public void ShowMenu()
     {
-        
+#if PLATFORM_STANDALONE
+        Cursor.visible = true;
+#endif
+        IsMenuOpen = true;
     }
     [SerializeField]
-    UnityEvent OnButtonESCdown;
+    UnityEvent OnMenuShowing, OnMenuHidding;
 
 }

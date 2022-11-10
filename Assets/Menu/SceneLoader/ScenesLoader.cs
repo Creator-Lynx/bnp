@@ -19,6 +19,8 @@ public class ScenesLoader : MonoBehaviour
     [SerializeField]
     GameObject endLoadingText;
     [SerializeField]
+    MenuButtonHider menuButton;
+    [SerializeField]
     Animator fadeScreen, canvasMenu;
 
     AsyncOperation sceneLoading, sceneUnloading;
@@ -44,6 +46,7 @@ public class ScenesLoader : MonoBehaviour
         sceneLoading.allowSceneActivation = false;
         fadeScreen.SetTrigger("Hide");
         canvasMenu.SetTrigger("Inactive");
+        menuButton.IsMenuOpen = false;
         progressBar.fillAmount = 0;
         fixedTouchOneFrameDelay = false;
         isSceneLoading = true;
