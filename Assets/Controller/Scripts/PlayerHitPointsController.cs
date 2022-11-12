@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +19,11 @@ public class PlayerHitPointsController : MonoBehaviour
     HPBar bar;
     [SerializeField]
     Image[] attemptsImages = new Image[3];
+
+    [SerializeField]
+    bool isDamageble = true;
+    [SerializeField]
+    float damageblaDelay = 1f;
     void Start()
     {
         SetAttempts();
@@ -31,6 +38,7 @@ public class PlayerHitPointsController : MonoBehaviour
     }
     public void SetDamage(int damage)
     {
+        if (!isDamageble) return;
         HP -= damage;
         if (HP <= 0)
         {
@@ -45,7 +53,7 @@ public class PlayerHitPointsController : MonoBehaviour
             Death();
         }
         bar.OnHpChange((float)HP / (float)maxHP);
-
+        StartCoroutine(DamageblaDelay());
     }
     void ReturnToCheckPoint()
     {
@@ -66,5 +74,10 @@ public class PlayerHitPointsController : MonoBehaviour
         GetComponent<SailMover>().isUncontrolled = true;
     }
 
-
+    IEnumerator DamageblaDelay()
+    {
+        isDamageble = false;
+        yield return new WaitForSeconds(damageblaDelay);
+        isDamageble = true;
+    }
 }
