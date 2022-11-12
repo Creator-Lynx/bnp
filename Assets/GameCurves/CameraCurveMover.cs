@@ -5,7 +5,7 @@ using UnityEngine;
 //[ExecuteAlways]
 public class CameraCurveMover : MonoBehaviour
 {
-    float t = 0f;
+    public float t = 0f;
 
     [SerializeField]
     Transform target, followObject, rotatedObject;
