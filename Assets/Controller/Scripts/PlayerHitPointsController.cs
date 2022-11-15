@@ -24,6 +24,8 @@ public class PlayerHitPointsController : MonoBehaviour
     bool isDamageble = true;
     [SerializeField]
     float damageblaDelay = 1f;
+    [SerializeField]
+    float oneHPInDecimal = .1f;
     void Start()
     {
         SetAttempts();
@@ -52,7 +54,7 @@ public class PlayerHitPointsController : MonoBehaviour
             HP = 0;
             Death();
         }
-        bar.OnHpChange((float)HP / (float)maxHP);
+        bar.OnHpChange(HP * oneHPInDecimal);
         StartCoroutine(DamageblaDelay());
     }
     void ReturnToCheckPoint()
