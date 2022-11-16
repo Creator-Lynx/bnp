@@ -56,7 +56,7 @@ public class PaddleMover : MonoBehaviour
 
     void ForceMoveByCurrentDirection()
     {
-        rig.AddForce(moveByFlowDirection * flowForce * water.WaterFlowDirection.magnitude, ForceMode.Force);
+        rig.AddForce(moveByFlowDirection * flowForce * water.WaterFlowDirection.magnitude * (Time.fixedDeltaTime / 0.02f), ForceMode.Force);
     }
     void RotationByCurrentDirection()
     {
@@ -66,8 +66,8 @@ public class PaddleMover : MonoBehaviour
         targetRotation = Quaternion.Lerp(onlyFlowRotation, targetRotation, t);
         //Quaternion invertTargetRotation = Quaternion.Euler(0, -Mathf.Asin(moveByFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
         Quaternion invertTargetRotation = Quaternion.Euler(0, -angleRotation, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f * (Time.fixedDeltaTime / 0.02f));
         if (paddle != null) paddle.transform.localRotation =
-        Quaternion.Slerp(paddle.transform.localRotation, invertTargetRotation, rotateSpeed * 0.4f);
+        Quaternion.Slerp(paddle.transform.localRotation, invertTargetRotation, rotateSpeed * 0.4f * (Time.fixedDeltaTime / 0.02f));
     }
 }
