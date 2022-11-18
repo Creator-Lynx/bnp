@@ -30,7 +30,7 @@ public class WindMover : MonoBehaviour
         //if (transform.rotation.y > 180) transform.rotation = Quaternion.Euler(transform.rotation.x, -180, transform.rotation.z);
         //if (transform.rotation.y < -180) transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, targetRotation, 0), rotateSpeed * 0.1f * (Time.fixedDeltaTime / 0.02f));
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, targetRotation, 0), rotateSpeed * 0.1f * 50 * Time.deltaTime);
         //transform.Rotate(0f, rotSign * rotateSpeed, 0f);
     }
     Vector3 dir = Vector3.zero;

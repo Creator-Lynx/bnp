@@ -56,7 +56,7 @@ public class PaddleMover : MonoBehaviour
 
     void ForceMoveByCurrentDirection()
     {
-        rig.AddForce(moveByFlowDirection * flowForce * water.WaterFlowDirection.magnitude * (Time.fixedDeltaTime / 0.02f), ForceMode.Force);
+        rig.AddForce(moveByFlowDirection * flowForce * water.WaterFlowDirection.magnitude, ForceMode.Force);
     }
     void RotationByCurrentDirection()
     {

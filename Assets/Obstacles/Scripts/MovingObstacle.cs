@@ -13,7 +13,7 @@ public class MovingObstacle : MonoBehaviour
     }
     void FixedUpdate()
     {
-        timer += Time.fixedDeltaTime * k;
+        timer += Time.deltaTime * k;
         float t = Mathf.SmoothStep(0, 1, timer / timeToNext);
         moving.position = Vector3.Lerp(point0.position, point1.position, t);
         if (k > 0 && timer > timeToNext) k = -1;

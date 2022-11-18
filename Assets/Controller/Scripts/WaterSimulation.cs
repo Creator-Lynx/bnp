@@ -26,7 +26,7 @@ public class WaterSimulation : MonoBehaviour
         divePercent = Mathf.Clamp(divePercent, 0f, 1f);
 
 
-        rig.AddForce(forceDirection * divePercent * WaterDensity * (Time.fixedDeltaTime / 0.02f));
+        rig.AddForce(forceDirection * divePercent * WaterDensity);
         rig.drag = divePercent * 2f;
         rig.angularDrag = divePercent * 2f;
     }

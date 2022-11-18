@@ -272,6 +272,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isDamageble: 1
+  damageblaDelay: 1
+  oneHPInDecimal: 0.1
 --- !u!1 &5202292278126012762
 GameObject:
   m_ObjectHideFlags: 0

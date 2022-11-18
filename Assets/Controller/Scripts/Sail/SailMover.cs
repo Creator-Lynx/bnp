@@ -60,7 +60,7 @@ public class SailMover : MonoBehaviour
         //Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
         currentVel = Vector3.Project(rig.velocity, transform.forward);
         if (currentVel.z < 0f) return;
-        rig.AddForce(resultForceDirection * windForce * (Time.fixedDeltaTime / 0.02f), ForceMode.Force);
+        rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
 
     }
 
@@ -71,6 +71,7 @@ public class SailMover : MonoBehaviour
             sailAngle = 180 - sailAngle;
         Quaternion sailRotation = Quaternion.Euler(0, sailAngle, 0);
         if (sail != null)
-            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, rotateSpeed * 0.1f * (Time.fixedDeltaTime / 0.02f));
+            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, rotateSpeed * 0.1f
+            * (Time.fixedDeltaTime / 0.02f));
     }
 }
