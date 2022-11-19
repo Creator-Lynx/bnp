@@ -6,6 +6,9 @@ public class BasicGameManager : MonoBehaviour
     [SerializeField]
     Animator loadScreen, endScreen;
     public static BasicGameManager instance;
+
+    [SerializeField]
+    float slowTime = 1f;
     private void Start()
     {
         instance = this;
@@ -48,7 +51,7 @@ public class BasicGameManager : MonoBehaviour
             Debug.LogWarning("Menus does not exists on scene.");
             return;
         }
-        loadScreen.SetTrigger("Hide");
+        //loadScreen.SetTrigger("Hide");
         if (isWin) endScreen.SetTrigger("win");
         else endScreen.SetTrigger("lose");
     }
@@ -59,4 +62,16 @@ public class BasicGameManager : MonoBehaviour
         CallMenu(false);
 
     }
+
+    IEnumerator SlowTime(float sec)
+    {
+        float t = 0;
+        for (int i = 0; i < 50; i++)
+        {
+            Time.timeScale = Mathf.InverseLerp(sec, 0, t);
+            t += sec / 50f;
+            yield return new WaitForSeconds(sec / 50f);
+        }
+    }
+
 }

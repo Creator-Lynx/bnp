@@ -18,7 +18,7 @@ public class fpsToggler : MonoBehaviour
     void Start()
     {
         if (counter != null) counter.gameObject.SetActive(false);
-        ppToggle.isOn = isPP;
+        if (ppToggle != null) ppToggle.isOn = isPP;
     }
 
     public void ToggleFPSCounter(bool toggle)
