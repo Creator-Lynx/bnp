@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class fpsToggler : MonoBehaviour
 {
     public static bool isPP = true;
     FPSCounter counter;
+    [SerializeField]
+    Toggle ppToggle;
+
     private void Awake()
     {
         isPP = PlayerPrefs.GetInt("IsPP", 1) == 1;
@@ -14,6 +18,7 @@ public class fpsToggler : MonoBehaviour
     void Start()
     {
         if (counter != null) counter.gameObject.SetActive(false);
+        ppToggle.isOn = isPP;
     }
 
     public void ToggleFPSCounter(bool toggle)
