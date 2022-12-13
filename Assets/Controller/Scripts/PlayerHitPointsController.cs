@@ -1,3 +1,4 @@
+using Microsoft.Win32.SafeHandles;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,6 +66,7 @@ public class PlayerHitPointsController : MonoBehaviour
     {
         GetComponent<PaddleMover>().isUncontrolled = true;
         GetComponent<SailMover>().isUncontrolled = true;
+        GetComponent<SailMover>().enabled = false;
         GetComponent<WaterSimulation>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Animation>().Play("dead");
