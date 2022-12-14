@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,6 +33,7 @@ public class ScenesLoader : MonoBehaviour
     }
     public void LoadScene(int sceneID)
     {
+        Time.timeScale = 1;
 #if UNITY_EDITOR 
 #else
         AnalyticsProtoSendler.SendAnalitics(
@@ -54,6 +56,7 @@ public class ScenesLoader : MonoBehaviour
 
     public void OnButtonExit()
     {
+        Time.timeScale = 1;
         if (currentActiveScene != menuBGSceneIndex)
         {
             ExitToMenu();

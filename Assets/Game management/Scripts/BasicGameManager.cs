@@ -5,6 +5,8 @@ public class BasicGameManager : MonoBehaviour
 {
     [SerializeField]
     Animator loadScreen, endScreen;
+    [SerializeField]
+    Animation grayScreenPP;
     public static BasicGameManager instance;
 
     [SerializeField]
@@ -28,6 +30,7 @@ public class BasicGameManager : MonoBehaviour
     {
         Debug.Log("WIn");
         instance.CallMenu(true);
+        instance.StartCoroutine(instance.SlowTime(instance.slowTime));
 #if PLATFORM_STANDALONE
         Cursor.visible = true;
 #endif
@@ -58,7 +61,10 @@ public class BasicGameManager : MonoBehaviour
 
     IEnumerator DeathWait(float waitSec)
     {
-        yield return new WaitForSeconds(waitSec);
+        grayScreenPP.Play();
+        yield return new WaitForSeconds(waitSec - 0.5f * slowTime);
+        StartCoroutine(SlowTime(slowTime));
+        yield return new WaitForSeconds(0.5f * slowTime);
         CallMenu(false);
 
     }
@@ -68,8 +74,8 @@ public class BasicGameManager : MonoBehaviour
         float t = 0;
         for (int i = 0; i < 50; i++)
         {
-            Time.timeScale = Mathf.InverseLerp(sec, 0, t);
             t += sec / 50f;
+            Time.timeScale = Mathf.InverseLerp(sec, 0, t);
             yield return new WaitForSeconds(sec / 50f);
         }
     }

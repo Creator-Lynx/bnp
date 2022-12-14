@@ -11870,7 +11870,7 @@ Animation:
   m_GameObject: {fileID: 798825468}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 068e82df29eaf004fac824c293a46dc8, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 068e82df29eaf004fac824c293a46dc8, type: 2}
   m_WrapMode: 0
@@ -18886,6 +18886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadScreen: {fileID: 0}
   endScreen: {fileID: 0}
+  grayScreenPP: {fileID: 798825469}
   slowTime: 1
 --- !u!4 &1278125764 stripped
 Transform:
