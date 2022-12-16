@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class WaterSimulation : MonoBehaviour
 {
-    [SerializeField] public float WaterDensity = 10f;
+    [SerializeField] public float WaterDensity = 10f, ToFlowForceValue = 5f;
 
     [SerializeField] Vector3 forceDirection = Vector3.up;
 
@@ -27,6 +27,7 @@ public class WaterSimulation : MonoBehaviour
 
 
         rig.AddForce(forceDirection * divePercent * WaterDensity);
+        rig.AddForce(FlowCurveHandler.ToFlowForce * ToFlowForceValue);
         rig.drag = divePercent * 2f;
         rig.angularDrag = divePercent * 2f;
     }

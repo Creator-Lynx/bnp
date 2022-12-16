@@ -18,8 +18,9 @@ public class FlowCurveHandler : MonoBehaviour
     Quaternion currentRotation;
     public static Vector3 WaterVector;
     public static float ToFlowDistance;
+    public static Vector3 ToFlowForce;
     [SerializeField]
-    float distanceToFlowKoef;
+    AnimationCurve toFlowForceCurve;
 
     [SerializeField] GameObject flowArrowPrefab;
     void Start()
@@ -49,12 +50,17 @@ public class FlowCurveHandler : MonoBehaviour
             t = Mathf.Lerp(t, t + (findStep / curve.SegmentsNumber), Time.deltaTime * lerpSpeed);
         }
 
-        Vector3 vectorToFlow = (new Vector3(target.position.x, targetPos.y, target.position.z) - targetPos);
+        Vector3 vectorToFlow = (targetPos - new Vector3(target.position.x, targetPos.y, target.position.z));
         ToFlowDistance = vectorToFlow.magnitude;
+        ToFlowForce = vectorToFlow / ToFlowDistance;
         ToFlowDistance = (-ToFlowDistance + maxFlowDistance) / maxFlowDistance;
+        float toFlowK = 0;
+        if (ToFlowDistance > 0) toFlowK = ToFlowDistance;
+        toFlowK = toFlowForceCurve.Evaluate(toFlowK);
+        ToFlowForce *= toFlowK;
         if (ToFlowDistance < minForceAtDistanceThreshold) ToFlowDistance = minForceAtDistanceThreshold;
+
         WaterVector = dir.normalized * targetPos.y * ToFlowDistance;
-        distanceToFlowKoef = ToFlowDistance;
     }
 
     void OnDrawGizmos()
@@ -63,6 +69,8 @@ public class FlowCurveHandler : MonoBehaviour
         Vector3 targetPos = curve.GetPointByT(t);
         Gizmos.color = Color.red;
         Gizmos.DrawLine(targetPos, targetPos + dir.normalized * targetPos.y * ToFlowDistance);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(targetPos, new Vector3(target.position.x, targetPos.y, target.position.z));
     }
 
 }

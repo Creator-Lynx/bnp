@@ -6900,7 +6900,30 @@ MonoBehaviour:
   maxFlowDistance: 10
   minForceAtDistanceThreshold: 0.5
   curve: {fileID: 454004187}
-  distanceToFlowKoef: 0
+  toFlowForceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.75427246
+      inSlope: 0.24572754
+      outSlope: 0.24572754
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.24572754
+      outSlope: 0.24572754
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   flowArrowPrefab: {fileID: 1569087047075593550, guid: 4a569d222e046a84b80f4079f62b7142,
     type: 3}
 --- !u!114 &454004187
