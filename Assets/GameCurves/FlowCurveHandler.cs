@@ -53,6 +53,8 @@ public class FlowCurveHandler : MonoBehaviour
         Vector3 vectorToFlow = (targetPos - new Vector3(target.position.x, targetPos.y, target.position.z));
         ToFlowDistance = vectorToFlow.magnitude;
         ToFlowForce = vectorToFlow / ToFlowDistance;
+        ToFlowForce -= Vector3.Project(ToFlowForce, dir);
+        //ToFlowForce.Normalize();
         ToFlowDistance = (-ToFlowDistance + maxFlowDistance) / maxFlowDistance;
         float toFlowK = 0;
         if (ToFlowDistance > 0) toFlowK = ToFlowDistance;

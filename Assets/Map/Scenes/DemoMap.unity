@@ -6905,21 +6905,21 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.75427246
-      inSlope: 0.24572754
-      outSlope: 0.24572754
-      tangentMode: 34
-      weightedMode: 0
+      value: 0
+      inSlope: 0.036850683
+      outSlope: 0.036850683
+      tangentMode: 0
+      weightedMode: 3
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.85833335
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.24572754
-      outSlope: 0.24572754
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
+      inSlope: 4.7164507
+      outSlope: 4.7164507
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.10833335
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -12549,6 +12549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983132, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_RootOrder
@@ -12603,6 +12608,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983134, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983134, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: ToFlowForceValue
+      value: 3.07
       objectReference: {fileID: 0}
     - target: {fileID: 4075902113601869768, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
