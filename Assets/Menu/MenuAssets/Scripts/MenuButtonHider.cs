@@ -41,6 +41,7 @@ public class MenuButtonHider : MonoBehaviour
         Cursor.visible = false;
 #endif
         IsMenuOpen = false;
+        ContinueGame();
     }
     public void ShowMenu()
     {
@@ -48,8 +49,17 @@ public class MenuButtonHider : MonoBehaviour
         Cursor.visible = true;
 #endif
         IsMenuOpen = true;
+        PauseGame();
     }
     [SerializeField]
     UnityEvent OnMenuShowing, OnMenuHidding;
-
+    public void PauseGame()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 1)
+            Time.timeScale = 0;
+    }
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+    }
 }
