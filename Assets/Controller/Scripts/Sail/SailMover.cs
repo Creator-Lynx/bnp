@@ -61,7 +61,8 @@ public class SailMover : MonoBehaviour
         currentVel = Vector3.Project(rig.velocity, transform.forward);
         if (currentVel.z < 0f) return;
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
-
+        Vector3 torque = Vector3.Cross(Vector3.up, resultForceDirection);
+        rig.AddTorque(torque * windForce / 4f, ForceMode.Force);
     }
 
     void RotationByCurrentDirection()
