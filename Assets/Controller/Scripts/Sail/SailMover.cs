@@ -51,6 +51,7 @@ public class SailMover : MonoBehaviour
 
     }
     [SerializeField] Vector3 currentVel;
+
     void ForceMoveByCurrentDirection()
     {
         float dot = Vector3.Dot(WindDirection, handledDirection);
@@ -62,7 +63,8 @@ public class SailMover : MonoBehaviour
         if (currentVel.z < 0f) return;
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
         Vector3 torque = Vector3.Cross(Vector3.up, resultForceDirection);
-        rig.AddTorque(torque * windForce / 4f, ForceMode.Force);
+        //rig.AddTorque(torque * windForce / 4f, ForceMode.Force);
+        transform.RotateAround(sail.position, torque, 1f);
     }
 
     void RotationByCurrentDirection()
