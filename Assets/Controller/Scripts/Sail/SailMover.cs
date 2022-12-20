@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(WaterSimulation))]
@@ -9,16 +10,22 @@ public class SailMover : MonoBehaviour
 
 
     [Space(30)]
-    [SerializeField] Transform sail;
-
+    [SerializeField]
+    Transform sail;
+    [Space(30)]
+    [SerializeField]
+    float threasholdRotation = 90f;
+    [Space(30)]
     Rigidbody rig;
 
     Vector3 handledDirection = Vector3.forward;
 
     public Vector3 WindDirection = Vector3.forward;
+    PlayerHitPointsController playerHP;
     void Start()
     {
         rig = GetComponent<Rigidbody>();
+        playerHP = GetComponent<PlayerHitPointsController>();
     }
 
     // Update is called once per frame
@@ -39,6 +46,17 @@ public class SailMover : MonoBehaviour
         RotationByCurrentDirection();
 
         WindDirection = WindCurveHandler.WindVector;
+        if (CheckThresholdRotation()) playerHP.SetDamage(1);
+    }
+
+    bool CheckThresholdRotation()
+    {
+        //if (Mathf.Abs(transform.localRotation.eulerAngles.x) +
+        //    Mathf.Abs(transform.localRotation.eulerAngles.z) > threasholdRotation)
+        //    return true;
+        //return false;
+        return Mathf.Abs(Vector3.Angle(Vector3.up, transform.up)) > threasholdRotation;
+
     }
 
     public void HandleDirection(float X, float Z)
@@ -64,7 +82,7 @@ public class SailMover : MonoBehaviour
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
         Vector3 torque = Vector3.Cross(Vector3.up, resultForceDirection);
         //rig.AddTorque(torque * windForce / 4f, ForceMode.Force);
-        transform.RotateAround(sail.position, torque, 1f);
+        //transform.RotateAround(sail.position, torque, 1f);
     }
 
     void RotationByCurrentDirection()
