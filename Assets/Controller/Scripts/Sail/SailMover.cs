@@ -16,6 +16,8 @@ public class SailMover : MonoBehaviour
     [Space(30)]
     [SerializeField]
     float threasholdRotation = 90f, forceRotatingAngle = 1f;
+    [SerializeField]
+    AnimationCurve windForcePostModifier;
     [Space(30)]
     Rigidbody rig;
 
@@ -46,7 +48,7 @@ public class SailMover : MonoBehaviour
         ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
         interpolatedForceModifier = Mathf.Lerp(previousForceModifier, forceRandomModifier, tmr / randomForceTimer);
-        WindDirection = WindCurveHandler.WindVector * interpolatedForceModifier;
+        WindDirection = WindCurveHandler.WindVector * windForcePostModifier.Evaluate(interpolatedForceModifier);
         if (CheckThresholdRotation()) playerHP.SetDamage(1);
     }
     [SerializeField]

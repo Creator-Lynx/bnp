@@ -231,10 +231,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUncontrolled: 0
   windForce: 10
-  rotateSpeed: 0.5
+  sailRotateSpeed: 0.5
   sail: {fileID: 3770052409860039151}
-  threasholdRotation: 90
+  threasholdRotation: 45
+  forceRotatingAngle: 1
+  windForcePostModifier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.69501543
+      outSlope: 0.69501543
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.2783396
+      value: 1.108561
+      inSlope: 0.52882475
+      outSlope: 0.52882475
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.3673584
+      outWeight: 0.6238681
+    - serializedVersion: 3
+      time: 1.5020496
+      value: 1.4999939
+      inSlope: 0.4187689
+      outSlope: 0.4187689
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.81987643
+      outWeight: 0.30880937
+    - serializedVersion: 3
+      time: 2
+      value: 2
+      inSlope: 1.0041282
+      outSlope: 1.0041282
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   WindDirection: {x: 0, y: 0, z: 1}
+  interpolatedForceModifier: 0
   lowerRandomForceModifier: 0.5
   upperRandomForceModifier: 1.5
   lowerRandomTimer: 1

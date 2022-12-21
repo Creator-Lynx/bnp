@@ -12562,6 +12562,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: forceRotatingAngle
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: threasholdRotation
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: upperRandomForceModifier
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983132, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_RootOrder
