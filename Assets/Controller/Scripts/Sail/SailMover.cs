@@ -7,7 +7,7 @@ public class SailMover : MonoBehaviour
 {
     public bool isUncontrolled = false;
 
-    [SerializeField] float windForce = 2.5f, rotateSpeed = 0.5f;
+    [SerializeField] float windForce = 2.5f, sailRotateSpeed = 0.5f;
 
 
     [Space(30)]
@@ -15,7 +15,7 @@ public class SailMover : MonoBehaviour
     Transform sail;
     [Space(30)]
     [SerializeField]
-    float threasholdRotation = 90f;
+    float threasholdRotation = 90f, forceRotatingAngle = 1f;
     [Space(30)]
     Rigidbody rig;
 
@@ -45,14 +45,16 @@ public class SailMover : MonoBehaviour
     {
         ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
-
-        WindDirection = WindCurveHandler.WindVector * forceRandomModifier;
+        interpolatedForceModifier = Mathf.Lerp(previousForceModifier, forceRandomModifier, tmr / randomForceTimer);
+        WindDirection = WindCurveHandler.WindVector * interpolatedForceModifier;
         if (CheckThresholdRotation()) playerHP.SetDamage(1);
     }
-
+    [SerializeField]
+    float interpolatedForceModifier;
     //random system ==============================================================================================
     float forceRandomModifier = 0;
-    float randomForceTimer = 0;
+    float previousForceModifier = 0;
+    float randomForceTimer = 1;
     Random.State randomState;
     [Space(30)]
     [SerializeField]
@@ -73,10 +75,11 @@ public class SailMover : MonoBehaviour
     void RandomForceGenerate()
     {
         Random.state = randomState;
+        previousForceModifier = forceRandomModifier;
         forceRandomModifier = Random.Range(lowerRandomForceModifier, upperRandomForceModifier);
         randomForceTimer = Random.Range(lowerRandomTimer, upperRandomTimer);
         randomState = Random.state;
-        Debug.Log(forceRandomModifier);
+        //Debug.Log(forceRandomModifier);
     }
     float tmr = 0f;
     void RandomTimerTick()
@@ -123,7 +126,7 @@ public class SailMover : MonoBehaviour
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
         Vector3 torque = Vector3.Cross(Vector3.up, resultForceDirection);
         //rig.AddTorque(torque * windForce / 4f, ForceMode.Force);
-        //transform.RotateAround(sail.position, torque, 1f);
+        transform.RotateAround(sail.position, torque, forceRotatingAngle);
     }
 
     void RotationByCurrentDirection()
@@ -133,7 +136,7 @@ public class SailMover : MonoBehaviour
             sailAngle = 180 - sailAngle;
         Quaternion sailRotation = Quaternion.Euler(0, sailAngle, 0);
         if (sail != null)
-            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, rotateSpeed * 0.1f
+            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, sailRotateSpeed * 0.1f
             * (Time.fixedDeltaTime / 0.02f));
     }
 }
