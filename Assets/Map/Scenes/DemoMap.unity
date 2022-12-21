@@ -12570,7 +12570,7 @@ PrefabInstance:
     - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: threasholdRotation
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}

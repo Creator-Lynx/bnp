@@ -18,7 +18,9 @@ public class ScenesLoader : MonoBehaviour
     [SerializeField]
     Image progressBar;
     [SerializeField]
-    GameObject endLoadingText;
+    GameObject endLoadingText, tipText;
+    [SerializeField]
+    AudioListener localCameraListener;
     [SerializeField]
     MenuButtonHider menuButton;
     [SerializeField]
@@ -50,8 +52,10 @@ public class ScenesLoader : MonoBehaviour
         canvasMenu.SetTrigger("Inactive");
         menuButton.IsMenuOpen = false;
         progressBar.fillAmount = 0;
+        tipText.SetActive(true);
         fixedTouchOneFrameDelay = false;
         isSceneLoading = true;
+        localCameraListener.enabled = true;
     }
 
     public void OnButtonExit()
@@ -119,6 +123,9 @@ public class ScenesLoader : MonoBehaviour
                 isSceneLoading = false;
                 fadeScreen.SetTrigger("Show");
                 endLoadingText.SetActive(false);
+                tipText.SetActive(false);
+                progressBar.fillAmount = 0;
+                localCameraListener.enabled = false;
             }
             fixedTouchOneFrameDelay = true;
         }
