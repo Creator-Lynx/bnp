@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(WaterSimulation))]
 public class SailMover : MonoBehaviour
@@ -26,6 +27,7 @@ public class SailMover : MonoBehaviour
     {
         rig = GetComponent<Rigidbody>();
         playerHP = GetComponent<PlayerHitPointsController>();
+        InitRandom();
     }
 
     // Update is called once per frame
@@ -37,17 +39,56 @@ public class SailMover : MonoBehaviour
             HandleDirection(
                 JoysticksFacade.GetJoystick(JoystickName.left).GetHorizontalAxis(),
                 JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
-
-
+        RandomTimerTick();
     }
     void FixedUpdate()
     {
         ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
 
-        WindDirection = WindCurveHandler.WindVector;
+        WindDirection = WindCurveHandler.WindVector * forceRandomModifier;
         if (CheckThresholdRotation()) playerHP.SetDamage(1);
     }
+
+    //random system ==============================================================================================
+    float forceRandomModifier = 0;
+    float randomForceTimer = 0;
+    Random.State randomState;
+    [Space(30)]
+    [SerializeField]
+    float lowerRandomForceModifier = 0.25f;
+    [SerializeField]
+    float upperRandomForceModifier = 1.5f;
+    [Space(5)]
+    [SerializeField]
+    float lowerRandomTimer = 1f;
+    [SerializeField]
+    float upperRandomTimer = 3f;
+    void InitRandom()
+    {
+        Random.InitState(2341923);
+        randomState = Random.state;
+        RandomForceGenerate();
+    }
+    void RandomForceGenerate()
+    {
+        Random.state = randomState;
+        forceRandomModifier = Random.Range(lowerRandomForceModifier, upperRandomForceModifier);
+        randomForceTimer = Random.Range(lowerRandomTimer, upperRandomTimer);
+        randomState = Random.state;
+        Debug.Log(forceRandomModifier);
+    }
+    float tmr = 0f;
+    void RandomTimerTick()
+    {
+        tmr += Time.deltaTime;
+        if (tmr >= randomForceTimer)
+        {
+            tmr = 0;
+            RandomForceGenerate();
+        }
+    }
+    //end of random system =======================================================================================
 
     bool CheckThresholdRotation()
     {

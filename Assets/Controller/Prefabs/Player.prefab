@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaterDensity: 15
+  ToFlowForceValue: 5
   forceDirection: {x: 0, y: 1, z: 0}
   WaterFlowDirection: {x: 0, y: 0, z: 1}
 --- !u!114 &3770052409976983129
@@ -232,7 +233,12 @@ MonoBehaviour:
   windForce: 10
   rotateSpeed: 0.5
   sail: {fileID: 3770052409860039151}
+  threasholdRotation: 90
   WindDirection: {x: 0, y: 0, z: 1}
+  lowerRandomForceModifier: 0.5
+  upperRandomForceModifier: 1.5
+  lowerRandomTimer: 1
+  upperRandomTimer: 3
   currentVel: {x: 0, y: 0, z: 0}
 --- !u!114 &149326997
 MonoBehaviour:
