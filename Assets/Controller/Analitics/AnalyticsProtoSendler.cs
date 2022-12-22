@@ -64,6 +64,6 @@ public class AnalyticsProtoSendler : MonoBehaviour
     //for button "blog" on review screen
     public void OpenURL()
     {
-        Application.OpenURL("https://t.me/train_game");
+        Application.OpenURL("https://t.me/GameTrainProject");
     }
 }
