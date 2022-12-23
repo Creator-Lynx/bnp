@@ -7,6 +7,8 @@ public class WaterSimulation : MonoBehaviour
 
     [SerializeField] Vector3 forceDirection = Vector3.up;
 
+    [SerializeField]
+    float rig_drag = 2f, rig_angularDrag = 2f;
     public Vector3 WaterFlowDirection = Vector3.forward;
 
     Rigidbody rig;
@@ -16,19 +18,18 @@ public class WaterSimulation : MonoBehaviour
         rig = GetComponent<Rigidbody>();
     }
 
-
+    public float divePercent;
     void FixedUpdate()
     {
         WaterFlowDirection = FlowCurveHandler.WaterVector;
 
 
-        float divePercent = -transform.position.y + transform.localScale.x * 0.5f;
+        divePercent = -transform.position.y + 0.5f;
         divePercent = Mathf.Clamp(divePercent, 0f, 1f);
-
 
         rig.AddForce(forceDirection * divePercent * WaterDensity);
         rig.AddForce(FlowCurveHandler.ToFlowForce * ToFlowForceValue);
-        rig.drag = divePercent * 2f;
-        rig.angularDrag = divePercent * 2f;
+        rig.drag = divePercent * rig_drag;
+        rig.angularDrag = divePercent * rig_angularDrag;
     }
 }

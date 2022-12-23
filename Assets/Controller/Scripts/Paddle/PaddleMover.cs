@@ -50,7 +50,8 @@ public class PaddleMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        ForceMoveByCurrentDirection();
+        if (water.divePercent > 0.25f)
+            ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
     }
 
