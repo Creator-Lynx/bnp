@@ -43,7 +43,9 @@ public class PlayerHitPointsController : MonoBehaviour
     {
         if (!isDamageble) return;
         HP -= damage;
+#if !PLATFORM_STANDALONE
         Handheld.Vibrate();
+#endif
         if (HP <= 0)
         {
             HP = maxHP;
