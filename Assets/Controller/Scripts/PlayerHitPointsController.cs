@@ -1,6 +1,6 @@
-using Microsoft.Win32.SafeHandles;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,6 +43,7 @@ public class PlayerHitPointsController : MonoBehaviour
     {
         if (!isDamageble) return;
         HP -= damage;
+        Handheld.Vibrate();
         if (HP <= 0)
         {
             HP = maxHP;
