@@ -43,13 +43,17 @@ public class SailMover : MonoBehaviour
                 JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
         RandomTimerTick();
     }
+
     void FixedUpdate()
     {
-        ForceMoveByCurrentDirection();
+        if (CheckThresholdRotation())
+            playerHP.SetDamage(1);
+        else
+            ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
         interpolatedForceModifier = Mathf.Lerp(previousForceModifier, forceRandomModifier, tmr / randomForceTimer);
         WindDirection = WindCurveHandler.WindVector * windForcePostModifier.Evaluate(interpolatedForceModifier);
-        if (CheckThresholdRotation()) playerHP.SetDamage(1);
+
     }
     [SerializeField]
     float interpolatedForceModifier;
