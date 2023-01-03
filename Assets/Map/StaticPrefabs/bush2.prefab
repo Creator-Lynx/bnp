@@ -143,7 +143,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3887185075125053422, guid: 1c4b7227cbdf7414a9145e035b479cec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1c4b7227cbdf7414a9145e035b479cec, type: 3}
 --- !u!1 &6696733078324036134 stripped
 GameObject:
@@ -157,25 +158,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5777830872188321655}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1940641257679732799
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6696733078324036134}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aba6fcef72197f046863a2e1407daa4a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &5333546740727483354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -225,3 +207,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6696733078324036134}
   m_Mesh: {fileID: 7882990383698319444, guid: 1c4b7227cbdf7414a9145e035b479cec, type: 3}
+--- !u!95 &1940641257679732799
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6696733078324036134}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aba6fcef72197f046863a2e1407daa4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
