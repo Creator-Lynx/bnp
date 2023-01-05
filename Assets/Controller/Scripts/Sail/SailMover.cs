@@ -32,7 +32,6 @@ public class SailMover : MonoBehaviour
         InitRandom();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isUncontrolled) return;

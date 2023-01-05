@@ -15,7 +15,7 @@ public class MenuButtonHider : MonoBehaviour
 #endif
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 #if PLATFORM_STANDALONE

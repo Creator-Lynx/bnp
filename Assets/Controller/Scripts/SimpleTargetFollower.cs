@@ -16,7 +16,6 @@ public class SimpleTargetFollower : MonoBehaviour
         yOffset = transform.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //transform.position = new Vector3(target.position.x + sqrOffset.x, transform.position.y, target.position.z + sqrOffset.z);

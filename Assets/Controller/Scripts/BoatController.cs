@@ -10,7 +10,6 @@ public class BoatController : MonoBehaviour
         mover = GetComponent<BoatMover>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         mover.horizontal = Input.GetAxis("Horizontal");
