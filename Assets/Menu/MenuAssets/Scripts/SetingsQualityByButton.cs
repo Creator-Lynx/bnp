@@ -6,7 +6,7 @@ public class SetingsQualityByButton : MonoBehaviour
 {
     private void Start()
     {
-        QualitySettings.vSyncCount = 60;
+        Application.targetFrameRate = 60;
     }
     public void SetHighQuality()
     {
