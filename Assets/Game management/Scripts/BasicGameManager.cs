@@ -8,6 +8,8 @@ public class BasicGameManager : MonoBehaviour
     [SerializeField]
     Animation grayScreenPP;
     public static BasicGameManager instance;
+    [SerializeField]
+    AnimationCurve slowingTimeModificator;
 
     [SerializeField]
     float slowTime = 1f;
@@ -72,12 +74,18 @@ public class BasicGameManager : MonoBehaviour
     IEnumerator SlowTime(float sec)
     {
         float t = 0;
-        for (int i = 0; i < 50; i++)
+        while (t < sec)
         {
-            t += sec / 50f;
+            t += Time.unscaledDeltaTime;
             Time.timeScale = Mathf.InverseLerp(sec, 0, t);
-            yield return new WaitForSeconds(sec / 50f);
+            yield return new WaitForEndOfFrame();
         }
+        //for (int i = 0; i < 50; i++)
+        //{
+        //    t += sec / 50f;
+        //    Time.timeScale = Mathf.InverseLerp(sec, 0, t);
+        //    yield return new WaitForSeconds(sec / 50f);
+        //}
     }
 
 }
