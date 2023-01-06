@@ -66,7 +66,7 @@ public class BasicGameManager : MonoBehaviour
         grayScreenPP.Play();
         yield return new WaitForSeconds(waitSec - 0.5f * slowTime);
         StartCoroutine(SlowTime(slowTime));
-        yield return new WaitForSeconds(0.5f * slowTime);
+        yield return new WaitForSecondsRealtime(0.5f * slowTime);
         CallMenu(false);
 
     }
