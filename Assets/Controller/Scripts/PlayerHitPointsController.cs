@@ -73,6 +73,8 @@ public class PlayerHitPointsController : MonoBehaviour
         GetComponent<WaterSimulation>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Animation>().Play("dead");
+        StopAllCoroutines();
+        isDamageble = false;
         BasicGameManager.LoseLevel();
     }
     public void CompleteLevel()

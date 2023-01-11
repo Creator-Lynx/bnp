@@ -47,6 +47,7 @@ public class BasicGameManager : MonoBehaviour
     }
     void StartCor()
     {
+        Debug.Log("DeathWait");
         StartCoroutine(DeathWait(7f));
     }
     void CallMenu(bool isWin)
