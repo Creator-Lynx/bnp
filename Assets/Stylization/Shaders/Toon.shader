@@ -17,6 +17,9 @@
 		_RimColor("Rim Color", Color) = (1, 1, 1, 1)
 		_RimAmount("Rim Amount", Range(0, 1)) = 0.716
 		_RimThroshold("Rim Threshold", Range(0, 1)) = 0.1
+
+		_ShadowTreshold("Shadow Threshold", Range(0, 1)) = 0
+		_HalfShadowTreshold("HalfShadow Threshold", Range(0, 1)) = 0.3
 	}
 	SubShader
 	{
@@ -90,11 +93,11 @@
 				float lightIntensity;
 				if(NdotL > 0)
 				{
-					lightIntensity = smoothstep(0, 0.01, NdotL) * 0.7 + 0.3;
+					lightIntensity = smoothstep(_ShadowTreshold, _ShadowTreshold+0.01, NdotL) * 0.7 + 0.3;
 				}
 				else
 				{
-					lightIntensity = smoothstep(-0.3, -0.29, NdotL) * 0.3 ;
+					lightIntensity = smoothstep(-_HalfShadowTreshold, -_HalfShadowTreshold + 0.01, NdotL) * 0.3 ;
 				}
 				lightIntensity *= shadow; //smoothstep(0, 0.01, shadow);
 
