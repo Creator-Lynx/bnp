@@ -4860,6 +4860,34 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: antialiasingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.sharpness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.jitterSpread
+      value: 0.703
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.motionBlending
+      value: 0.605
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: fastApproximateAntialiasing.fastMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: fastApproximateAntialiasing.keepAlpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.stationaryBlending
+      value: 0.776
+      objectReference: {fileID: 0}
     - target: {fileID: 1718697216159887513, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
       propertyPath: weight
