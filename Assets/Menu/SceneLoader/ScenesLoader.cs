@@ -35,14 +35,15 @@ public class ScenesLoader : MonoBehaviour
     }
     public void LoadScene(int sceneID)
     {
-        Time.timeScale = 1;
-#if UNITY_EDITOR 
+
+#if UNITY_EDITOR
 #else
         AnalyticsProtoSendler.SendAnalitics(
             sceneID, SceneManager.GetSceneByBuildIndex(sceneID).name,
             currentActiveScene, SceneManager.GetSceneByBuildIndex(currentActiveScene).name
         );
 #endif
+        BasicGameManager.StopCorutines();
         sceneUnloading = SceneManager.UnloadSceneAsync(currentActiveScene);
         //sceneUnloading.allowSceneActivation = false;
         currentActiveScene = sceneID;
@@ -56,11 +57,12 @@ public class ScenesLoader : MonoBehaviour
         fixedTouchOneFrameDelay = false;
         isSceneLoading = true;
         localCameraListener.enabled = true;
+        Time.timeScale = 1;
     }
 
     public void OnButtonExit()
     {
-        Time.timeScale = 1;
+
         if (currentActiveScene != menuBGSceneIndex)
         {
             ExitToMenu();
@@ -70,6 +72,7 @@ public class ScenesLoader : MonoBehaviour
             //Debug.Log("Exit");
             ExitGame();
         }
+        Time.timeScale = 1;
 
     }
     public void ExitToMenu()

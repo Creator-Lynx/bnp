@@ -17,6 +17,7 @@ public class BasicGameManager : MonoBehaviour
     {
         instance = this;
         Animator[] animators = GameObject.FindGameObjectWithTag("Menu")?.GetComponentsInChildren<Animator>();
+        Time.timeScale = 1;
         if (animators != null)
             for (int i = 0; i < animators.Length; i++)
             {
@@ -37,6 +38,7 @@ public class BasicGameManager : MonoBehaviour
         Cursor.visible = true;
 #endif
     }
+
     public static void LoseLevel()
     {
         Debug.Log("Lose");
@@ -49,6 +51,11 @@ public class BasicGameManager : MonoBehaviour
     {
         Debug.Log("DeathWait");
         StartCoroutine(DeathWait(7f));
+    }
+    public static void StopCorutines()
+    {
+        if (instance)
+            instance.StopAllCoroutines();
     }
     void CallMenu(bool isWin)
     {

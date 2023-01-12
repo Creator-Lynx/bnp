@@ -18,6 +18,7 @@ public class TextTipShower : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1;
         textComponent = GetComponent<TextMeshProUGUI>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -26,7 +27,7 @@ public class TextTipShower : MonoBehaviour
     {
         for (int i = 0; i < texts[textNumber].Length; i++)
         {
-            yield return new WaitForSeconds(timeToShowSimbol + UnityEngine.Random.Range(0f, 2f * timeToShowSimbol));
+            yield return new WaitForSecondsRealtime(timeToShowSimbol + UnityEngine.Random.Range(0f, 2f * timeToShowSimbol));
             textComponent.text = textComponent.text + texts[textNumber][i];
             audioSource.Play();
         }
