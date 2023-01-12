@@ -23,6 +23,7 @@ public class PlayerHitPointsController : MonoBehaviour
 
     [SerializeField]
     bool isDamageble = true;
+    bool isDead = false;
     [SerializeField]
     float damageblaDelay = 1f;
     [SerializeField]
@@ -41,7 +42,7 @@ public class PlayerHitPointsController : MonoBehaviour
     }
     public void SetDamage(int damage)
     {
-        if (!isDamageble) return;
+        if (!isDamageble || isDead) return;
         HP -= damage;
 #if !PLATFORM_STANDALONE
         Handheld.Vibrate();
@@ -73,8 +74,9 @@ public class PlayerHitPointsController : MonoBehaviour
         GetComponent<WaterSimulation>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Animation>().Play("dead");
-        StopAllCoroutines();
+        StopCoroutine(DamageblaDelay());
         isDamageble = false;
+        isDead = true;
         BasicGameManager.LoseLevel();
     }
     public void CompleteLevel()
