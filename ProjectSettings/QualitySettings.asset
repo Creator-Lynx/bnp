@@ -45,11 +45,11 @@ QualitySettings:
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 4
-    shadows: 1
+    shadows: 2
     shadowResolution: 3
-    shadowProjection: 1
+    shadowProjection: 0
     shadowCascades: 2
-    shadowDistance: 15.7
+    shadowDistance: 11.99
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.1031509
     shadowCascade4Split: {x: 0.09257334, y: 0.23238352, z: 0.5379102}

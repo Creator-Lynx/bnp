@@ -9,10 +9,10 @@ LightmapParameters:
   m_Name: New LightmapParameters
   serializedVersion: 3
   resolution: 1
-  clusterResolution: 0.5
+  clusterResolution: 1
   irradianceBudget: 128
   irradianceQuality: 8192
-  backFaceTolerance: 0.9
+  backFaceTolerance: 0.073
   isTransparent: 0
   modellingTolerance: 0.01
   systemTag: -1
@@ -20,7 +20,7 @@ LightmapParameters:
   blurRadius: 2
   directLightQuality: 64
   antiAliasingSamples: 8
-  pushoff: 0.0001
+  pushoff: 0.128
   bakedLightmapTag: 1
   limitLightmapCount: 0
   maxLightmapCount: 1
