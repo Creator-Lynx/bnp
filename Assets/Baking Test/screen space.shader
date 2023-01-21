@@ -39,15 +39,19 @@ Shader "screen space"
 
                 // checker value will be negative for 4x4 blocks of pixels
                 // in a checkerboard pattern
-                screenPos.xy = floor(screenPos.xy * 0.125) * 0.08;
+                screenPos.xy = floor(screenPos.xy * 0.25) * 0.5;
                 float checker = -frac(screenPos.r + screenPos.g);
+                checker = 0;
+                if(frac(screenPos.x) == 0 && frac(screenPos.y) == 0) checker = -1;
+                else checker = 0;
+                 
 
                 // clip HLSL instruction stops rendering a pixel if value is negative
                 //clip(checker);
 
                 // for pixels that were kept, read the texture and output it
                 fixed4 c = 0;//tex2D (_MainTex, i.uv);
-                if(checker < 0) c = 1;
+                if(checker < 0) c = 0.5;
                 return c;
             }
             ENDCG
