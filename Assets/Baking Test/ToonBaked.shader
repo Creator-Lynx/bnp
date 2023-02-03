@@ -41,17 +41,39 @@
 
             sampler2D _GIAlbedoTex;
             fixed4 _GIAlbedoColor;
+			float4 _AmbientColor;
             float4 frag_meta2 (v2f_meta i): SV_Target
             {
                 // We're interested in diffuse & specular colors
                 // and surface roughness to produce final albedo.
 
-                FragmentCommonData data = UNITY_SETUP_BRDF_INPUT (i.uv);
+               
+				//float3 normal = normalize(i.worldNormal);
+				//float NdotL = dot(normal, _WorldSpaceLightPos0);
+				float shadow = SHADOW_ATTENUATION(i);
+				float lightIntensity = 1;
+				//if(NdotL > 0)
+				//{
+				//	lightIntensity = smoothstep(_ShadowTreshold, _ShadowTreshold+0.01, NdotL) * 0.7 + 0.3;
+				//}
+				///else
+				//{
+				//	lightIntensity = smoothstep(-_HalfShadowTreshold, -_HalfShadowTreshold + 0.01, NdotL) * 0.3 ;
+				//}
+				//lightIntensity *= shadow; //smoothstep(0, 0.01, shadow);
+				lightIntensity *= shadow;
+
+				float4 light = lightIntensity * _LightColor0;
+				
+
+				float4 sample = tex2D(_MainTex, i.uv);
+
+				FragmentCommonData data = UNITY_SETUP_BRDF_INPUT (i.uv);
                 UnityMetaInput o;
                 UNITY_INITIALIZE_OUTPUT(UnityMetaInput, o);
-                fixed4 c = tex2D (_GIAlbedoTex, i.uv);
-                o.Albedo = fixed3(c.rgb * _GIAlbedoColor.rgb);
-                o.Emission = Emission(i.uv.xy);
+                fixed4 c = _Color * sample * (light + _AmbientColor);
+                o.Albedo = fixed3(c.rgb);
+                //o.Emission = Emission(i.uv.xy);
                 return UnityMetaFragment(o);
             }
 
@@ -91,6 +113,7 @@
 			{
 				float4 pos : SV_POSITION;
 				float2 uv : TEXCOORD0;
+				float2 uv0 : TEXCOORD2;
 				float3 worldNormal : NORMAL;
 				float3 viewDir : TEXCOORD1;
 				SHADOW_COORDS(2)
@@ -104,9 +127,11 @@
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+				o.uv0 = v.uv.xy * unity_LightmapST.xy + unity_LightmapST.zw;
 				o.worldNormal = UnityObjectToWorldNormal(v.normal);
 				o.viewDir = WorldSpaceViewDir(v.vertex);
-				TRANSFER_SHADOW(o)
+				TRANSFER_SHADOW(o);
+				
 				return o;
 			}
 			
@@ -155,9 +180,12 @@
 				float rimIntensity = smoothstep(_RimAmount - 0.01, _RimAmount + 0.01, rimDot);
 				float4 rim = rimIntensity * _RimColor;
 
+				half4 bakedColorTex = UNITY_SAMPLE_TEX2D(unity_Lightmap, i.uv0.xy);
+                fixed4 bakedColor;
+                bakedColor.rgb = DecodeLightmap(bakedColorTex);
 
 				float4 sample = tex2D(_MainTex, i.uv);
-				return _Color * sample * (light + _AmbientColor + specular + rim);
+				return _Color * sample * (light + _AmbientColor + specular + rim) * bakedColor;
 			}
 			ENDCG
 		}
