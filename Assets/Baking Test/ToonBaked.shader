@@ -181,7 +181,7 @@
 				float4 rim = rimIntensity * _RimColor;
 
 				half4 bakedColorTex = UNITY_SAMPLE_TEX2D(unity_Lightmap, i.uv0.xy);
-                fixed4 bakedColor;
+                fixed4 bakedColor = 1;
                 bakedColor.rgb = DecodeLightmap(bakedColorTex);
 
 				float4 sample = tex2D(_MainTex, i.uv);
