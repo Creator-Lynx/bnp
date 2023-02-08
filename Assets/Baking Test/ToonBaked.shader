@@ -116,7 +116,7 @@
 				float2 uv0 : TEXCOORD2;
 				float3 worldNormal : NORMAL;
 				float3 viewDir : TEXCOORD1;
-				SHADOW_COORDS(2)
+				SHADOW_COORDS(3)
 			};
 
 			sampler2D _MainTex;
