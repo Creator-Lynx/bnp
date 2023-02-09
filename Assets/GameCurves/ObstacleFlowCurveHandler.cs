@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[ExecuteAlways]
 public class ObstacleFlowCurveHandler : MonoBehaviour
 {
     float t = 0f;
@@ -16,13 +15,17 @@ public class ObstacleFlowCurveHandler : MonoBehaviour
     [SerializeField]
     GameCurve curve;
 
-    public static Vector3 WaterVector;
+    public Vector3 WaterVector;
     public static float ToFlowDistance;
     public static Vector3 ToFlowForce;
     [SerializeField]
     AnimationCurve toFlowForceCurve;
 
-
+    private void Start()
+    {
+        curve = FlowCurveHandler.FlowCurve;
+        target = transform;
+    }
 
     void Update()
     {
