@@ -38,16 +38,17 @@ public class FlowCurveHandler : MonoBehaviour
         instance = this;
         float locT = 0;
         int count = curve.SegmentsNumber * 3;
-        for (int i = 0; i < count; i++)
-        {
-            Vector3 pos = curve.GetPointByT(locT);
-            float strong = pos.y;
-            pos.y = -0.5f;
-            Instantiate(flowArrowPrefab, pos,
-            Quaternion.LookRotation(curve.GetDirectionByT(locT)), arrowsParent)
-            .transform.localScale = new Vector3(1f, 1f, strong);
-            locT += 1f / count;
-        }
+        if (arrowsParent != null)
+            for (int i = 0; i < count; i++)
+            {
+                Vector3 pos = curve.GetPointByT(locT);
+                float strong = pos.y;
+                pos.y = -0.5f;
+                Instantiate(flowArrowPrefab, pos,
+                Quaternion.LookRotation(curve.GetDirectionByT(locT)), arrowsParent)
+                .transform.localScale = new Vector3(1f, 1f, strong);
+                locT += 1f / count;
+            }
     }
 
     void Update()
