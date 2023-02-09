@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 //[ExecuteAlways]
@@ -15,6 +14,15 @@ public class FlowCurveHandler : MonoBehaviour
     float maxFlowDistance = 2f, minForceAtDistanceThreshold = .5f;
     [SerializeField]
     GameCurve curve;
+    public static GameCurve FlowCurve
+    {
+        get
+        {
+            return instance.curve;
+        }
+        private set { }
+    }
+    static FlowCurveHandler instance;
     Quaternion currentRotation;
     public static Vector3 WaterVector;
     public static float ToFlowDistance;
@@ -25,6 +33,9 @@ public class FlowCurveHandler : MonoBehaviour
     [SerializeField] GameObject flowArrowPrefab;
     void Start()
     {
+
+        if (instance != null) Debug.LogException(new Exception("More than one FlowCurveHandler on scene"));
+        instance = this;
         float locT = 0;
         int count = curve.SegmentsNumber * 3;
         for (int i = 0; i < count; i++)
