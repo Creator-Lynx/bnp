@@ -33261,6 +33261,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2301206543427466850, guid: d0e58b3ea2cb040428e2f6a6f65c1538,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301206543427466850, guid: d0e58b3ea2cb040428e2f6a6f65c1538,
+        type: 3}
       propertyPath: m_Name
       value: FloatingSnagObstacle
       objectReference: {fileID: 0}

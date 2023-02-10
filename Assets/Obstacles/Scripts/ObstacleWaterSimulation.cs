@@ -20,36 +20,44 @@ public class ObstacleWaterSimulation : MonoBehaviour
     }
 
     public float divePercent;
+    int fixedCounter = 0;
     void FixedUpdate()
     {
+
+
         WaterFlowDirection = _curveHandler.WaterVector;
 
 
-        divePercent = -transform.position.y + 0.5f;
+        divePercent = -transform.position.y;
         divePercent = Mathf.Clamp(divePercent, 0f, 1f);
+        float WaterDensityMod = WaterDensity;// + Mathf.Sin(Time.time) * 5;
 
-        rig.AddForce(forceDirection * divePercent * WaterDensity);
-        rig.AddForce(FlowCurveHandler.ToFlowForce * ToFlowForceValue);
+        Debug.Log(Time.time + "\n" + Mathf.Sin(Time.time * Mathf.PI * 2));
+        rig.AddForce(forceDirection * divePercent * WaterDensityMod);
+        rig.AddForce(_curveHandler.ToFlowForce * ToFlowForceValue);
         rig.drag = divePercent * rig_drag;
         rig.angularDrag = divePercent * rig_angularDrag;
         if (divePercent > 0.25f)
             ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
+        fixedCounter++;
     }
 
 
     [SerializeField] float flowForce = 5f, rotateSpeed = 0.5f;
-
-    Vector3 moveByFlowDirection;
-
     void ForceMoveByCurrentDirection()
     {
         rig.AddForce(flowForce * WaterFlowDirection, ForceMode.Force);
     }
     void RotationByCurrentDirection()
     {
-        Quaternion targetRotation = Quaternion.Euler(0, Mathf.Asin(WaterFlowDirection.normalized.x) * Mathf.Rad2Deg, 0);
+        Quaternion targetRotation =
+        Quaternion.Euler(0, Vector3.SignedAngle(Vector3.forward, WaterFlowDirection, Vector3.up), 0);
         transform.rotation =
-        Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * 0.1f * (Time.fixedDeltaTime / Time.fixedUnscaledDeltaTime));
+        Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + WaterFlowDirection);
     }
 }

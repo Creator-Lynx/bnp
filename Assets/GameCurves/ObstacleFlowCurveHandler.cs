@@ -16,8 +16,8 @@ public class ObstacleFlowCurveHandler : MonoBehaviour
     GameCurve curve;
 
     public Vector3 WaterVector;
-    public static float ToFlowDistance;
-    public static Vector3 ToFlowForce;
+    public float ToFlowDistance;
+    public Vector3 ToFlowForce;
     [SerializeField]
     AnimationCurve toFlowForceCurve;
 
