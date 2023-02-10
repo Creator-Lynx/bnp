@@ -22,19 +22,13 @@ public class ObstacleWaterSimulation : MonoBehaviour
     }
 
     public float divePercent;
-    int fixedCounter = 0;
+
     void FixedUpdate()
     {
-
-
         WaterFlowDirection = _curveHandler.WaterVector;
-
-
         divePercent = -transform.position.y + 0.5f;
         divePercent = Mathf.Clamp(divePercent, 0f, 1f);
         float WaterDensityMod = WaterDensity + Mathf.Sin((Time.time / floatingPeriod) * Mathf.PI * 2) * densityAmplitude;
-        if (fixedCounter % 10 == 0)
-            Debug.Log(Time.time + "\n" + Mathf.Sin((Time.time / floatingPeriod) * Mathf.PI * 2));
         rig.AddForce(forceDirection * divePercent * WaterDensityMod);
         rig.AddForce(_curveHandler.ToFlowForce * ToFlowForceValue);
         rig.drag = divePercent * rig_drag;
@@ -42,7 +36,6 @@ public class ObstacleWaterSimulation : MonoBehaviour
         if (divePercent > 0.25f)
             ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
-        fixedCounter++;
     }
 
 
