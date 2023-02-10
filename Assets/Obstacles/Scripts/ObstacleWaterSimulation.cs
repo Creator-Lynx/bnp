@@ -13,6 +13,8 @@ public class ObstacleWaterSimulation : MonoBehaviour
 
     Rigidbody rig;
     ObstacleFlowCurveHandler _curveHandler;
+    [SerializeField]
+    float floatingPeriod = 2f, densityAmplitude = 5;
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -28,11 +30,11 @@ public class ObstacleWaterSimulation : MonoBehaviour
         WaterFlowDirection = _curveHandler.WaterVector;
 
 
-        divePercent = -transform.position.y;
+        divePercent = -transform.position.y + 0.5f;
         divePercent = Mathf.Clamp(divePercent, 0f, 1f);
-        float WaterDensityMod = WaterDensity;// + Mathf.Sin(Time.time) * 5;
-
-        Debug.Log(Time.time + "\n" + Mathf.Sin(Time.time * Mathf.PI * 2));
+        float WaterDensityMod = WaterDensity + Mathf.Sin((Time.time / floatingPeriod) * Mathf.PI * 2) * densityAmplitude;
+        if (fixedCounter % 10 == 0)
+            Debug.Log(Time.time + "\n" + Mathf.Sin((Time.time / floatingPeriod) * Mathf.PI * 2));
         rig.AddForce(forceDirection * divePercent * WaterDensityMod);
         rig.AddForce(_curveHandler.ToFlowForce * ToFlowForceValue);
         rig.drag = divePercent * rig_drag;
