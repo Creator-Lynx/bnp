@@ -7,9 +7,12 @@ public class FloatingObstacleSpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject[] spawPrefabs;
+    [SerializeField]
+    float defaultTimeToSpawn = 10, randomFactorOfTime = 5f;
     void Start()
     {
-
+        System.TimeSpan a = new System.TimeSpan();
+        Random.InitState(a.Seconds);
     }
 
     // Update is called once per frame
@@ -26,8 +29,13 @@ public class FloatingObstacleSpawner : MonoBehaviour
         }
         Instantiate(spawPrefabs[variant], transform.position, Quaternion.identity);
     }
+    void RandomSpawn()
+    {
+
+    }
     IEnumerator SpanwWaiter()
     {
-        yield return new WaitForSeconds(1);
+        RandomSpawn();
+        yield return new WaitForSeconds(defaultTimeToSpawn + randomFactorOfTime * UnityEngine.Random.Range(-1, 1));
     }
 }
