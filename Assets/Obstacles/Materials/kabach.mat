@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4eb816e291a1da441b9bb50dd555c593, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -61,25 +61,25 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 8.52
+    - _Glossiness: 19.48
     - _GlossyReflections: 1
-    - _HalfShadowTreshold: 0.09
+    - _HalfShadowTreshold: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.77
+    - _RimAmount: 0.901
     - _RimThroshold: 0
-    - _ShadowTreshold: 0.25
+    - _ShadowTreshold: 0.286
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.08220935, g: 1, b: 0, a: 1}
-    - _Color: {r: 0.27345884, g: 0.6117647, b: 0.29208812, a: 1}
+    - _AmbientColor: {r: 0.023777433, g: 0.064, b: 0.014080003, a: 1}
+    - _Color: {r: 0.5402759, g: 1, b: 0.495, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 7.552344, g: 5.846471, b: 0, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 11.3026285, g: 7.648356, b: 0, a: 1}
+    - _SpecularColor: {r: 0.8777951, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -70,6 +70,9 @@ MonoBehaviour:
   rig_drag: 2
   rig_angularDrag: 2
   WaterFlowDirection: {x: 0, y: 0, z: 1}
+  floatingPeriod: 2
+  densityAmplitude: 3
+  floatingAngleAmplitude: 15
   divePercent: 0
   flowForce: 5
   rotateSpeed: 0.5
@@ -93,6 +96,8 @@ MonoBehaviour:
   minForceAtDistanceThreshold: 0.5
   curve: {fileID: 0}
   WaterVector: {x: 0, y: 0, z: 0}
+  ToFlowDistance: 0
+  ToFlowForce: {x: 0, y: 0, z: 0}
   toFlowForceCurve:
     serializedVersion: 2
     m_Curve:
@@ -152,7 +157,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
@@ -279,12 +284,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.23000002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
@@ -417,12 +422,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.23000002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}

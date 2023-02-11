@@ -68,8 +68,8 @@ MonoBehaviour:
   rig_drag: 3
   rig_angularDrag: 2
   WaterFlowDirection: {x: 0, y: 0, z: 1}
-  floatingPeriod: 2
-  densityAmplitude: 5
+  floatingPeriod: 1.5
+  densityAmplitude: 3
   divePercent: 0
   flowForce: 4.04
   rotateSpeed: 0.5

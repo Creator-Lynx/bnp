@@ -14,7 +14,7 @@ public class ObstacleWaterSimulation : MonoBehaviour
     Rigidbody rig;
     ObstacleFlowCurveHandler _curveHandler;
     [SerializeField]
-    float floatingPeriod = 2f, densityAmplitude = 5;
+    float floatingPeriod = 2f, densityAmplitude = 5, floatingAngleAmplitude = 15f;
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -47,9 +47,13 @@ public class ObstacleWaterSimulation : MonoBehaviour
     void RotationByCurrentDirection()
     {
         Quaternion targetRotation =
-        Quaternion.Euler(0, Vector3.SignedAngle(Vector3.forward, WaterFlowDirection, Vector3.up), 0);
+        Quaternion.Euler(0,
+         Vector3.SignedAngle(Vector3.forward, WaterFlowDirection, Vector3.up), 0);
         transform.rotation =
         Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);
+        transform.Rotate(
+            Mathf.Sin((Time.time / floatingPeriod) * Mathf.PI * 1 + Mathf.PI) * floatingAngleAmplitude * Time.fixedDeltaTime,
+             0, 0, Space.Self);
     }
     private void OnDrawGizmos()
     {
