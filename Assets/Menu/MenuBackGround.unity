@@ -265,6 +265,7 @@ MonoBehaviour:
   - {fileID: 6635972361389487574, guid: 74c2acd477dd0594b91f225183fc0d24, type: 3}
   defaultTimeToSpawn: 10
   randomFactorOfTime: 5
+  randomAmplitudeOfPrefab: 0.3
   percentSpawnChance: 10
 --- !u!1001 &185892851
 PrefabInstance:

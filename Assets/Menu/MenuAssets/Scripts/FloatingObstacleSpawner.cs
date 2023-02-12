@@ -45,7 +45,7 @@ public class FloatingObstacleSpawner : MonoBehaviour
         float randFactor2 = UnityEngine.Random.Range(1 - randomAmplitudeOfPrefab, 1 + randomAmplitudeOfPrefab);
         //randomize rotation and scale
         Transform trans = obst.transform.GetChild(0).transform;
-        trans.localScale *= randFactor;
+        trans.localScale *= randFactor * 1.5f;
         trans.localRotation *= Quaternion.Euler(0f, 180 * UnityEngine.Random.Range(0, 2), 0f);
         trans.localRotation *= Quaternion.Euler(0f, (randFactor - 1) * 45, (randFactor2 - 1) * 90);
         //randomize floating
