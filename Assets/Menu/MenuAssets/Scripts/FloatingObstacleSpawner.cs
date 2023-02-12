@@ -8,7 +8,7 @@ public class FloatingObstacleSpawner : MonoBehaviour
     [SerializeField]
     GameObject[] spawPrefabs;
     [SerializeField]
-    float defaultTimeToSpawn = 10, randomFactorOfTime = 5f;
+    float defaultTimeToSpawn = 10, randomFactorOfTime = 5f, randomAmplitudeOfPrefab = 0.2f;
     [SerializeField]
     int percentSpawnChance = 25;
     void Start()
@@ -21,10 +21,10 @@ public class FloatingObstacleSpawner : MonoBehaviour
     void SpawnVariants(int variant)
     {
         Debug.Log(variant);
-        if (variant < 0 || variant >= spawPrefabs.Length)
-            Debug.LogException(new System.Exception("Spawn func take an incorrect argument for choosing prefab from array."));
         if (spawPrefabs.Length == 0)
             Debug.LogException(new System.Exception("PrefabsArray of spawner is empty."));
+        if (variant < 0 || variant >= spawPrefabs.Length)
+            Debug.LogException(new System.Exception("Spawn func take an incorrect argument for choosing prefab from array."));
         RandomizeFloatingPrefab(
         Instantiate(spawPrefabs[variant], transform.position, Quaternion.identity).GetComponent<ObstacleWaterSimulation>());
     }
@@ -41,7 +41,17 @@ public class FloatingObstacleSpawner : MonoBehaviour
 
     void RandomizeFloatingPrefab(ObstacleWaterSimulation obst)
     {
+        Debug.Log(obst.gameObject.name);
+        float randFactor = UnityEngine.Random.Range(1 - randomAmplitudeOfPrefab, 1 + randomAmplitudeOfPrefab);
+        float randFactor2 = UnityEngine.Random.Range(1 - randomAmplitudeOfPrefab, 1 + randomAmplitudeOfPrefab);
+        //randomize rotation and scale
+        Transform trans = obst.transform.GetChild(0).transform;
+        trans.localScale *= randFactor;
+        trans.localRotation *= Quaternion.Euler(0f, 180 * UnityEngine.Random.Range(0, 2), 0f);
+        trans.localRotation *= Quaternion.Euler(0f, (randFactor - 1) * 45, (randFactor2 - 1) * 90);
+        //randomize floating
 
+        //randomize flowing
     }
 
     IEnumerator SpawnWaiter()
