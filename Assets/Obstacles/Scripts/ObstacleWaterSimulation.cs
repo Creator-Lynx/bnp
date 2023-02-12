@@ -35,7 +35,7 @@ public class ObstacleWaterSimulation : MonoBehaviour
         rig.angularDrag = divePercent * rig_angularDrag;
         if (divePercent > 0.25f)
             ForceMoveByCurrentDirection();
-        //RotationByCurrentDirection();
+        RotationByCurrentDirection();
     }
 
 

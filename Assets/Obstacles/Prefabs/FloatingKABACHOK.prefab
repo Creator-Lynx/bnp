@@ -49,7 +49,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8969766647004419157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +70,7 @@ MonoBehaviour:
   WaterFlowDirection: {x: 0, y: 0, z: 1}
   floatingPeriod: 1.5
   densityAmplitude: 3
+  floatingAngleAmplitude: 15
   divePercent: 0
   flowForce: 4.04
   rotateSpeed: 0.5
@@ -208,9 +209,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970f5820be604b34cbfd543f24779b11, type: 3}
+--- !u!1 &3235629333157892521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 970f5820be604b34cbfd543f24779b11,
+    type: 3}
+  m_PrefabInstance: {fileID: 2316585708782415096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2858821564043201299 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970f5820be604b34cbfd543f24779b11,
     type: 3}
   m_PrefabInstance: {fileID: 2316585708782415096}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &6565174074838591015
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235629333157892521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 70948873267775455, guid: 970f5820be604b34cbfd543f24779b11, type: 3}
