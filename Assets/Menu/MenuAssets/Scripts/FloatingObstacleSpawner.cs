@@ -9,31 +9,36 @@ public class FloatingObstacleSpawner : MonoBehaviour
     GameObject[] spawPrefabs;
     [SerializeField]
     float defaultTimeToSpawn = 10, randomFactorOfTime = 5f;
+    int percentSpawnChance = 25;
     void Start()
     {
         System.TimeSpan a = new System.TimeSpan();
         Random.InitState(a.Seconds);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        StartCoroutine(SpawnWaiter());
     }
 
     void SpawnVariants(int variant)
     {
         if (variant < 0 || variant >= spawPrefabs.Length)
-        {
-            Debug.LogException(new System.Exception("Spawn func take an incorrect argument for choosing prefab from array"));
-        }
+            Debug.LogException(new System.Exception("Spawn func take an incorrect argument for choosing prefab from array."));
+        if (spawPrefabs.Length == 0)
+            Debug.LogException(new System.Exception("PrefabsArray of spawner is empty."));
         Instantiate(spawPrefabs[variant], transform.position, Quaternion.identity);
     }
+
     void RandomSpawn()
     {
+        int rand = UnityEngine.Random.Range(0, 100);
+        if (rand < percentSpawnChance) SpawnVariants(0);
+        else
+        {
+            SpawnVariants(UnityEngine.Random.Range(1, 4));
+        }
+
 
     }
-    IEnumerator SpanwWaiter()
+
+    IEnumerator SpawnWaiter()
     {
         RandomSpawn();
         yield return new WaitForSeconds(defaultTimeToSpawn + randomFactorOfTime * UnityEngine.Random.Range(-1, 1));
