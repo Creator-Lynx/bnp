@@ -7,14 +7,12 @@ public class ObstacleWaterSimulation : MonoBehaviour
 
     [SerializeField] Vector3 forceDirection = Vector3.up;
 
-    [SerializeField]
-    float rig_drag = 2f, rig_angularDrag = 2f;
+    public float rig_drag = 2f, rig_angularDrag = 2f;
     public Vector3 WaterFlowDirection = Vector3.forward;
 
     Rigidbody rig;
     ObstacleFlowCurveHandler _curveHandler;
-    [SerializeField]
-    float floatingPeriod = 2f, densityAmplitude = 5, floatingAngleAmplitude = 15f;
+    public float floatingPeriod = 2f, densityAmplitude = 5, floatingAngleAmplitude = 15f;
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -39,7 +37,8 @@ public class ObstacleWaterSimulation : MonoBehaviour
     }
 
 
-    [SerializeField] float flowForce = 5f, rotateSpeed = 0.5f;
+    [SerializeField] float rotateSpeed = 0.5f;
+    public float flowForce = 5f;
     void ForceMoveByCurrentDirection()
     {
         rig.AddForce(flowForce * WaterFlowDirection, ForceMode.Force);

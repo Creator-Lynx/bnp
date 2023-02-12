@@ -41,7 +41,6 @@ public class FloatingObstacleSpawner : MonoBehaviour
 
     void RandomizeFloatingPrefab(ObstacleWaterSimulation obst)
     {
-        Debug.Log(obst.gameObject.name);
         float randFactor = UnityEngine.Random.Range(1 - randomAmplitudeOfPrefab, 1 + randomAmplitudeOfPrefab);
         float randFactor2 = UnityEngine.Random.Range(1 - randomAmplitudeOfPrefab, 1 + randomAmplitudeOfPrefab);
         //randomize rotation and scale
@@ -50,8 +49,15 @@ public class FloatingObstacleSpawner : MonoBehaviour
         trans.localRotation *= Quaternion.Euler(0f, 180 * UnityEngine.Random.Range(0, 2), 0f);
         trans.localRotation *= Quaternion.Euler(0f, (randFactor - 1) * 45, (randFactor2 - 1) * 90);
         //randomize floating
-
+        obst.densityAmplitude *= randFactor;
+        obst.rig_drag *= randFactor;
+        obst.rig_angularDrag *= randFactor;
+        obst.floatingAngleAmplitude *= randFactor;
+        obst.floatingPeriod *= randFactor;
         //randomize flowing
+        float invertRand = (randFactor - 1) * (-1) + 1;
+        obst.ToFlowForceValue *= invertRand;
+        obst.flowForce *= invertRand;
     }
 
     IEnumerator SpawnWaiter()
