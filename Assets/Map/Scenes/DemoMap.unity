@@ -4436,6 +4436,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: m_ShowToolkit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: antialiasingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.sharpness
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.motionBlending
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: temporalAntialiasing.stationaryBlending
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: subpixelMorphologicalAntialiasing.quality
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2366420742422651342, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
       propertyPath: target

@@ -177,6 +177,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a3e2a7aeb0e9b494f94b2bb950d11a30, type: 2}
+    - target: {fileID: -5754084199372789682, guid: dede56168b9ec3545b7da153b3e81798,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2696537169766571715, guid: 9dbbdc9cb8bad7540b8505d4c19de84b,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_Name
@@ -210,18 +216,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2696537169766571715, guid: dede56168b9ec3545b7da153b3e81798, type: 3}
---- !u!114 &8599992867241723605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536880077925840728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1a3182583a18b4baf90303bb5c7152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!111 &178205756
 Animation:
   m_ObjectHideFlags: 0
@@ -238,3 +232,15 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &8599992867241723605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3536880077925840728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1a3182583a18b4baf90303bb5c7152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
