@@ -103,8 +103,8 @@ MonoBehaviour:
   densityAmplitude: 3
   floatingAngleAmplitude: 15
   divePercent: 0
-  flowForce: 5
   rotateSpeed: 0.5
+  flowForce: 5
 --- !u!114 &787806116959811280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 8762463155639955398, guid: 89bbf24cfd44cd74799349a339a59ce6,
+      objectReference: {fileID: 8762463155639955398, guid: 0bcd53303e387a844aa1a6d29883b370,
         type: 3}
     - target: {fileID: 919132149155446097, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
