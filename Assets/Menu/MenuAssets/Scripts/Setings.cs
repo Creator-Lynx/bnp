@@ -59,7 +59,7 @@ public class Setings : MonoBehaviour
                 Application.targetFrameRate = 144;
                 break;
             default:
-                Application.targetFrameRate = 60;
+                Application.targetFrameRate = 1000;
                 break;
         }
         PlayerPrefs.SetInt("TARGET_FPS", code);
