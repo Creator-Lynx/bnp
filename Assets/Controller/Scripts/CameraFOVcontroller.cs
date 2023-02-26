@@ -24,7 +24,7 @@ public class CameraFOVcontroller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 deltaV = target.position - prevPosition;
         deltaV = Vector3.Project(deltaV, prevForward);
