@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class DebuggerHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void StartDebug()
     {
-        
+        Profiler.logFile = "log";
+        Profiler.enableBinaryLog = true;
+        Profiler.enabled = true;
+        Profiler.maxUsedMemory = 256 * 1024 * 1024;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EndDebug()
     {
-        
+        Profiler.enabled = false;
+        Profiler.logFile = "";
     }
 }
