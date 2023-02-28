@@ -11,6 +11,7 @@ public class DebuggerHandler : MonoBehaviour
         Profiler.enableBinaryLog = true;
         Profiler.enabled = true;
         Profiler.maxUsedMemory = 256 * 1024 * 1024;
+        QualitySettings.maxQueuedFrames = 0;
     }
 
     public void EndDebug()
