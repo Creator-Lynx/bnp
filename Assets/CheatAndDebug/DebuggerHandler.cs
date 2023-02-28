@@ -7,7 +7,7 @@ public class DebuggerHandler : MonoBehaviour
 {
     public void StartDebug()
     {
-        Profiler.logFile = "log";
+        Profiler.logFile = "C:\\Users\\1_lin\\Documents\\log";
         Profiler.enableBinaryLog = true;
         Profiler.enabled = true;
         Profiler.maxUsedMemory = 256 * 1024 * 1024;
