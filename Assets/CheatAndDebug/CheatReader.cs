@@ -34,7 +34,7 @@ public class CheatReader : MonoBehaviour
                 if (cheats[i].progress >= cheats[i].code.Length)
                 {
                     cheats[i].Execute();
-                    cheats[i].progress = 0;
+                    foreach (Cheat a in cheats) a.progress = 0;
                 }
             }
         }

@@ -931,7 +931,7 @@ PrefabInstance:
     - target: {fileID: 9113963766546725171, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 84.04255
+      value: 80.742355
       objectReference: {fileID: 0}
     - target: {fileID: 9113963766546725171, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -966,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 9113963766576057775, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 154.25531
+      value: 147.9476
       objectReference: {fileID: 0}
     - target: {fileID: 9113963766576057775, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1067,7 +1067,7 @@ PrefabInstance:
     - target: {fileID: 9113963766902681454, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 82.76595
+      value: 79.56332
       objectReference: {fileID: 0}
     - target: {fileID: 9113963766902681454, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1103,7 +1103,7 @@ PrefabInstance:
     - target: {fileID: 9113963767091284857, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80.21276
+      value: 78.38428
       objectReference: {fileID: 0}
     - target: {fileID: 9113963767091284857, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1139,7 +1139,7 @@ PrefabInstance:
     - target: {fileID: 9113963767099626490, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.765957
+      value: 24.148472
       objectReference: {fileID: 0}
     - target: {fileID: 9113963767099626490, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1174,7 +1174,7 @@ PrefabInstance:
     - target: {fileID: 9113963767400220725, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70
+      value: 68.951965
       objectReference: {fileID: 0}
     - target: {fileID: 9113963767400220725, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1210,7 +1210,7 @@ PrefabInstance:
     - target: {fileID: 9113963767635160675, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 124.893616
+      value: 118.47161
       objectReference: {fileID: 0}
     - target: {fileID: 9113963767635160675, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1285,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 9113963767967852055, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 158.0851
+      value: 152.66376
       objectReference: {fileID: 0}
     - target: {fileID: 9113963767967852055, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1320,7 +1320,7 @@ PrefabInstance:
     - target: {fileID: 9113963768013942789, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 76.38297
+      value: 74.84716
       objectReference: {fileID: 0}
     - target: {fileID: 9113963768013942789, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1465,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 9113963768296306438, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 269.14893
+      value: 270.5677
       objectReference: {fileID: 0}
     - target: {fileID: 9113963768296306438, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1500,7 +1500,7 @@ PrefabInstance:
     - target: {fileID: 9113963768551538075, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 156.8085
+      value: 153.84279
       objectReference: {fileID: 0}
     - target: {fileID: 9113963768551538075, guid: 2b6d3c54dc34dd644ae149dd526f779b,
         type: 3}
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.4
+  m_fontSize: 45.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5436,7 +5436,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 229625447}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10869,7 +10869,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: v0
+    Name: vsync0
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10887,7 +10887,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: v1
+    Name: vsync1
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10905,7 +10905,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: v2
+    Name: vsync2
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10923,7 +10923,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: v3
+    Name: vsync3
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10941,7 +10941,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: v4
+    Name: vsync4
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10959,7 +10959,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q-1
+    Name: queuedFrameNegOne
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10977,7 +10977,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q0
+    Name: queuedFrameZero
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -10995,7 +10995,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q1
+    Name: queuedFramePosOne
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -11013,7 +11013,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q2
+    Name: queuedFrame2
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -11031,7 +11031,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q3
+    Name: queuedFrame3
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -11049,7 +11049,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q4
+    Name: queuedFrame4
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -11067,7 +11067,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q5
+    Name: queuedFrame5
     cheat:
       m_PersistentCalls:
         m_Calls:
@@ -11085,7 +11085,7 @@ MonoBehaviour:
           m_CallState: 2
   - progress: 0
     code: 
-    Name: q10
+    Name: queuedFrameTen
     cheat:
       m_PersistentCalls:
         m_Calls:

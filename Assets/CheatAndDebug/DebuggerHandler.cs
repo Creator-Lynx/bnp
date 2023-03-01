@@ -20,7 +20,6 @@ public class DebuggerHandler : MonoBehaviour
         Profiler.logFile = path;//"C:\\Users\\1_lin\\Documents\\log";
         Profiler.enableBinaryLog = true;
         Profiler.enabled = true;
-        Profiler.maxUsedMemory = 256 * 1024 * 1024;
     }
     public void SetVSync(int v)
     {
