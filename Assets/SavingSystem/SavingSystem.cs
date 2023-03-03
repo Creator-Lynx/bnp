@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class SavingSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        MakeSave();
     }
-
-    // Update is called once per frame
-    void Update()
+    public static void MakeSave()
     {
-        
+        OnSave.Invoke();
     }
+    public static void MakeLoad()
+    {
+        OnLoad.Invoke();
+    }
+    public static Action OnLoad, OnSave;
 }
