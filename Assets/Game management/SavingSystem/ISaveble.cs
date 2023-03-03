@@ -1,7 +1,7 @@
 using UnityEngine;
 public abstract class ISaveble : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         SavingSystem.OnLoad += Load;
         SavingSystem.OnSave += Save;
