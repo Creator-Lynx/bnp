@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleFlowCurveHandler : MonoBehaviour
 {
-    float t = 0f;
+    public float t = 0f;
 
     [SerializeField]
     Transform target;
