@@ -4624,7 +4624,7 @@ GameObject:
   - component: {fileID: 317982428}
   - component: {fileID: 317982427}
   m_Layer: 0
-  m_Name: CameraSpringTarget
+  m_Name: springJointTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25465,7 +25465,7 @@ GameObject:
   - component: {fileID: 1614416879}
   - component: {fileID: 1614416878}
   m_Layer: 0
-  m_Name: SpringJointTarget
+  m_Name: target of SpringJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25726,7 +25726,7 @@ GameObject:
   - component: {fileID: 1637504160}
   - component: {fileID: 1637504161}
   m_Layer: 0
-  m_Name: target
+  m_Name: playerFolower
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -27767,6 +27767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dd53aa38e1cac42a3af98b86ef50a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1804601831
 PrefabInstance:
   m_ObjectHideFlags: 0
