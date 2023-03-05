@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //[ExecuteAlways]
 public class WindCurveHandler : MonoBehaviour
 {
-    float t = 0f;
+    public static float t = 0f;
 
     [SerializeField]
     Transform target, empty;
@@ -13,12 +11,12 @@ public class WindCurveHandler : MonoBehaviour
     float lerpSpeed = 0.5f, findStep = 0.05f, offset = 0.5f, rotationLerpSpeed;
     [SerializeField]
     GameCurve curve;
-    Quaternion currentRotation;
+    public static Quaternion currentRotation;
     public static Vector3 WindVector;
 
     void Start()
     {
-
+        t = 0;
     }
 
     void Update()

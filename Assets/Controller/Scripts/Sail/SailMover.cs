@@ -50,22 +50,23 @@ public class SailMover : MonoBehaviour
         else
             ForceMoveByCurrentDirection();
         RotationByCurrentDirection();
-        interpolatedForceModifier = Mathf.Lerp(previousForceModifier, forceRandomModifier, tmr / randomForceTimer);
+        interpolatedForceModifier = Mathf.Lerp(CurrentRandomState.previousForceModifier,
+            CurrentRandomState.forceRandomModifier, tmr / CurrentRandomState.randomForceTimer);
         WindDirection = WindCurveHandler.WindVector * windForcePostModifier.Evaluate(interpolatedForceModifier);
 
     }
     [SerializeField]
     float interpolatedForceModifier;
     //random system ==============================================================================================
-    float forceRandomModifier = 0;
-    float previousForceModifier = 0;
-    float randomForceTimer = 1;
-    Random.State randomState;
-    public Random.State RandomState
+    public struct RandomWindForceModifierState
     {
-        get { return randomState; }
-        set { randomState = value; }
+        public float forceRandomModifier;
+        public float previousForceModifier;
+        public float randomForceTimer;
+        public Random.State randomState;
     }
+    public RandomWindForceModifierState CurrentRandomState;
+
     [Space(30)]
     [SerializeField]
     float lowerRandomForceModifier = 0.25f;
@@ -79,23 +80,25 @@ public class SailMover : MonoBehaviour
     void InitRandom()
     {
         Random.InitState(2341923);
-        randomState = Random.state;
+        CurrentRandomState.randomState = Random.state;
+        CurrentRandomState.forceRandomModifier = 0;
+        CurrentRandomState.previousForceModifier = 0;
+        CurrentRandomState.randomForceTimer = 1;
         RandomForceGenerate();
     }
     void RandomForceGenerate()
     {
-        Random.state = randomState;
-        previousForceModifier = forceRandomModifier;
-        forceRandomModifier = Random.Range(lowerRandomForceModifier, upperRandomForceModifier);
-        randomForceTimer = Random.Range(lowerRandomTimer, upperRandomTimer);
-        randomState = Random.state;
-        //Debug.Log(forceRandomModifier);
+        Random.state = CurrentRandomState.randomState;
+        CurrentRandomState.previousForceModifier = CurrentRandomState.forceRandomModifier;
+        CurrentRandomState.forceRandomModifier = Random.Range(lowerRandomForceModifier, upperRandomForceModifier);
+        CurrentRandomState.randomForceTimer = Random.Range(lowerRandomTimer, upperRandomTimer);
+        CurrentRandomState.randomState = Random.state;
     }
     float tmr = 0f;
     void RandomTimerTick()
     {
         tmr += Time.deltaTime;
-        if (tmr >= randomForceTimer)
+        if (tmr >= CurrentRandomState.randomForceTimer)
         {
             tmr = 0;
             RandomForceGenerate();

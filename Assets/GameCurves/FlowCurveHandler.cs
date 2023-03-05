@@ -4,7 +4,7 @@ using UnityEngine;
 //[ExecuteAlways]
 public class FlowCurveHandler : MonoBehaviour
 {
-    float t = 0f;
+    public static float t = 0f;
 
     [SerializeField]
     Transform target, arrowsParent;
@@ -49,6 +49,7 @@ public class FlowCurveHandler : MonoBehaviour
                 .transform.localScale = new Vector3(1f, 1f, strong);
                 locT += 1f / count;
             }
+        t = 0;
     }
 
     void Update()
