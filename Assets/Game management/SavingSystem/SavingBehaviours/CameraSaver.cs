@@ -9,7 +9,11 @@ public class CameraSaver : SelfSaver
     Vector3 playerFol, curveFol, sJ, sT, cameraItselfPos;
     protected override void Load()
     {
-
+        playerFolower.position = playerFol;
+        cameraCurveFolower.position = curveFol;
+        springJointer.position = sJ;
+        springTarget.position = sT;
+        transform.position = cameraItselfPos;
     }
     protected override void Save()
     {
@@ -18,16 +22,5 @@ public class CameraSaver : SelfSaver
         sJ = springJointer.position;
         sT = springTarget.position;
         cameraItselfPos = transform.position;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
