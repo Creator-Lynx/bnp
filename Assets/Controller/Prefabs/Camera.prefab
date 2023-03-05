@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 1608020738}
   - component: {fileID: 1608020740}
   - component: {fileID: 2366420742422651342}
+  - component: {fileID: 7672166739965567638}
   m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
@@ -245,7 +246,7 @@ MonoBehaviour:
   volumeLayer:
     serializedVersion: 2
     m_Bits: 64
-  stopNaNPropagation: 1
+  stopNaNPropagation: 0
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
   temporalAntialiasing:
@@ -310,6 +311,22 @@ MonoBehaviour:
   FOVLerpSpeed: 0.6
   target: {fileID: 0}
   testSqrDelta: 0
+--- !u!114 &7672166739965567638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872314202615758878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbd84d866f98394e92fa82b2b08b586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFolower: {fileID: 0}
+  cameraCurveFolower: {fileID: 0}
+  springJointer: {fileID: 0}
+  springTarget: {fileID: 0}
 --- !u!1001 &7872314201227235200
 PrefabInstance:
   m_ObjectHideFlags: 0
