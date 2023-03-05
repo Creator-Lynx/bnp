@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSaver : ISaveble
+public class CameraSaver : SelfSaver
 {
     [SerializeField]
     Transform playerFolower, cameraCurveFolower, springJointer, springTarget;
     Vector3 playerFol, curveFol, sJ, sT, cameraItselfPos;
-    public override void Load()
+    protected override void Load()
     {
 
     }
-    public override void Save()
+    protected override void Save()
     {
         playerFol = playerFolower.position;
         curveFol = cameraCurveFolower.position;

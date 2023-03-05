@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class SavingSystem : MonoBehaviour
+public class SavingManager : MonoBehaviour
 {
     private void Start()
     {
@@ -22,5 +23,5 @@ public class SavingSystem : MonoBehaviour
         Debug.Log("MakeLoad");
         OnLoad.Invoke();
     }
-    public static Action OnLoad, OnSave;
+    public static UnityEvent OnLoad = new UnityEvent(), OnSave = new UnityEvent();
 }
