@@ -21,7 +21,7 @@ public class SailMover : MonoBehaviour
     [Space(30)]
     Rigidbody rig;
 
-    Vector3 handledDirection = Vector3.forward;
+    public Vector3 handledDirection = Vector3.forward;
 
     public Vector3 WindDirection = Vector3.forward;
     PlayerHitPointsController playerHP;
