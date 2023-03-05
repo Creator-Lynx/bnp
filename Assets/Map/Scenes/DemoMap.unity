@@ -12012,14 +12012,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 149326997, guid: 1af7bd3694715d14c8bea3eff7aff481, type: 3}
-      propertyPath: flowForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 149326997, guid: 1af7bd3694715d14c8bea3eff7aff481, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 454291872238572352, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12175,26 +12167,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: forceRotatingAngle
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: threasholdRotation
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: upperRandomForceModifier
-      value: 1.7
-      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983132, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_RootOrder
@@ -12249,16 +12221,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983134, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983134, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: ToFlowForceValue
-      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4075902113601869768, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
@@ -12322,28 +12284,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af7bd3694715d14c8bea3eff7aff481, type: 3}
---- !u!1 &816417766 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3770052409976983128, guid: 1af7bd3694715d14c8bea3eff7aff481,
-    type: 3}
-  m_PrefabInstance: {fileID: 816417765}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &816417767
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816417766}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 353baf23b48546d42b545a89ce682ca0, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!4 &817934168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1288589446122198418, guid: 25d125c7675151a4ba8c1b5b3fca4580,
@@ -18667,7 +18607,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 816417765}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816417766}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc3db774ad6d12e439ec2f517406a163, type: 3}
