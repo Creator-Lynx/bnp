@@ -61,6 +61,11 @@ public class SailMover : MonoBehaviour
     float previousForceModifier = 0;
     float randomForceTimer = 1;
     Random.State randomState;
+    public Random.State RandomState
+    {
+        get { return randomState; }
+        set { randomState = value; }
+    }
     [Space(30)]
     [SerializeField]
     float lowerRandomForceModifier = 0.25f;
