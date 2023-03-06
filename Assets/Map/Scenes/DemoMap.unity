@@ -13512,31 +13512,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f84d9fb578eda4ba5ae0e94357941c, type: 3}
---- !u!1 &918563378 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6128868929012622999, guid: 64f84d9fb578eda4ba5ae0e94357941c,
+--- !u!95 &918563382 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5234267605353763448, guid: 64f84d9fb578eda4ba5ae0e94357941c,
     type: 3}
   m_PrefabInstance: {fileID: 918563377}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &918563380
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918563378}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0f06c764a453b154bafe3f74fe701e8b, type: 2}
-  m_CullingMode: 2
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &919409909 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2365764485093750402, guid: e30e1faebe77611468529748287ade2d,
@@ -22599,7 +22580,7 @@ MonoBehaviour:
     OnCalledEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 918563380}
+        - m_Target: {fileID: 918563382}
           m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
           m_MethodName: SetTrigger
           m_Mode: 5
@@ -22615,14 +22596,14 @@ MonoBehaviour:
     OnCalledEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 918563380}
+        - m_Target: {fileID: 918563382}
           m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
           m_MethodName: SetTrigger
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: fall
             m_BoolArgument: 0

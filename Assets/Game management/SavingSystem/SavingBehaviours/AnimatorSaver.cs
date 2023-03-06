@@ -1,11 +1,13 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AnimatorSaver : SelfSaver
 {
     int shortNameHash;
     float stateNormalizedTime;
     protected override void Load()
     {
+        Debug.Log("Falling Snag Load");
         GetComponent<Animator>().Play(shortNameHash, 0, stateNormalizedTime);
     }
     protected override void Save()
