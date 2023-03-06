@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class MovingObstacle : MonoBehaviour
+public class MovingObstacle : SelfSaver
 {
     [SerializeField]
     Transform moving, point0, point1;
     [SerializeField]
     float timeToNext = 2f;
     float timer = 0f, k = 1;
+    Animation animated;
     void Start()
     {
         timer = UnityEngine.Random.Range(0f, timeToNext);
+        animated = GetComponentInChildren<Animation>();
     }
     void FixedUpdate()
     {
@@ -18,5 +20,18 @@ public class MovingObstacle : MonoBehaviour
         moving.position = Vector3.Lerp(point0.position, point1.position, t);
         if (k > 0 && timer > timeToNext) k = -1;
         if (k < 0 && timer < 0f) k = 1;
+    }
+    float savedTimer, savedK;
+    protected override void Save()
+    {
+        savedTimer = timer;
+        savedK = k;
+        animated.Sample();
+
+    }
+    protected override void Load()
+    {
+        timer = savedTimer;
+        k = savedK;
     }
 }
