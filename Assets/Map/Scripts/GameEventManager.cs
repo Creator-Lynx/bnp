@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventManager : MonoBehaviour
+public class GameEventManager : SelfSaver
 {
     [SerializeField]
     CameraCurveMover curveMover;
@@ -27,6 +27,15 @@ public class GameEventManager : MonoBehaviour
     public void TEST()
     {
         Debug.Log("Event is invoked");
+    }
+    int saveEventID;
+    protected override void Load()
+    {
+        eventID = saveEventID;
+    }
+    protected override void Save()
+    {
+        saveEventID = eventID;
     }
 }
 
