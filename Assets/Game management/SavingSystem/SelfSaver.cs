@@ -1,8 +1,9 @@
 using UnityEngine;
 public abstract class SelfSaver : MonoBehaviour
 {
-    private void Awake()
+    public virtual void Awake()
     {
+        //Debug.Log("SelfSaver Awaked" + gameObject.name);
         SavingManager.OnLoad.AddListener(Load);
         SavingManager.OnSave.AddListener(Save);
     }
