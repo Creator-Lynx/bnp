@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   maxHP: 10
-  attempts: 1
+  attempts: 3
   bar: {fileID: 0}
   attemptsImages:
   - {fileID: 0}

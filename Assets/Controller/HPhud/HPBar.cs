@@ -7,7 +7,7 @@ public class HPBar : MonoBehaviour
     Image selfImage;
     [SerializeField]
     float timeToChange = 0.4f;
-    private void Start()
+    private void Awake()
     {
         selfImage = GetComponent<Image>();
     }

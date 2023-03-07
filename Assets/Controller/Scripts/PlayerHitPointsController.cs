@@ -31,6 +31,7 @@ public class PlayerHitPointsController : MonoBehaviour
     void Start()
     {
         SetAttempts();
+        bar.OnHpChange(HP * oneHPInDecimal);
     }
 
     void SetAttempts()
@@ -66,7 +67,7 @@ public class PlayerHitPointsController : MonoBehaviour
     }
     void ReturnToCheckPoint()
     {
-
+        SavingManager.MakeLoad();
     }
     void Death()
     {
