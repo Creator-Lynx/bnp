@@ -25,12 +25,18 @@ public class ScenesLoader : MonoBehaviour
     MenuButtonHider menuButton;
     [SerializeField]
     Animator fadeScreen, canvasMenu;
+    static ScenesLoader instance;
+    public static Animator FadeScreen
+    {
+        get { return instance.fadeScreen; }
+    }
 
     AsyncOperation sceneLoading, sceneUnloading;
 
 
     void Start()
     {
+        instance = this;
         currentActiveScene = menuBGSceneIndex;
     }
     public void LoadScene(int sceneID)

@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,14 +57,15 @@ public class PlayerHitPointsController : MonoBehaviour
                 Death();
             }
             else
-                ReturnToCheckPoint();
+                StartCoroutine(ReturnToCheckPoint());
         }
 
         bar.OnHpChange(HP * oneHPInDecimal);
         StartCoroutine(DamageblaDelay());
     }
-    void ReturnToCheckPoint()
+    IEnumerator ReturnToCheckPoint()
     {
+        yield return new WaitForSeconds(1f);
         SavingManager.MakeLoad();
     }
     void Death()
