@@ -16,12 +16,10 @@ public class SavingManager : MonoBehaviour
     }
     public static void MakeSave()
     {
-        Debug.Log("MakeSave");
         OnSave.Invoke();
     }
     public static void MakeLoad()
     {
-        Debug.Log("MakeLoad");
         OnLoad.Invoke();
     }
     public static UnityEvent OnLoad = new UnityEvent(), OnSave = new UnityEvent();

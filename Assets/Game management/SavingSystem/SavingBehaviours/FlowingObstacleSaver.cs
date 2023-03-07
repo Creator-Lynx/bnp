@@ -8,7 +8,6 @@ public class FlowingObstacleSaver : SelfSaver
     float t;
     protected override void Load()
     {
-        Debug.Log("Loading snag");
         transform.position = position;
         transform.rotation = rotation;
         GetComponent<Rigidbody>().velocity = velocity;
@@ -16,7 +15,6 @@ public class FlowingObstacleSaver : SelfSaver
     }
     protected override void Save()
     {
-        Debug.Log("Saving snag");
         position = transform.position;
         rotation = transform.rotation;
         velocity = GetComponent<Rigidbody>().velocity;
