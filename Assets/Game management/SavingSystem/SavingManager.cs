@@ -9,7 +9,7 @@ public class SavingManager : MonoBehaviour
     }
     private void Update()
     {
-#if UNITY_EDITOR
+#if UNITY_EDITOR_64
         if (Input.GetKey(KeyCode.O)) MakeSave();
         if (Input.GetKey(KeyCode.L)) MakeLoad();
 #endif
