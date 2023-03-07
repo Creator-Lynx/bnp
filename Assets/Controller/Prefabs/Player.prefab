@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 454291872238572352}
   m_Layer: 7
   m_Name: paddle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3770052409860039151}
   m_Layer: 7
   m_Name: Sail
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +291,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  handledDirection: {x: 0, y: 0, z: 1}
   WindDirection: {x: 0, y: 0, z: 1}
   interpolatedForceModifier: 0
   lowerRandomForceModifier: 0.5
@@ -604,6 +605,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4536054379777593256, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
         type: 3}
       propertyPath: m_Enabled
@@ -684,6 +690,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ad634bcbe6e608b438bf99c4ff03c1eb, type: 2}
+    - target: {fileID: 7317951168888701867, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317951168888701867, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73, type: 3}
 --- !u!1 &4075902113601869768 stripped
