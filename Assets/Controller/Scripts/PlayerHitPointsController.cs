@@ -52,13 +52,15 @@ public class PlayerHitPointsController : MonoBehaviour
             HP = maxHP;
             attempts--;
             SetAttempts();
-            ReturnToCheckPoint();
+            if (attempts <= 0)
+            {
+                HP = 0;
+                Death();
+            }
+            else
+                ReturnToCheckPoint();
         }
-        if (attempts <= 0)
-        {
-            HP = 0;
-            Death();
-        }
+
         bar.OnHpChange(HP * oneHPInDecimal);
         StartCoroutine(DamageblaDelay());
     }
