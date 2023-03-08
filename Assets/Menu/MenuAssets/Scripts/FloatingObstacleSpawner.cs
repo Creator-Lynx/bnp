@@ -20,7 +20,7 @@ public class FloatingObstacleSpawner : MonoBehaviour
 
     void SpawnVariants(int variant)
     {
-        Debug.Log(variant);
+        //Debug.Log(variant);
         if (spawPrefabs.Length == 0)
             Debug.LogException(new System.Exception("PrefabsArray of spawner is empty."));
         if (variant < 0 || variant >= spawPrefabs.Length)

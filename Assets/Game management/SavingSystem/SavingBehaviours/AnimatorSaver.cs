@@ -7,8 +7,8 @@ public class AnimatorSaver : SelfSaver
     float stateNormalizedTime;
     protected override void Load()
     {
-        Debug.Log("Falling Snag Load");
-        GetComponent<Animator>().Play(shortNameHash, 0, stateNormalizedTime);
+        Debug.Log("animator load. " + gameObject.name);
+        GetComponent<Animator>()?.Play(shortNameHash, 0, stateNormalizedTime);
     }
     protected override void Save()
     {
