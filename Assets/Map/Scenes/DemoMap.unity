@@ -604,8 +604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowingTime: 1
   unslowingTime: 1
-  graingTime: 1
-  ungraingTime: 1
+  graingTime: 0.75
+  ungraingTime: 0.75
   grayScreenVolume: {fileID: 798825470}
 --- !u!1001 &20782380
 PrefabInstance:
