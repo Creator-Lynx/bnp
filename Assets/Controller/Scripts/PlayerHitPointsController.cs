@@ -26,6 +26,8 @@ public class PlayerHitPointsController : MonoBehaviour
     float damageblaDelay = 1f;
     [SerializeField]
     float oneHPInDecimal = .1f;
+    [SerializeField]
+    CheckPointReturn checkPointReturn;
     void Start()
     {
         SetAttempts();
@@ -57,17 +59,13 @@ public class PlayerHitPointsController : MonoBehaviour
                 Death();
             }
             else
-                StartCoroutine(ReturnToCheckPoint());
+                checkPointReturn.StartReturn();
         }
 
         bar.OnHpChange(HP * oneHPInDecimal);
         StartCoroutine(DamageblaDelay());
     }
-    IEnumerator ReturnToCheckPoint()
-    {
-        yield return new WaitForSeconds(1f);
-        SavingManager.MakeLoad();
-    }
+
     void Death()
     {
         GetComponent<PaddleMover>().isUncontrolled = true;

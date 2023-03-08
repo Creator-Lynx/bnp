@@ -8,8 +8,6 @@ public class BasicGameManager : MonoBehaviour
     [SerializeField]
     Animation grayScreenPP;
     public static BasicGameManager instance;
-    [SerializeField]
-    AnimationCurve slowingTimeModificator;
 
     [SerializeField]
     float slowTime = 1f;
