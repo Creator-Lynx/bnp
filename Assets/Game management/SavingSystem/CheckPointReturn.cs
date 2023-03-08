@@ -82,8 +82,11 @@ public class CheckPointReturn : MonoBehaviour
     }
     IEnumerator Vibrate()
     {
+#if !PLATFORM_STANDALONE
         Handheld.Vibrate();
         yield return new WaitForSeconds(0.3f);
         Handheld.Vibrate();
+#endif
+        yield return new WaitForEndOfFrame();
     }
 }
