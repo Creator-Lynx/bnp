@@ -28,7 +28,7 @@ public class ScenesLoader : MonoBehaviour
     static ScenesLoader instance;
     public static Animator FadeScreen
     {
-        get { return instance.fadeScreen; }
+        get { return instance?.fadeScreen; }
     }
 
     AsyncOperation sceneLoading, sceneUnloading;
