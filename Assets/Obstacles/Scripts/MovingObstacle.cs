@@ -8,10 +8,11 @@ public class MovingObstacle : SelfSaver
     float timeToNext = 2f;
     float timer = 0f, k = 1;
     Animation animated;
-    void Start()
+    public override void Awake()
     {
-        timer = UnityEngine.Random.Range(0f, timeToNext);
         animated = GetComponentInChildren<Animation>();
+        timer = UnityEngine.Random.Range(0f, timeToNext);
+        base.Awake();
     }
     void FixedUpdate()
     {

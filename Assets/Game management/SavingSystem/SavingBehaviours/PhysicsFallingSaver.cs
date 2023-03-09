@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysicsFallingSaver : SelfSaver
@@ -8,10 +5,9 @@ public class PhysicsFallingSaver : SelfSaver
     Rigidbody[] rigidbodies;
     public override void Awake()
     {
-        base.Awake();
-        //Debug.Log("PhysSaver awaked " + gameObject.name);
         rigidbodies = GetComponentsInChildren<Rigidbody>();
         rigStates = new rigState[rigidbodies.Length];
+        base.Awake();
     }
     struct rigState
     {

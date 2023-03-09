@@ -5,7 +5,7 @@ public class SavingManager : MonoBehaviour
 {
     private void Start()
     {
-        MakeSave();
+
     }
     private void Update()
     {

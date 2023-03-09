@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 //[ExecuteAlways]
@@ -26,7 +27,8 @@ public class WindCurveHandler : MonoBehaviour
         BezieSegment seg = curve.GetSegmentByT(t);
         Transform a = seg.points[0], b = seg.points[3];
         Quaternion targetRotation = Quaternion.Slerp(a.rotation, b.rotation, curve.GetLocalTbyT(t));
-        currentRotation = Quaternion.Lerp(currentRotation, targetRotation, Time.deltaTime * rotationLerpSpeed);
+        float clampedLerpRate = Mathf.Clamp(Time.deltaTime * rotationLerpSpeed, 0.05f, 0.99f);
+        currentRotation = Quaternion.Lerp(currentRotation, targetRotation, clampedLerpRate);
         empty.rotation = currentRotation;
         WindVector = empty.forward * targetPos.y;
     }
