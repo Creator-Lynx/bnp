@@ -141,6 +141,10 @@ public class ScenesLoader : MonoBehaviour
 
 
     }
+    private void OnDestroy()
+    {
+        instance = null;
+    }
 
 }
 
