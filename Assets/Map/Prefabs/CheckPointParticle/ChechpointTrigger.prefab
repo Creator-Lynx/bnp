@@ -4840,7 +4840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935278129}
   m_LocalRotation: {x: -0, y: 0.026725948, z: -0, w: 0.99964285}
-  m_LocalPosition: {x: -0.47, y: -0.37, z: -0.27}
+  m_LocalPosition: {x: -0.44, y: -2.8, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 59608917854502331}
@@ -5204,7 +5204,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 400
+      scalar: 200
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5968,13 +5968,13 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.19665104
-          value: 0.92956704
-          inSlope: -0.113285474
-          outSlope: -0.113285474
-          tangentMode: 0
+          time: 0.10980733
+          value: 1
+          inSlope: 0.18947344
+          outSlope: 0
+          tangentMode: 65
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.7189785
           outWeight: 0.12389348
         - serializedVersion: 3
           time: 1
@@ -9680,7 +9680,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 1
   m_RotateWithStretchDirection: 0
   m_VertexStreams: 00030409
-  m_Mesh: {fileID: -5495902117074765545, guid: 01f7906c247a2414bafc1ec277b0079b, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 3322408c0bd201f478ccdda001ca4061, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
