@@ -33025,18 +33025,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1418504424, guid: 3157ebcddda776c44a98fd7c072ee787, type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418504424, guid: 3157ebcddda776c44a98fd7c072ee787, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].cycleCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418504424, guid: 3157ebcddda776c44a98fd7c072ee787, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 59608917854502331, guid: 3157ebcddda776c44a98fd7c072ee787,
         type: 3}
       propertyPath: m_RootOrder
@@ -33096,11 +33084,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChechpointTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 2672814617923587337, guid: 3157ebcddda776c44a98fd7c072ee787,
-        type: 3}
-      propertyPath: SubModule.subEmitters.Array.data[0].type
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3157ebcddda776c44a98fd7c072ee787, type: 3}
