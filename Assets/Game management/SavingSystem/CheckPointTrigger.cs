@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPointTrigger : MonoBehaviour
+public class CheckPointTrigger : SelfSaver
 {
     [SerializeField]
     bool isUsed = false;
@@ -19,4 +19,17 @@ public class CheckPointTrigger : MonoBehaviour
             spikes.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
+    protected override void Save() { }
+    protected override void Load()
+    {
+        Debug.Log("Triggered Checkpoint");
+        box.gameObject.SetActive(true);
+        box.Play();
+    }
+    public override void Awake()
+    {
+        base.Awake();
+        Debug.Log("Awaked checkpoint");
+    }
+
 }
