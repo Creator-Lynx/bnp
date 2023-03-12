@@ -27,7 +27,7 @@
 	}
 	SubShader
 	{
-		// ------------------------------------------------------------------
+	// ------------------------------------------------------------------
     // Extracts information for lightmapping, GI (emission, albedo, ...)
     // This pass is not used during regular rendering.
         Pass
