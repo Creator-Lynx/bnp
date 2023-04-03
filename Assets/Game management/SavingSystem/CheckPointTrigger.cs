@@ -14,6 +14,7 @@ public class CheckPointTrigger : SelfSaver
         {
             SavingManager.MakeSave();
             isUsed = true;
+            box.gameObject.SetActive(true);
             box.Play();
             spikes.TriggerSubEmitter(0);
             spikes.Stop(true, ParticleSystemStopBehavior.StopEmitting);
