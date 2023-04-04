@@ -11,7 +11,7 @@ public class PlayerSaver : SelfSaver
     float _windT;
     Quaternion _windRotation;
     //set wind force randomizer
-    SailMover.RandomWindForceModifierState _randomState;
+    //SailMover.RandomWindForceModifierState _randomState;
     //set flow force curve
     float _flowT;
     public override void Awake()
@@ -30,7 +30,7 @@ public class PlayerSaver : SelfSaver
         //wind
         _windT = WindCurveHandler.t;
         _windRotation = WindCurveHandler.currentRotation;
-        _randomState = GetComponent<SailMover>().CurrentRandomState;
+        //_randomState = GetComponent<SailMover>().CurrentRandomState;
         //water 
         _flowT = FlowCurveHandler.t;
     }
@@ -45,7 +45,7 @@ public class PlayerSaver : SelfSaver
         //wind
         WindCurveHandler.t = _windT;
         WindCurveHandler.currentRotation = _windRotation;
-        GetComponent<SailMover>().CurrentRandomState = _randomState;
+        //GetComponent<SailMover>().CurrentRandomState = _randomState;
         //flow
         FlowCurveHandler.t = _flowT;
     }

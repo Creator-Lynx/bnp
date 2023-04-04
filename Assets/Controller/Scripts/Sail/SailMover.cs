@@ -3,7 +3,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(WaterSimulation))]
-public class SailMover : MonoBehaviour
+public class SailMover : SelfSaver
 {
     public bool isUncontrolled = false;
 
@@ -29,7 +29,6 @@ public class SailMover : MonoBehaviour
     {
         rig = GetComponent<Rigidbody>();
         playerHP = GetComponent<PlayerHitPointsController>();
-        InitRandom();
     }
 
     void Update()
@@ -105,6 +104,31 @@ public class SailMover : MonoBehaviour
         }
     }
     //end of random system =======================================================================================
+
+
+
+    //saving random state correctly ============================================================
+    public override void Awake()
+    {
+        InitRandom();
+        base.Awake();
+    }
+    RandomWindForceModifierState _randomState;
+    float saving_tmr;
+    protected override void Load()
+    {
+        CurrentRandomState = _randomState;
+        tmr = saving_tmr;
+    }
+    protected override void Save()
+    {
+        _randomState = CurrentRandomState;
+        saving_tmr = tmr;
+    }
+    //end saving random state ==================================================================
+
+
+
 
     bool CheckThresholdRotation()
     {
