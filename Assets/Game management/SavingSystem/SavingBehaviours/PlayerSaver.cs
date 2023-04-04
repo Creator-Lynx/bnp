@@ -3,7 +3,8 @@ public class PlayerSaver : SelfSaver
 {
     Vector3 position;
     Quaternion rotation;
-    Vector3 velocity;
+    Vector3 velocity, rig_position, rig_angularVelocity;
+    Rigidbody rig;
     //handeld direction of sail
     Vector3 _handeledDir;
     //set wind direction curve
@@ -13,11 +14,18 @@ public class PlayerSaver : SelfSaver
     SailMover.RandomWindForceModifierState _randomState;
     //set flow force curve
     float _flowT;
+    public override void Awake()
+    {
+        rig = GetComponent<Rigidbody>();
+        base.Awake();
+    }
     protected override void Save()
     {
         position = transform.position;
         rotation = transform.rotation;
-        velocity = GetComponent<Rigidbody>().velocity;
+        rig_position = rig.position;
+        rig_angularVelocity = rig.angularVelocity;
+        velocity = rig.velocity;
         _handeledDir = GetComponent<SailMover>().handledDirection;
         //wind
         _windT = WindCurveHandler.t;
@@ -30,7 +38,9 @@ public class PlayerSaver : SelfSaver
     {
         transform.position = position;
         transform.rotation = rotation;
-        GetComponent<Rigidbody>().velocity = velocity;
+        rig.angularVelocity = rig_angularVelocity;
+        rig.position = rig_position;
+        rig.velocity = velocity;
         GetComponent<SailMover>().handledDirection = _handeledDir;
         //wind
         WindCurveHandler.t = _windT;
