@@ -14,7 +14,7 @@ public class MovingObstacle : SelfSaver
         timer = UnityEngine.Random.Range(0f, timeToNext);
         base.Awake();
     }
-    void FixedUpdate()
+    void Update()
     {
         timer += Time.deltaTime * k;
         float t = Mathf.SmoothStep(0, 1, timer / timeToNext);
