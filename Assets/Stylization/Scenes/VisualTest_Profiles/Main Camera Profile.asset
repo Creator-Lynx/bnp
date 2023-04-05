@@ -34,13 +34,13 @@ MonoBehaviour:
     value: 0.923
   toneCurveShoulderStrength:
     overrideState: 1
-    value: 0.286
+    value: 0.945
   toneCurveShoulderLength:
     overrideState: 1
     value: 3.11
   toneCurveShoulderAngle:
     overrideState: 1
-    value: 0.177
+    value: 0.572
   toneCurveGamma:
     overrideState: 1
     value: 0.89
@@ -64,17 +64,17 @@ MonoBehaviour:
     overrideState: 0
     value: -50.3
   saturation:
-    overrideState: 1
-    value: 21
+    overrideState: 0
+    value: 4
   brightness:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
-    value: 0.25
+    overrideState: 1
+    value: 0.39
   contrast:
     overrideState: 1
-    value: 13
+    value: 20
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -107,7 +107,7 @@ MonoBehaviour:
     value: {x: 0.7901688, y: 0.74913436, z: 1, w: 0.14195585}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 0.83093464, z: 0.9859332, w: 0.08832816}
+    value: {x: 1, y: 0.47436833, z: 0.70496583, w: 0.08832816}
   gain:
     overrideState: 1
     value: {x: 0.65938485, y: 1, z: 0.9610751, w: 0.42586753}
