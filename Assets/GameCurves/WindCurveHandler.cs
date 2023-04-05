@@ -31,7 +31,11 @@ public class WindCurveHandler : MonoBehaviour
         currentRotation = Quaternion.Lerp(currentRotation, targetRotation, clampedLerpRate);
         empty.rotation = currentRotation;
         WindVector = empty.forward * targetPos.y;
+        tStat.AddKey(Time.time, t);
     }
+    [SerializeField]
+    AnimationCurve tStat;
+
     void SelfMoving()
     {
         Vector3 dir = curve.GetDirectionByT(t);
