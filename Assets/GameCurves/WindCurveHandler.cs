@@ -32,7 +32,7 @@ public class WindCurveHandler : SelfSaver
         currentRotation = Quaternion.Lerp(currentRotation, targetRotation, clampedLerpRate);
         empty.rotation = currentRotation;
         WindVector = empty.forward * targetPos.y;
-        tStat.AddKey(Time.time, t);
+        //tStat.AddKey(Time.time, t);
     }
     [SerializeField]
     AnimationCurve tStat;
@@ -56,7 +56,7 @@ public class WindCurveHandler : SelfSaver
     protected override void Load()
     {
         t = _windT;
-        Debug.Log("temporal saving wind " + _windT);
+        //Debug.Log("temporal saving wind " + _windT);
         WindCurveHandler.currentRotation = _windRotation;
     }
 
