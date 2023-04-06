@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 
 //[ExecuteAlways]
-public class WindCurveHandler : MonoBehaviour
+public class WindCurveHandler : SelfSaver
 {
-    public static float t = 0f;
+    float t = 0f;
 
     [SerializeField]
     Transform target, empty;
@@ -15,9 +15,10 @@ public class WindCurveHandler : MonoBehaviour
     public static Quaternion currentRotation;
     public static Vector3 WindVector;
 
-    void Start()
+    public override void Awake()
     {
         t = 0;
+        base.Awake();
     }
 
     void Update()
@@ -49,5 +50,19 @@ public class WindCurveHandler : MonoBehaviour
         //transform.position = curve.GetPointByT(t) + Vector3.back * 6f + Vector3.up * 4f;
     }
 
+    //SAVING ======================================
+    float _windT;
+    Quaternion _windRotation;
+    protected override void Load()
+    {
+        t = _windT;
+        Debug.Log("temporal saving wind " + _windT);
+        WindCurveHandler.currentRotation = _windRotation;
+    }
 
+    protected override void Save()
+    {
+        _windT = t;
+        _windRotation = WindCurveHandler.currentRotation;
+    }
 }
