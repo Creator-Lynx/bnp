@@ -63,19 +63,21 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 6.24
     - _GlossyReflections: 1
+    - _HalfShadowTreshold: 0.3
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimAmount: 0.71
     - _RimThroshold: 0
+    - _ShadowTreshold: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 1}
+    - _AmbientColor: {r: 0.135, g: 0.135, b: 0.135, a: 1}
     - _Color: {r: 0.29316482, g: 0.29637077, b: 0.33962262, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}

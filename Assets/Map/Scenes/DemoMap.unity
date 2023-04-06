@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.72
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.09433961, g: 0.037824843, b: 0.037824843, a: 1}
+  m_SubtractiveShadowColor: {r: 0.075778306, g: 0.09551888, b: 0.135, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 1495d16f6dfb16d48a5d325eae676635, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -4460,6 +4460,11 @@ PrefabInstance:
     - target: {fileID: 1608020740, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
       propertyPath: subpixelMorphologicalAntialiasing.quality
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718697216159887513, guid: 3db94fbb63f2312449ff46d0c670d594,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2366420742422651342, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
@@ -28901,6 +28906,12 @@ MonoBehaviour:
   offset: 0
   rotationLerpSpeed: 1.53
   curve: {fileID: 1917260763}
+  tStat:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1917260763
 MonoBehaviour:
   m_ObjectHideFlags: 0
