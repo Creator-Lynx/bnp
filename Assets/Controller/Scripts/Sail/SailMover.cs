@@ -29,6 +29,7 @@ public class SailMover : SelfSaver
     {
         rig = GetComponent<Rigidbody>();
         playerHP = GetComponent<PlayerHitPointsController>();
+        modifierDelta = upperRandomForceModifier - lowerRandomForceModifier;
     }
 
     void Update()
@@ -41,7 +42,7 @@ public class SailMover : SelfSaver
                 JoysticksFacade.GetJoystick(JoystickName.left).GetVerticalAxis());
         RandomTimerTick();
     }
-
+    float modifierDelta;
     void FixedUpdate()
     {
         if (CheckThresholdRotation())
@@ -51,7 +52,8 @@ public class SailMover : SelfSaver
         RotationByCurrentDirection();
         interpolatedForceModifier = Mathf.Lerp(CurrentRandomState.previousForceModifier,
             CurrentRandomState.forceRandomModifier, tmr / CurrentRandomState.randomForceTimer);
-        WindDirection = WindCurveHandler.WindVector * windForcePostModifier.Evaluate(interpolatedForceModifier);
+        float modifier = windForcePostModifier.Evaluate(interpolatedForceModifier) * modifierDelta + lowerRandomForceModifier;
+        WindDirection = WindCurveHandler.WindVector * modifier;
 
     }
     [SerializeField]
@@ -89,7 +91,7 @@ public class SailMover : SelfSaver
     {
         Random.state = CurrentRandomState.randomState;
         CurrentRandomState.previousForceModifier = CurrentRandomState.forceRandomModifier;
-        CurrentRandomState.forceRandomModifier = Random.Range(lowerRandomForceModifier, upperRandomForceModifier);
+        CurrentRandomState.forceRandomModifier = Random.Range(0f, 1f);
         CurrentRandomState.randomForceTimer = Random.Range(lowerRandomTimer, upperRandomTimer);
         CurrentRandomState.randomState = Random.state;
     }
@@ -157,7 +159,8 @@ public class SailMover : SelfSaver
         //Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
         float modifiedDot = dot >= 0 ? dot : 0f;
         Vector3 resultForceDirection = handledDirection * modifiedDot;
-        //Debug.DrawRay(transform.position, resultForceDirection * 5f, Color.green);
+        //Debug.DrawRay(transform.position, WindDirection * 5f, Color.green);
+        //Debug.Log(dot);
         currentVel = Vector3.Project(rig.velocity, transform.forward);
         if (currentVel.z < 0f) return;
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
