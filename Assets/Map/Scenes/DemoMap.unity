@@ -11717,6 +11717,91 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[1].time
+      value: 0.33973807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[2].time
+      value: 0.62506855
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[3].time
+      value: 0.7002014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[4].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[1].value
+      value: 0.47197855
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[2].value
+      value: 0.57624614
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[3].value
+      value: 0.7652878
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[4].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[0].inSlope
+      value: 1.3892424
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[1].inSlope
+      value: 0.87733495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[3].inSlope
+      value: 1.1017724
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[4].inSlope
+      value: 0.7828995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[0].outSlope
+      value: 1.3892424
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[1].outSlope
+      value: 0.87733495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[3].inWeight
+      value: 0.5888745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[3].outSlope
+      value: 1.1017724
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: windForcePostModifier.m_Curve.Array.data[4].outSlope
+      value: 0.7828995
+      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983132, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_RootOrder
