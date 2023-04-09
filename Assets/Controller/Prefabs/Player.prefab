@@ -236,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUncontrolled: 0
   windForce: 10
-  sailRotateSpeed: 0.5
+  sailRotateSpeed: 0.55
   sail: {fileID: 3770052409860039151}
   threasholdRotation: 30
   forceRotatingAngle: 0.6
@@ -246,24 +246,24 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 1.3892424
+      outSlope: 1.3892424
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.69501543
-      outSlope: 0.69501543
+      time: 0.33973807
+      value: 0.47197855
+      inSlope: 0.87733495
+      outSlope: 0.87733495
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.2783396
-      value: 1.108561
+      time: 0.62506855
+      value: 0.57624614
       inSlope: 0.52882475
       outSlope: 0.52882475
       tangentMode: 0
@@ -271,19 +271,19 @@ MonoBehaviour:
       inWeight: 0.3673584
       outWeight: 0.6238681
     - serializedVersion: 3
-      time: 1.5020496
-      value: 1.4999939
-      inSlope: 0.4187689
-      outSlope: 0.4187689
+      time: 0.7002014
+      value: 0.7652878
+      inSlope: 1.1017724
+      outSlope: 1.1017724
       tangentMode: 0
       weightedMode: 3
-      inWeight: 0.81987643
+      inWeight: 0.5888745
       outWeight: 0.30880937
     - serializedVersion: 3
-      time: 2
-      value: 2
-      inSlope: 1.0041282
-      outSlope: 1.0041282
+      time: 1
+      value: 1
+      inSlope: 0.7828995
+      outSlope: 0.7828995
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -298,6 +298,7 @@ MonoBehaviour:
   upperRandomForceModifier: 1.7
   lowerRandomTimer: 1
   upperRandomTimer: 3
+  sailControllLerpRate: 7.92
   currentVel: {x: 0, y: 0, z: 0}
 --- !u!114 &149326997
 MonoBehaviour:
@@ -329,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4477b1d5c9de53e4495ea40b0ab51561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 3
   maxHP: 10
   attempts: 3
   bar: {fileID: 0}
@@ -340,6 +341,7 @@ MonoBehaviour:
   isDamageble: 1
   damageblaDelay: 1
   oneHPInDecimal: 0.1
+  checkPointReturn: {fileID: 0}
 --- !u!111 &8826230782513646303
 Animation:
   m_ObjectHideFlags: 0

@@ -141,13 +141,14 @@ public class SailMover : SelfSaver
         return Mathf.Abs(Vector3.Angle(Vector3.up, transform.up)) > threasholdRotation;
 
     }
-
+    [SerializeField]
+    float sailControllLerpRate = 5f;
     public void HandleDirection(float X, float Z)
     {
         if (X == 0 && Z == 0) return;
         Vector3 tmp = new Vector3(X, 0, Z).normalized;
         //Debug.DrawRay(transform.position + Vector3.up, tmp * 8, Color.white);
-        handledDirection = Vector3.SlerpUnclamped(handledDirection, tmp, 0.2f);
+        handledDirection = Vector3.SlerpUnclamped(handledDirection, tmp, Time.deltaTime * sailControllLerpRate);
         handledDirection.Normalize();
 
     }
@@ -176,7 +177,6 @@ public class SailMover : SelfSaver
             sailAngle = 180 - sailAngle;
         Quaternion sailRotation = Quaternion.Euler(0, sailAngle, 0);
         if (sail != null)
-            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, sailRotateSpeed * 0.1f
-            * (Time.fixedDeltaTime / 0.02f));
+            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, sailRotateSpeed * 0.1f);
     }
 }
