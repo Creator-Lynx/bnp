@@ -73,17 +73,17 @@ Material:
     - _EmissionEnabled: 0
     - _FlipbookMode: 0
     - _GlossMapScale: 1
-    - _Glossiness: 10.7
+    - _Glossiness: 1.45
     - _GlossyReflections: 1
-    - _HalfShadowTreshold: 0.277
+    - _HalfShadowTreshold: 0.56
     - _LightingEnabled: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.663
-    - _RimThroshold: 0.1
-    - _ShadowTreshold: 0.435
+    - _RimAmount: 0.1
+    - _RimThroshold: 0.42
+    - _ShadowTreshold: 0.21
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
@@ -93,12 +93,12 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.4, g: 0.4, b: 0.4, a: 0.4}
+    - _AmbientColor: {r: 1, g: 1, b: 1, a: 0.4}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.24132253, g: 0.26592258, b: 0.2735849, a: 0.69411767}
+    - _Color: {r: 0.374466, g: 0.47265926, b: 0.5188679, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecularColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0.9}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.9}
   m_BuildTextureStacks: []
