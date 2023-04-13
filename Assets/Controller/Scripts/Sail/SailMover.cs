@@ -15,6 +15,8 @@ public class SailMover : SelfSaver
     Transform sail;
     [SerializeField]
     SkinnedMeshRenderer sailRenderer;
+    [SerializeField]
+    float sailWeghtLerpRate = 10;
     [Space(30)]
     [SerializeField]
     float threasholdRotation = 90f, forceRotatingAngle = 1f;
@@ -155,13 +157,14 @@ public class SailMover : SelfSaver
 
     }
     [SerializeField] Vector3 currentVel;
-
+    float sailShapeWeight = 0;
     void ForceMoveByCurrentDirection()
     {
         float dot = Vector3.Dot(WindDirection, handledDirection);
         //Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
         float modifiedDot = dot >= 0 ? dot : 0f;
-        sailRenderer.SetBlendShapeWeight(0, modifiedDot * 100);
+        sailShapeWeight = Mathf.Lerp(sailShapeWeight, modifiedDot * 100, Time.deltaTime * sailWeghtLerpRate);
+        sailRenderer.SetBlendShapeWeight(0, sailShapeWeight);
         Vector3 resultForceDirection = handledDirection * modifiedDot;
         //Debug.DrawRay(transform.position, WindDirection * 5f, Color.green);
         //Debug.Log(dot);
