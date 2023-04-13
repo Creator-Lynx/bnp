@@ -163,7 +163,7 @@ public class SailMover : SelfSaver
         float dot = Vector3.Dot(WindDirection, handledDirection);
         //Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
         float modifiedDot = dot >= 0 ? dot : 0f;
-        sailShapeWeight = Mathf.Lerp(sailShapeWeight, modifiedDot * 100, Time.deltaTime * sailWeghtLerpRate);
+        sailShapeWeight = Mathf.Clamp(Mathf.Lerp(sailShapeWeight, modifiedDot * 100, Time.deltaTime * sailWeghtLerpRate), 0, 150);
         sailRenderer.SetBlendShapeWeight(0, sailShapeWeight);
         Vector3 resultForceDirection = handledDirection * modifiedDot;
         //Debug.DrawRay(transform.position, WindDirection * 5f, Color.green);
