@@ -321,6 +321,7 @@ MonoBehaviour:
   windForce: 10
   sailRotateSpeed: 0.55
   sail: {fileID: 3770052409860039151}
+  sailRenderer: {fileID: 3770052409147683173}
   threasholdRotation: 30
   forceRotatingAngle: 0.6
   windForcePostModifier:
