@@ -11717,6 +11717,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: sailRotateSpeed
+      value: 5.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770052409976983129, guid: 1af7bd3694715d14c8bea3eff7aff481,
+        type: 3}
+      propertyPath: sailWeghtLerpRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983132, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_RootOrder
