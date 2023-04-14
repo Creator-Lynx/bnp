@@ -186,6 +186,6 @@ public class SailMover : SelfSaver
             sailAngle = 180 - sailAngle;
         Quaternion sailRotation = Quaternion.Euler(0, sailAngle, 0);
         if (sail != null)
-            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, sailRotateSpeed * 0.1f);
+            sail.transform.localRotation = Quaternion.Slerp(sail.transform.localRotation, sailRotation, sailRotateSpeed * Time.deltaTime);
     }
 }
