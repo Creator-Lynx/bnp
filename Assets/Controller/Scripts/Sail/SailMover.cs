@@ -160,9 +160,12 @@ public class SailMover : SelfSaver
     float sailShapeWeight = 0;
     void ForceMoveByCurrentDirection()
     {
-        float dot = Vector3.Dot(WindDirection, handledDirection);
+        float dot = Vector3.Dot(WindDirection.normalized, handledDirection);
         //Debug.DrawRay(transform.position, WindDirection * 5, Color.magenta);
-        float modifiedDot = dot >= 0 ? dot : 0f;
+        float modifiedDot = dot >= 0 ? 0.25f : 0f;
+        modifiedDot = dot >= 0.25f ? 0.5f : modifiedDot;
+        modifiedDot = dot >= 0.5f ? 1 : modifiedDot;
+        modifiedDot = modifiedDot * WindDirection.magnitude;
         sailShapeWeight = Mathf.Clamp(Mathf.Lerp(sailShapeWeight, modifiedDot * 100, Time.deltaTime * sailWeghtLerpRate), 0, 150);
         sailRenderer.SetBlendShapeWeight(0, sailShapeWeight);
         Vector3 resultForceDirection = handledDirection * modifiedDot;
