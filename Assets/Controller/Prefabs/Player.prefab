@@ -319,10 +319,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUncontrolled: 0
   windForce: 5
-  sailRotateSpeed: 0.55
+  sailRotateSpeed: 5.82
   sail: {fileID: 3770052409860039151}
   sailRenderer: {fileID: 3770052409147683173}
-  sailWeghtLerpRate: 10
+  sailWeghtLerpRate: 5
   threasholdRotation: 30
   forceRotatingAngle: 0.6
   windForcePostModifier:
@@ -685,7 +685,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
         type: 3}
       propertyPath: m_Name
-      value: boat
+      value: boat0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ea13f160e8e9924a9baf8d8fdf3dd73,
         type: 3}
@@ -915,7 +915,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1edcb52f577060c4ca2381e08da9a105,
         type: 3}
       propertyPath: m_Name
-      value: boat2
+      value: boat
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1edcb52f577060c4ca2381e08da9a105,
         type: 3}
@@ -1002,6 +1002,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ad634bcbe6e608b438bf99c4ff03c1eb, type: 2}
+    - target: {fileID: 7317951168888701867, guid: 1edcb52f577060c4ca2381e08da9a105,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8882424000515941739, guid: 1edcb52f577060c4ca2381e08da9a105,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
