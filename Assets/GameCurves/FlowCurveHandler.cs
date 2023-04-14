@@ -11,7 +11,7 @@ public class FlowCurveHandler : MonoBehaviour
     [SerializeField]
     float lerpSpeed = 0.5f, findStep = 0.05f, offset = 0.5f;
     [SerializeField]
-    float maxFlowDistance = 2f, minForceAtDistanceThreshold = .5f;
+    float maxFlowDistance = 2f; //minForceAtDistanceThreshold = .5f;
     [SerializeField]
     GameCurve curve;
     public static GameCurve FlowCurve
@@ -28,7 +28,7 @@ public class FlowCurveHandler : MonoBehaviour
     public static float ToFlowDistance;
     public static Vector3 ToFlowForce;
     [SerializeField]
-    AnimationCurve toFlowForceCurve;
+    AnimationCurve toFlowForceCurve, flowForceInterpolationCurve;
 
     [SerializeField] GameObject flowArrowPrefab;
     void Awake()
@@ -73,8 +73,9 @@ public class FlowCurveHandler : MonoBehaviour
         if (ToFlowDistance > 0) toFlowK = ToFlowDistance;
         toFlowK = toFlowForceCurve.Evaluate(toFlowK);
         ToFlowForce *= toFlowK;
-        if (ToFlowDistance < minForceAtDistanceThreshold) ToFlowDistance = minForceAtDistanceThreshold;
-
+        //if (ToFlowDistance < minForceAtDistanceThreshold) ToFlowDistance = minForceAtDistanceThreshold;
+        //analog interpolation like toFlowForce. With same limitation from above line.
+        ToFlowDistance = flowForceInterpolationCurve.Evaluate(ToFlowDistance);
         WaterVector = dir.normalized * targetPos.y * ToFlowDistance;
     }
 
