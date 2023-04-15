@@ -33510,6 +33510,86 @@ PrefabInstance:
       propertyPath: arrowsParent
       value: 
       objectReference: {fileID: 40684633}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[1].time
+      value: 0.88467556
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[2].time
+      value: 1.0010376
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[1].value
+      value: 0.58023894
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[0].inSlope
+      value: 3.4528923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[1].inSlope
+      value: 0.4443778
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[2].inSlope
+      value: -0.08506458
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[0].outSlope
+      value: 3.4528923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[1].inWeight
+      value: 0.28664327
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[1].outSlope
+      value: 0.4443778
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[2].inWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[2].outSlope
+      value: -0.08506458
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[0].outWeight
+      value: 0.2139461
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[1].outWeight
+      value: 0.51579785
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448348031583568416, guid: cb910c1b339aaff44922e7988d7ad7a2,
+        type: 3}
+      propertyPath: toFlowForceCurve.m_Curve.Array.data[2].weightedMode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6448348031583568419, guid: cb910c1b339aaff44922e7988d7ad7a2,
         type: 3}
       propertyPath: m_Name

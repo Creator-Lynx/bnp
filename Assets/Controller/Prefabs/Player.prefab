@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUncontrolled: 0
   windForce: 5
-  sailRotateSpeed: 5.82
+  sailRotateSpeed: 7.3
   sail: {fileID: 3770052409860039151}
   sailRenderer: {fileID: 3770052409147683173}
   sailWeghtLerpRate: 5
