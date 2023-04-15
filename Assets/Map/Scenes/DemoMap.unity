@@ -11772,11 +11772,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3770052409976983134, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: ToFlowForceValue
-      value: 5.54
-      objectReference: {fileID: 0}
     - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: bar
