@@ -9,6 +9,8 @@ public class CheckPointReturn : MonoBehaviour
     unslowingTime = 1f,
     graingTime = 1f,
     ungraingTime = 1f;
+
+    public static bool isPausedCorutine;
     [SerializeField]
     PostProcessVolume grayScreenVolume;
     public void StartReturn()
