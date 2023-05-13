@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuButtonHider : MonoBehaviour
+public class PauseGame : MonoBehaviour
 {
     [SerializeField]
     public bool IsMenuOpen = true;
@@ -49,11 +49,11 @@ public class MenuButtonHider : MonoBehaviour
         Cursor.visible = true;
 #endif
         IsMenuOpen = true;
-        PauseGame();
+        Pause();
     }
     [SerializeField]
     UnityEvent OnMenuShowing, OnMenuHidding;
-    public void PauseGame()
+    public void Pause()
     {
         if (SceneManager.GetActiveScene().buildIndex != 1)
             Time.timeScale = 0;

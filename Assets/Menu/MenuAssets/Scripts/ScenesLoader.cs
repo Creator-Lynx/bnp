@@ -22,7 +22,7 @@ public class ScenesLoader : MonoBehaviour
     [SerializeField]
     AudioListener localCameraListener;
     [SerializeField]
-    MenuButtonHider menuButton;
+    PauseGame menuButton;
     [SerializeField]
     Animator fadeScreen, canvasMenu;
     static ScenesLoader instance;
