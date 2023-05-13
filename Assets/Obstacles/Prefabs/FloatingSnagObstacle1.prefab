@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb9f2e51537e2d4090137072bbbaba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  t: 0
   target: {fileID: 0}
   lerpSpeed: 3.57
   findStep: 0.15
@@ -232,7 +233,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a3e2a7aeb0e9b494f94b2bb950d11a30, type: 2}
+      objectReference: {fileID: 2100000, guid: 4dd70ea0a8992b24e9429872c1197be1, type: 2}
     - target: {fileID: -5754084199372789682, guid: dede56168b9ec3545b7da153b3e81798,
         type: 3}
       propertyPath: m_Mesh
