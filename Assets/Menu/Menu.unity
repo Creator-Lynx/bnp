@@ -2363,7 +2363,7 @@ PrefabInstance:
     - target: {fileID: 8244470019863299515, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}
       propertyPath: m_AnimationTriggers.m_DisabledTrigger
-      value: DisableMenuButton
+      value: Disabled
       objectReference: {fileID: 0}
     - target: {fileID: 8244470019863299515, guid: 68c68edaed4c24449a449210a115e413,
         type: 3}

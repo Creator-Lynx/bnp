@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,16 +12,24 @@ public class PauseGame : MonoBehaviour
     void Start()
     {
 #if PLATFORM_STANDALONE
-        GetComponent<Button>().interactable = false;
+        //GetComponent<Button>().interactable = false;
+        DeactivateVisualUI();
 #endif
         instance = this;
     }
 
+    void DeactivateVisualUI()
+    {
+        GetComponent<Button>().enabled = false;
+        GetComponent<Animator>().enabled = false;
+        GetComponent<Image>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
 
     void Update()
     {
 #if PLATFORM_STANDALONE
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) & !IsChangingDelayed)
         {
             if (IsMenuOpen)
             {
@@ -43,6 +52,7 @@ public class PauseGame : MonoBehaviour
 #endif
         IsMenuOpen = false;
         ContinueGame();
+        StartCoroutine(MenuChangingDelay());
     }
     public void ShowMenu()
     {
@@ -51,6 +61,7 @@ public class PauseGame : MonoBehaviour
 #endif
         IsMenuOpen = true;
         Pause();
+        StartCoroutine(MenuChangingDelay());
     }
     public UnityEvent OnMenuShowing, OnMenuHidding;
     public void Pause()
@@ -61,5 +72,15 @@ public class PauseGame : MonoBehaviour
     public void ContinueGame()
     {
         Time.timeScale = 1;
+    }
+
+    bool IsChangingDelayed = false;
+    IEnumerator MenuChangingDelay()
+    {
+        GetComponent<Button>().interactable = false;
+        IsChangingDelayed = true;
+        yield return new WaitForSecondsRealtime(0.5f);
+        GetComponent<Button>().interactable = true;
+        IsChangingDelayed = false;
     }
 }
