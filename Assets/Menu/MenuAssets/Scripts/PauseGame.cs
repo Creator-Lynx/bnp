@@ -7,12 +7,13 @@ public class PauseGame : MonoBehaviour
 {
     [SerializeField]
     public bool IsMenuOpen = true;
-
+    public static PauseGame instance;
     void Start()
     {
 #if PLATFORM_STANDALONE
         GetComponent<Button>().interactable = false;
 #endif
+        instance = this;
     }
 
 
@@ -51,8 +52,7 @@ public class PauseGame : MonoBehaviour
         IsMenuOpen = true;
         Pause();
     }
-    [SerializeField]
-    UnityEvent OnMenuShowing, OnMenuHidding;
+    public UnityEvent OnMenuShowing, OnMenuHidding;
     public void Pause()
     {
         if (SceneManager.GetActiveScene().buildIndex != 1)

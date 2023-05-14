@@ -10,7 +10,7 @@ public class CheckPointReturn : MonoBehaviour
     graingTime = 1f,
     ungraingTime = 1f;
 
-    public static bool isPausedCorutine;
+
     [SerializeField]
     PostProcessVolume grayScreenVolume;
     public void StartReturn()
@@ -57,9 +57,17 @@ public class CheckPointReturn : MonoBehaviour
         float t = 0;
         while (t < sec)
         {
-            t += Time.unscaledDeltaTime;
-            Time.timeScale = Mathf.InverseLerp(-0.2f, sec, t);
-            yield return new WaitForEndOfFrame();
+            if (PauseGame.instance.IsMenuOpen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            else
+            {
+                t += Time.unscaledDeltaTime;
+                Time.timeScale = Mathf.InverseLerp(-0.2f, sec, t);
+                yield return new WaitForEndOfFrame();
+            }
+
         }
     }
     IEnumerator GraingScreen(float sec)
@@ -77,9 +85,16 @@ public class CheckPointReturn : MonoBehaviour
         float t = 0;
         while (t < sec)
         {
-            t += Time.unscaledDeltaTime;
-            grayScreenVolume.weight = Mathf.InverseLerp(sec, 0, t);
-            yield return new WaitForEndOfFrame();
+            if (PauseGame.instance.IsMenuOpen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            else
+            {
+                t += Time.unscaledDeltaTime;
+                grayScreenVolume.weight = Mathf.InverseLerp(sec, 0, t);
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
     IEnumerator Vibrate()
