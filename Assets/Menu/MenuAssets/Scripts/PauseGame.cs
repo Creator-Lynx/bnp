@@ -77,9 +77,17 @@ public class PauseGame : MonoBehaviour
     bool IsChangingDelayed = false;
     IEnumerator MenuChangingDelay()
     {
+        DeactivateMenuChanging();
+        yield return new WaitForSecondsRealtime(0.5f);
+        ActivateMenuChanging();
+    }
+    public void DeactivateMenuChanging()
+    {
         GetComponent<Button>().interactable = false;
         IsChangingDelayed = true;
-        yield return new WaitForSecondsRealtime(0.5f);
+    }
+    public void ActivateMenuChanging()
+    {
         GetComponent<Button>().interactable = true;
         IsChangingDelayed = false;
     }

@@ -22,6 +22,7 @@ public class BasicGameManager : MonoBehaviour
                 if (animators[i]?.name == "LoadScreen") loadScreen = animators?[i];
                 if (animators[i]?.name == "WinAndLose") endScreen = animators?[i];
             }
+        PauseGame.instance?.ActivateMenuChanging();
 #if PLATFORM_STANDALONE
         Cursor.visible = false;
 #endif
@@ -35,6 +36,7 @@ public class BasicGameManager : MonoBehaviour
 #if PLATFORM_STANDALONE
         Cursor.visible = true;
 #endif
+        PauseGame.instance?.DeactivateMenuChanging();
     }
 
     public static void LoseLevel()
@@ -44,6 +46,7 @@ public class BasicGameManager : MonoBehaviour
 #if PLATFORM_STANDALONE
         Cursor.visible = true;
 #endif
+        PauseGame.instance?.DeactivateMenuChanging();
     }
     void StartCor()
     {
