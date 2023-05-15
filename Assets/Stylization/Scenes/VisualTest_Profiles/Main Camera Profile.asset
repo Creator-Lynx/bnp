@@ -1430,8 +1430,8 @@ MonoBehaviour:
     value: 1
   dirtTexture:
     overrideState: 0
-    value: {fileID: 2800000, guid: c39f9e8ff84331441a656e7ce2c3f1f2, type: 3}
+    value: {fileID: 2800000, guid: d8b7e6551c14fca43a77378636143b06, type: 3}
     defaultState: 1
   dirtIntensity:
     overrideState: 0
-    value: 1
+    value: 1.27
