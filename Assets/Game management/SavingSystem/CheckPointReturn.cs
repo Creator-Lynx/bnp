@@ -57,7 +57,7 @@ public class CheckPointReturn : MonoBehaviour
         float t = 0;
         while (t < sec)
         {
-            if (PauseGame.instance.IsMenuOpen)
+            if (PauseGame.instance != null && PauseGame.instance.IsMenuOpen)
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -85,7 +85,7 @@ public class CheckPointReturn : MonoBehaviour
         float t = 0;
         while (t < sec)
         {
-            if (PauseGame.instance.IsMenuOpen)
+            if (PauseGame.instance != null && PauseGame.instance.IsMenuOpen)
             {
                 yield return new WaitForEndOfFrame();
             }
