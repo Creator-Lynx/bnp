@@ -28,10 +28,13 @@ public class PlayerHitPointsController : MonoBehaviour
     float oneHPInDecimal = .1f;
     [SerializeField]
     CheckPointReturn checkPointReturn;
+
+    ParticleSystem damageParticle;
     void Start()
     {
         SetAttempts();
         bar.OnHpChange(HP * oneHPInDecimal);
+        damageParticle = Camera.main.GetComponentInChildren<ParticleSystem>();
     }
 
     void SetAttempts()
@@ -48,6 +51,7 @@ public class PlayerHitPointsController : MonoBehaviour
 #if !PLATFORM_STANDALONE
         Handheld.Vibrate();
 #endif
+        damageParticle.Play();
         if (HP <= 0)
         {
             HP = maxHP;
