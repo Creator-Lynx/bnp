@@ -53,10 +53,7 @@ public class PlayerHitPointsController : MonoBehaviour
         Handheld.Vibrate();
 #endif
         screenDamageParticle.Play();
-        Debug.Log(selfDamageParticle.name);
         selfDamageParticle.Play();
-        //selfDamageParticle.TriggerSubEmitter(0);
-        //selfDamageParticle.TriggerSubEmitter(1);
         if (HP <= 0)
         {
             HP = maxHP;
