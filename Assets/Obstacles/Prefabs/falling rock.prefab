@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 1040590696191697898}
   - component: {fileID: 2996051471256377120}
   - component: {fileID: 4491647188632585419}
-  - component: {fileID: 4491647188632585418}
-  - component: {fileID: 4491647188632585417}
   m_Layer: 0
   m_Name: falling rock
   m_TagString: Untagged
@@ -31,7 +29,8 @@ Transform:
   m_LocalRotation: {x: -0.753705, y: 0.14862274, z: -0.18923941, w: 0.61157864}
   m_LocalPosition: {x: -9.7, y: 17, z: 134.2}
   m_LocalScale: {x: 100, y: 100.000015, z: 254.76007}
-  m_Children: []
+  m_Children:
+  - {fileID: 7435547130783510674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -120.043, y: -68.88901, z: 65.481}
@@ -100,13 +99,45 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4491647188632585418
+--- !u!1 &5550509525120360984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7435547130783510674}
+  - component: {fileID: 3277122971022403581}
+  - component: {fileID: 538226470048383759}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7435547130783510674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550509525120360984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.00142}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_Children: []
+  m_Father: {fileID: 4170104749080325199}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3277122971022403581
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3644784840146581237}
+  m_GameObject: {fileID: 5550509525120360984}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -114,13 +145,13 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6413750109319685827, guid: becbc416d4017004ba29e489d9915ee5, type: 3}
---- !u!114 &4491647188632585417
+--- !u!114 &538226470048383759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3644784840146581237}
+  m_GameObject: {fileID: 5550509525120360984}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c1a3182583a18b4baf90303bb5c7152, type: 3}

@@ -148,13 +148,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8345517510342798897}
-  m_LocalRotation: {x: 0.16185115, y: -0, z: 0.000000007450579, w: 0.9868152}
+  m_LocalRotation: {x: 0.16183037, y: 0.0025945827, z: -0.015819378, w: 0.98668844}
   m_LocalPosition: {x: -0.00704, y: -0.01201, z: 0.00452}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.67576, y: 1, z: 0.82202}
   m_Children: []
   m_Father: {fileID: 3284521095192896183}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 18.629, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.629, y: 0, z: -1.837}
 --- !u!65 &8345517510342798903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.12
+  m_Radius: 0.06
   m_Height: 1.32
   m_Direction: 1
   m_Center: {x: -0.0000012722087, y: 0.30031225, z: -0.000000029361695}
@@ -263,13 +263,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8345517510616466561}
-  m_LocalRotation: {x: 0.30917072, y: -0.44933715, z: 0.50839555, w: 0.666366}
+  m_LocalRotation: {x: 0.3186546, y: -0.4426621, z: 0.4941125, w: 0.6770247}
   m_LocalPosition: {x: -0.02071, y: 0.00017, z: 0.00543}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 3284521095192896183}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 60.334, y: -35.084, z: 53.861}
+  m_LocalEulerAnglesHint: {x: 60.334, y: -35.084, z: 51.424}
 --- !u!136 &8345517510616466567
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -338,8 +338,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.11831016
-  m_Height: 1.2436087
+  m_Radius: 0.03
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: -0.012063815, y: -0.24979134, z: 0.01624736}
 --- !u!114 &8345517510620697277
@@ -396,7 +396,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.2806493
+  m_Radius: 0.16
   m_Height: 1.9890592
   m_Direction: 1
   m_Center: {x: -0.0000007240962, y: 0.12293622, z: -0.000000024959503}
@@ -454,7 +454,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.11831016
+  m_Radius: 0.06
   m_Height: 1.3264291
   m_Direction: 1
   m_Center: {x: -0.012064405, y: -0.20838119, z: 0.016247358}
@@ -512,8 +512,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.06
-  m_Height: 0.85
+  m_Radius: 0.03
+  m_Height: 0.7
   m_Direction: 1
   m_Center: {x: -0.0000012722087, y: 0.30031225, z: -0.000000029361695}
 --- !u!114 &8345517511494943076
@@ -570,7 +570,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.12
+  m_Radius: 0.06
   m_Height: 1.32
   m_Direction: 1
   m_Center: {x: -0.0000012722087, y: 0.30031225, z: -0.000000029361695}
