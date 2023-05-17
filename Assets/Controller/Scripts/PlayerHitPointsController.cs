@@ -29,12 +29,13 @@ public class PlayerHitPointsController : MonoBehaviour
     [SerializeField]
     CheckPointReturn checkPointReturn;
 
-    ParticleSystem damageParticle;
+    ParticleSystem screenDamageParticle, selfDamageParticle;
     void Start()
     {
         SetAttempts();
         bar.OnHpChange(HP * oneHPInDecimal);
-        damageParticle = Camera.main.GetComponentInChildren<ParticleSystem>();
+        screenDamageParticle = Camera.main.GetComponentInChildren<ParticleSystem>();
+        selfDamageParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     void SetAttempts()
@@ -51,7 +52,11 @@ public class PlayerHitPointsController : MonoBehaviour
 #if !PLATFORM_STANDALONE
         Handheld.Vibrate();
 #endif
-        damageParticle.Play();
+        screenDamageParticle.Play();
+        Debug.Log(selfDamageParticle.name);
+        selfDamageParticle.Play();
+        //selfDamageParticle.TriggerSubEmitter(0);
+        //selfDamageParticle.TriggerSubEmitter(1);
         if (HP <= 0)
         {
             HP = maxHP;
