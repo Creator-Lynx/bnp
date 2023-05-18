@@ -12723,21 +12723,6 @@ PrefabInstance:
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 1944650707}
-    - target: {fileID: 3770052409860039151, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409860039151, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409860039151, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983128, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_Name
@@ -12823,28 +12808,12 @@ PrefabInstance:
       propertyPath: attemptsImages.Array.data[2]
       value: 
       objectReference: {fileID: 1579228035}
-    - target: {fileID: 5307471486553293842, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: SubModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5307471486553293842, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5634749775572129934, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8615493463286665895, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 1944650707}
-    m_RemovedComponents:
-    - {fileID: 4173144232942784952, guid: 1af7bd3694715d14c8bea3eff7aff481, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af7bd3694715d14c8bea3eff7aff481, type: 3}
 --- !u!4 &817934168 stripped
 Transform:

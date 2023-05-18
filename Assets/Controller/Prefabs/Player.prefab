@@ -10332,7 +10332,7 @@ GameObject:
   - component: {fileID: 3143825019088717280}
   m_Layer: 7
   m_Name: boat_collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11227,7 +11227,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -14169,7 +14169,7 @@ ParticleSystem:
     primitives: []
   SubModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 8615493463286665895}
@@ -15702,23 +15702,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8072937899510453807}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8991929162999982974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1edcb52f577060c4ca2381e08da9a105,
-    type: 3}
-  m_PrefabInstance: {fileID: 8072937899510453807}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &4173144232942784952
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8991929162999982974}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8536425139288874787, guid: 1edcb52f577060c4ca2381e08da9a105, type: 3}
