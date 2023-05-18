@@ -16,7 +16,7 @@ public class GameCurve : MonoBehaviour
     [SerializeField]
     BezieSegment[] segments;
 
-    void Start()
+    void Awake()
     {
         AutoSetAllControls();
         segments = new BezieSegment[segmentsNumber];
