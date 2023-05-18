@@ -12770,21 +12770,6 @@ PrefabInstance:
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 1944650707}
-    - target: {fileID: 3770052409147683173, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: -0.0014338179
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409147683173, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770052409147683173, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.0014338179
-      objectReference: {fileID: 0}
     - target: {fileID: 3770052409976983128, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: m_Name
