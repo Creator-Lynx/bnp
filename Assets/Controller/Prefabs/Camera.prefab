@@ -4992,7 +4992,7 @@ GameObject:
   - component: {fileID: 6563210554375829121}
   - component: {fileID: 5782681018853266645}
   m_Layer: 6
-  m_Name: Particle System
+  m_Name: Damage_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5029,7 +5029,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5639,8 +5639,8 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 1
-    type: 4
+    enabled: 0
+    type: 20
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -5649,7 +5649,7 @@ ParticleSystem:
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
-    placementMode: 0
+    placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
     m_MeshSpawn:
@@ -5841,7 +5841,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -8783,11 +8783,11 @@ ParticleSystem:
     primitives: []
   SubModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 0}
-      type: 0
+      type: 3
       properties: 0
       emitProbability: 1
   LightsModule:
@@ -9852,6 +9852,7 @@ GameObject:
   - component: {fileID: 1608020740}
   - component: {fileID: 2366420742422651342}
   - component: {fileID: 7672166739965567638}
+  - component: {fileID: 1786648720}
   m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
@@ -9900,7 +9901,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 300
-  field of view: 65
+  field of view: 75
   orthographic: 0
   orthographic size: 16.05
   m_Depth: 0
@@ -9940,7 +9941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 2e4efa646e2ab6541ace05921664fd4f, type: 2}
   isGlobal: 1
-  blendDistance: 0
+  blendDistance: 3.57
   weight: 1
   priority: 0
 --- !u!114 &1608020733
@@ -9995,11 +9996,11 @@ MonoBehaviour:
   antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.703
-    sharpness: 0
-    stationaryBlending: 0.776
-    motionBlending: 0.605
+    sharpness: 2.03
+    stationaryBlending: 0
+    motionBlending: 0.99
   subpixelMorphologicalAntialiasing:
-    quality: 2
+    quality: 0
   fastApproximateAntialiasing:
     fastMode: 0
     keepAlpha: 0
@@ -10071,6 +10072,30 @@ MonoBehaviour:
   cameraCurveFolower: {fileID: 0}
   springJointer: {fileID: 0}
   springTarget: {fileID: 0}
+--- !u!114 &1786648720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872314202615758878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6343617c6a315c54184d4afca1faede2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curvePos:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveRot:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &7872314201227235200
 PrefabInstance:
   m_ObjectHideFlags: 0
