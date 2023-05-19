@@ -8,7 +8,7 @@ public class ObstacleBehavior : MonoBehaviour
         if (damageble)
         {
             Debug.Log(other.impulse.magnitude + "\n" + other.relativeVelocity.magnitude);
-            if (other.impulse.sqrMagnitude > Mathf.Pow(damageble.impulseDamageTreashold, 2))
+            if (other.relativeVelocity.sqrMagnitude > Mathf.Pow(damageble.impulseDamageTreashold, 2))
                 damageble.SetDamage(1);
         }
     }

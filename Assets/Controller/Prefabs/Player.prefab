@@ -10247,7 +10247,7 @@ MonoBehaviour:
   damageblaDelay: 1
   oneHPInDecimal: 0.1
   checkPointReturn: {fileID: 0}
-  impulseDamageTreashold: 2.3
+  impulseDamageTreashold: 5.5
 --- !u!111 &8826230782513646303
 Animation:
   m_ObjectHideFlags: 0

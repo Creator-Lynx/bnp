@@ -92,6 +92,7 @@ public class PlayerHitPointsController : MonoBehaviour
     {
         GetComponent<PaddleMover>().isUncontrolled = true;
         GetComponent<SailMover>().isUncontrolled = true;
+        isDamageble = false;
     }
 
     IEnumerator DamageblaDelay()
