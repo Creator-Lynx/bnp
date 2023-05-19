@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //[ExecuteAlways]
@@ -29,7 +27,9 @@ public class CameraCurveMover : MonoBehaviour
     void SelfMoving()
     {
         Vector3 dir = curve.GetDirectionByT(t);
-        Vector3 tptr = target.position - curve.GetPointByT(t);
+        Vector3 modifiedTargetPos = target.position;
+        modifiedTargetPos.y = curve.GetPointByT(t).y;
+        Vector3 tptr = modifiedTargetPos - curve.GetPointByT(t);
         float dotDist = Vector3.Dot(tptr, dir);
         if (dotDist > offset)
         {

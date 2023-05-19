@@ -20280,16 +20280,6 @@ PrefabInstance:
       propertyPath: springFollower
       value: 
       objectReference: {fileID: 317982429}
-    - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
-        type: 3}
-      propertyPath: rotationLerpSpeed
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423575414454934826, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
-        type: 3}
-      propertyPath: springFollowerLerpRate
-      value: 8.06
-      objectReference: {fileID: 0}
     - target: {fileID: 8447140016963130130, guid: 9d6fd7a585d04a04eb205d6329cf4d78,
         type: 3}
       propertyPath: m_Name
@@ -20350,8 +20340,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8447140016963130140, guid: 9d6fd7a585d04a04eb205d6329cf4d78, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6fd7a585d04a04eb205d6329cf4d78, type: 3}
 --- !u!4 &1342305314 stripped
 Transform:
