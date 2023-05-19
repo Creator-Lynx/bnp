@@ -5199,6 +5199,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3125975922228883152, guid: 3db94fbb63f2312449ff46d0c670d594,
+        type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7672166739965567638, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
       propertyPath: springTarget
