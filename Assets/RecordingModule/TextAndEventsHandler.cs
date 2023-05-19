@@ -49,7 +49,10 @@ public class TextAndEventsHandler : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
-
+    public void PlayAnimation(Animation animated)
+    {
+        animated.Play();
+    }
 
 
 }
