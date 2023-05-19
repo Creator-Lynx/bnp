@@ -20,6 +20,7 @@ public class TextAndEventsHandler : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject.transform.parent.parent);
         textComponent = GetComponent<TextMeshProUGUI>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -37,7 +38,7 @@ public class TextAndEventsHandler : MonoBehaviour
         textComponent.text = "";
         for (int i = 0; i < text.Length; i++)
         {
-            yield return new WaitForSecondsRealtime(timeToShowSimbol + UnityEngine.Random.Range(0f, 2f * timeToShowSimbol));
+            yield return new WaitForSeconds(timeToShowSimbol + UnityEngine.Random.Range(0f, 2f * timeToShowSimbol));
             textComponent.text = textComponent.text + text[i];
             audioSource.Play();
         }
