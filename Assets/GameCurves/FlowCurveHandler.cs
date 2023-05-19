@@ -31,7 +31,7 @@ public class FlowCurveHandler : MonoBehaviour
     AnimationCurve toFlowForceCurve, flowForceInterpolationCurve;
 
     [SerializeField] GameObject flowArrowPrefab;
-    void Start()
+    void Awake()
     {
 
         if (instance != null) Debug.LogException(new Exception("More than one FlowCurveHandler on scene"));

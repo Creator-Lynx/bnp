@@ -10,7 +10,7 @@ public class TextAndEventsHandler : MonoBehaviour
 {
     [SerializeField] float timeToShowSimbol = 0.1f;
     [Space(30)]
-    [TextArea(minLines: 4, maxLines: 8)]
+
     [SerializeField]
     UnityEvent[] Events;
     TextMeshProUGUI textComponent;
@@ -26,11 +26,11 @@ public class TextAndEventsHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-
-        {
-            Events[iterator].Invoke();
-        }
+        if (Input.GetKeyDown(KeyCode.Space)) Events[iterator++].Invoke();
+    }
+    public void ShowText(string text)
+    {
+        StartCoroutine(TextShow(text));
     }
     public IEnumerator TextShow(string text)
     {
