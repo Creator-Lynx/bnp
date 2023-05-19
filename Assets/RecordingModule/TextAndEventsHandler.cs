@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Xml.Schema;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,11 +17,19 @@ public class TextAndEventsHandler : MonoBehaviour
     TextMeshProUGUI textComponent;
     AudioSource audioSource;
 
-    int iterator = 0;
+    static int iterator = 0;
+    static TextAndEventsHandler instance;
 
     void Awake()
     {
+        if (instance)
+        {
+            Destroy(gameObject.transform.parent.parent.gameObject);
+            return;
+        }
+        iterator = 0;
         DontDestroyOnLoad(gameObject.transform.parent.parent);
+        instance = this;
         textComponent = GetComponent<TextMeshProUGUI>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -31,6 +40,7 @@ public class TextAndEventsHandler : MonoBehaviour
     }
     public void ShowText(string text)
     {
+        StopAllCoroutines();
         StartCoroutine(TextShow(text));
     }
     public IEnumerator TextShow(string text)
@@ -52,6 +62,22 @@ public class TextAndEventsHandler : MonoBehaviour
     public void PlayAnimation(Animation animated)
     {
         animated.Play();
+    }
+
+    public void StartFadeMusic(AudioSource source)
+    {
+        StartCoroutine(FadeMusic(source, 1.5f));
+    }
+    public IEnumerator FadeMusic(AudioSource source, float time)
+    {
+        float timer = time;
+        while (timer > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            timer -= Time.deltaTime;
+            source.pitch = Mathf.Lerp(0.8f, 0, (-timer + time) / time);
+            source.volume = Mathf.Lerp(1f, 0, (-timer + time) / time);
+        }
     }
 
 
