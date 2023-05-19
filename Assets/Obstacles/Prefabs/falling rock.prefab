@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1040590696191697898}
   - component: {fileID: 2996051471256377120}
   - component: {fileID: 4491647188632585419}
+  - component: {fileID: 5678003519887125346}
   m_Layer: 0
   m_Name: falling rock
   m_TagString: Untagged
@@ -99,6 +100,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5678003519887125346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644784840146581237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1a3182583a18b4baf90303bb5c7152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5550509525120360984
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7435547130783510674}
   - component: {fileID: 3277122971022403581}
-  - component: {fileID: 538226470048383759}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -145,15 +157,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6413750109319685827, guid: becbc416d4017004ba29e489d9915ee5, type: 3}
---- !u!114 &538226470048383759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5550509525120360984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1a3182583a18b4baf90303bb5c7152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
