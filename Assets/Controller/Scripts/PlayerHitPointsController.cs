@@ -29,6 +29,9 @@ public class PlayerHitPointsController : MonoBehaviour
     [SerializeField]
     CheckPointReturn checkPointReturn;
 
+
+    public float impulseDamageTreashold = 3;
+
     ParticleSystem screenDamageParticle, selfDamageParticle;
     void Start()
     {

@@ -10235,9 +10235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4477b1d5c9de53e4495ea40b0ab51561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 8
   maxHP: 10
-  attempts: 3
+  attempts: 1
   bar: {fileID: 0}
   attemptsImages:
   - {fileID: 0}
@@ -10247,6 +10247,7 @@ MonoBehaviour:
   damageblaDelay: 1
   oneHPInDecimal: 0.1
   checkPointReturn: {fileID: 0}
+  impulseDamageTreashold: 2.3
 --- !u!111 &8826230782513646303
 Animation:
   m_ObjectHideFlags: 0

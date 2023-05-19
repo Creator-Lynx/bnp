@@ -7,7 +7,9 @@ public class ObstacleBehavior : MonoBehaviour
         PlayerHitPointsController damageble = other.collider.GetComponentInParent<PlayerHitPointsController>();
         if (damageble)
         {
-            damageble.SetDamage(1);
+            Debug.Log(other.impulse.magnitude + "\n" + other.relativeVelocity.magnitude);
+            if (other.impulse.sqrMagnitude > Mathf.Pow(damageble.impulseDamageTreashold, 2))
+                damageble.SetDamage(1);
         }
     }
 }

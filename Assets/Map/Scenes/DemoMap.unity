@@ -12709,19 +12709,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
-      propertyPath: HP
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
       propertyPath: bar
       value: 
       objectReference: {fileID: 821410682}
-    - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: attempts
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: checkPointReturn
@@ -17055,7 +17045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464743222, guid: 98a3aefc63247754c834744213316871, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.89999
+      value: -2.899994
       objectReference: {fileID: 0}
     - target: {fileID: 1638293318, guid: 98a3aefc63247754c834744213316871, type: 3}
       propertyPath: m_AnchoredPosition.x
