@@ -12790,19 +12790,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
-      propertyPath: HP
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
       propertyPath: bar
       value: 
       objectReference: {fileID: 821410682}
-    - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
-        type: 3}
-      propertyPath: attempts
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4269875557532553335, guid: 1af7bd3694715d14c8bea3eff7aff481,
         type: 3}
       propertyPath: checkPointReturn

@@ -9,7 +9,8 @@ public class WindSoundController : MonoBehaviour
     Transform windDirectionObject;
     [SerializeField]
     Transform soundSourceObject;
-
+    AudioLowPassFilter sourceLowPass;
+    Transform cameraTransform;
     [Header("Controll distance of sound source")]
     [Space(30)]
     [Range(0, 2)]
@@ -22,16 +23,66 @@ public class WindSoundController : MonoBehaviour
     [SerializeField]
     float soundSourceDistanceRange = 2;
 
-    [Header("Debugging wind force value")]
+    [Header("Debugging")]
+    [Space(10)]
     [SerializeField]
     float windForceValue;
+    [SerializeField]
+    bool enableRotationByWind = true;
+
+
+    [Header("Simulate rear sound")]
+    [Space(30)]
+    [SerializeField]
+    [Range(10, 22000)]
+    float basicLowPassCutoff = 2000;
+    [SerializeField]
+    [Range(10, 5000)]
+    float maximumLowPassCutoff = 2000;
+
+    [Header("Remaping")]
+    [SerializeField]
+    bool enableRemaping = false;
+    [SerializeField]
+    AnimationCurve remapThreasholdInterpolaitonCurve;
+
+    [Header("Experimental")]
+    [Space(30)]
+    [SerializeField]
+    bool enableExperimentalCurve;
+    [SerializeField]
+    AnimationCurve customCutoffCurve;
+
+    void Start()
+    {
+        sourceLowPass = GetComponentInChildren<AudioLowPassFilter>();
+        cameraTransform = Camera.main.transform;
+    }
 
     Vector3 tempVector = Vector3.zero;
     void Update()
     {
-        transform.rotation = windDirectionObject.rotation;
+        if (enableRotationByWind)
+            transform.rotation = windDirectionObject.rotation;
         tempVector.z = -soundSourceDistanceRange * Mathf.InverseLerp(maxWindForce, minWindForce, SailMover.GlobalFinalWindForce);
         windForceValue = SailMover.GlobalFinalWindForce;
         soundSourceObject.localPosition = tempVector;
+
+        //LOW PASS ============================
+
+        //obtain the angle of position. how we need to increas lowpass.
+        Vector3 horCameraVector = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up);
+        float scalar = Vector3.Dot(transform.forward, horCameraVector);
+        float t = scalar > 0 ? scalar : 0;
+
+
+        //applying frequency cutoff
+        float remapedT = enableRemaping ? remapThreasholdInterpolaitonCurve.Evaluate(t) : t;
+        sourceLowPass.cutoffFrequency = Mathf.Lerp(basicLowPassCutoff, maximumLowPassCutoff, remapedT);
+
+
+        //experimental
+        if (enableExperimentalCurve)
+            sourceLowPass.customCutoffCurve = customCutoffCurve;
     }
 }
