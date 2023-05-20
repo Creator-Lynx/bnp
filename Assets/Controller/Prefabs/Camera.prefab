@@ -81,19 +81,30 @@ MonoBehaviour:
   soundSourceDistanceRange: 3
   windForceValue: 0
   enableRotationByWind: 1
-  basicLowPassCutoff: 2000
-  maximumLowPassCutoff: 584
-  enableRemaping: 0
+  basicLowPassCutoff: 11310
+  maximumLowPassCutoff: 820
+  enableRemaping: 1
   remapThreasholdInterpolaitonCurve:
     serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  enableExperimentalCurve: 0
-  customCutoffCurve:
-    serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -123,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120489318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -0.952}
+  m_LocalPosition: {x: 0, y: -0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 949534837}
@@ -160,23 +171,41 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.025204726
       value: 1
-      inSlope: 1.0471089
-      outSlope: 1.0471089
+      inSlope: -15.005997
+      outSlope: -15.005997
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.15267175
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.7557373
-      value: 0.05987549
-      inSlope: 0.019195927
-      outSlope: 0.019195927
+      time: 0.065038815
+      value: 0.64738464
+      inSlope: -3.7514992
+      outSlope: -3.7514992
       tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.9745547
-      outWeight: 0.33333334
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5187002
+      value: 0.060302734
+      inSlope: -0.057712533
+      outSlope: -0.057712533
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25370374
+      outWeight: 0.22972813
+    - serializedVersion: 3
+      time: 1
+      value: 0.030716963
+      inSlope: -0.06669331
+      outSlope: -0.06669331
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -185,16 +214,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9831917
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.16539465
-      value: 1.001899
+      value: 0.862
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -243,13 +263,13 @@ AudioLowPassFilter:
   m_GameObject: {fileID: 1120489318}
   m_Enabled: 1
   serializedVersion: 3
-  m_LowpassResonanceQ: 1
+  m_LowpassResonanceQ: 1.5
   lowpassLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.22727273
+      value: 0.5341519
       inSlope: 0
       outSlope: 0
       tangentMode: 0

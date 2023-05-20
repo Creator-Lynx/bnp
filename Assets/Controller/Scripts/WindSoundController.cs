@@ -46,12 +46,6 @@ public class WindSoundController : MonoBehaviour
     [SerializeField]
     AnimationCurve remapThreasholdInterpolaitonCurve;
 
-    [Header("Experimental")]
-    [Space(30)]
-    [SerializeField]
-    bool enableExperimentalCurve;
-    [SerializeField]
-    AnimationCurve customCutoffCurve;
 
     void Start()
     {
@@ -64,7 +58,7 @@ public class WindSoundController : MonoBehaviour
     {
         if (enableRotationByWind)
             transform.rotation = windDirectionObject.rotation;
-        tempVector.z = -soundSourceDistanceRange * Mathf.InverseLerp(maxWindForce, minWindForce, SailMover.GlobalFinalWindForce);
+        tempVector.z = -soundSourceDistanceRange * Mathf.InverseLerp(maxWindForce, minWindForce, SailMover.GlobalFinalWindForce) + 0.2f;
         windForceValue = SailMover.GlobalFinalWindForce;
         soundSourceObject.localPosition = tempVector;
 
@@ -81,8 +75,5 @@ public class WindSoundController : MonoBehaviour
         sourceLowPass.cutoffFrequency = Mathf.Lerp(basicLowPassCutoff, maximumLowPassCutoff, remapedT);
 
 
-        //experimental
-        if (enableExperimentalCurve)
-            sourceLowPass.customCutoffCurve = customCutoffCurve;
     }
 }
