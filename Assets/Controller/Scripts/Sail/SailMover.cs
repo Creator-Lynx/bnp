@@ -58,8 +58,9 @@ public class SailMover : SelfSaver
             CurrentRandomState.forceRandomModifier, tmr / CurrentRandomState.randomForceTimer);
         float modifier = windForcePostModifier.Evaluate(interpolatedForceModifier) * modifierDelta + lowerRandomForceModifier;
         WindDirection = WindCurveHandler.WindVector * modifier;
-
+        GlobalFinalWindForce = WindDirection.magnitude;
     }
+    public static float GlobalFinalWindForce;
     [SerializeField]
     float interpolatedForceModifier;
     //random system ==============================================================================================
