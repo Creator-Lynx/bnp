@@ -76,9 +76,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windDirectionObject: {fileID: 0}
   soundSourceObject: {fileID: 1120489319}
-  minWindForce: 0.2
+  minWindForce: 0
   maxWindForce: 3
-  soundSourceDistanceRange: 3
+  soundSourceDistanceRange: 5
+  distanceLerpRate: 4.17
+  rotationLerpRate: 3.99
   windForceValue: 0
   enableRotationByWind: 1
   basicLowPassCutoff: 11310
@@ -90,12 +92,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 3.2642155
+      outSlope: 3.2642155
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.027579162
     - serializedVersion: 3
       time: 1
       value: 1
@@ -160,10 +162,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0
-  MinDistance: 1
-  MaxDistance: 15
+  MinDistance: 0.16
+  MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -171,35 +173,26 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.025204726
+      time: 0.06666667
       value: 1
-      inSlope: -15.005997
-      outSlope: -15.005997
+      inSlope: -1.5607384
+      outSlope: -1.5607384
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.3114414
     - serializedVersion: 3
-      time: 0.065038815
-      value: 0.64738464
-      inSlope: -3.7514992
-      outSlope: -3.7514992
+      time: 0.31382042
+      value: 0.35507202
+      inSlope: -0.9750517
+      outSlope: -0.9750517
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.20983301
       outWeight: 0
-    - serializedVersion: 3
-      time: 0.5187002
-      value: 0.060302734
-      inSlope: -0.057712533
-      outSlope: -0.057712533
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.25370374
-      outWeight: 0.22972813
     - serializedVersion: 3
       time: 1
-      value: 0.030716963
+      value: 0.06666667
       inSlope: -0.06669331
       outSlope: -0.06669331
       tangentMode: 0

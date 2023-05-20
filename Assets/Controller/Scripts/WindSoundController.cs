@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,15 @@ public class WindSoundController : MonoBehaviour
     [Range(0, 5)]
     [SerializeField]
     float soundSourceDistanceRange = 2;
+
+    [Header("Smoothed by lerping")]
+    [Space(10)]
+    [SerializeField]
+    [Range(2, 15)]
+    float distanceLerpRate = 5f;
+    [SerializeField]
+    [Range(2, 15)]
+    float rotationLerpRate = 5f;
 
     [Header("Debugging")]
     [Space(10)]
@@ -57,8 +67,9 @@ public class WindSoundController : MonoBehaviour
     void Update()
     {
         if (enableRotationByWind)
-            transform.rotation = windDirectionObject.rotation;
-        tempVector.z = -soundSourceDistanceRange * Mathf.InverseLerp(maxWindForce, minWindForce, SailMover.GlobalFinalWindForce) + 0.2f;
+            transform.rotation = Quaternion.Slerp(transform.rotation, windDirectionObject.rotation, rotationLerpRate * Time.deltaTime);
+        float forceToRange = -soundSourceDistanceRange * Mathf.InverseLerp(maxWindForce, minWindForce, SailMover.GlobalFinalWindForce) + 0.2f;
+        tempVector.z = Mathf.SmoothStep(tempVector.z, forceToRange, distanceLerpRate * Time.deltaTime);
         windForceValue = SailMover.GlobalFinalWindForce;
         soundSourceObject.localPosition = tempVector;
 
@@ -68,7 +79,6 @@ public class WindSoundController : MonoBehaviour
         Vector3 horCameraVector = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up);
         float scalar = Vector3.Dot(transform.forward, horCameraVector);
         float t = scalar > 0 ? scalar : 0;
-
 
         //applying frequency cutoff
         float remapedT = enableRemaping ? remapThreasholdInterpolaitonCurve.Evaluate(t) : t;
