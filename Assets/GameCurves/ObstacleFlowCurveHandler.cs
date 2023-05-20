@@ -5,7 +5,6 @@ using UnityEngine;
 public class ObstacleFlowCurveHandler : MonoBehaviour
 {
     public float t = 0f;
-
     [SerializeField]
     Transform target;
     [SerializeField]
@@ -25,6 +24,12 @@ public class ObstacleFlowCurveHandler : MonoBehaviour
     {
         curve = FlowCurveHandler.FlowCurve;
         target = transform;
+
+    }
+
+    public void SetStartT(float _t)
+    {
+        t = _t;
     }
 
     void Update()
