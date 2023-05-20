@@ -54,3 +54,5 @@ MonoBehaviour:
   rotationLerpSpeed: 0.2
   springFollowerLerpRate: 8.06
   curve: {fileID: 0}
+  cameraFrustrumLimiterObject: {fileID: 0}
+  player: {fileID: 0}

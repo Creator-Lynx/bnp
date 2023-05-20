@@ -26,12 +26,8 @@ public class CameraCurveMover : MonoBehaviour
     }
 
 
-    [Header("Модификации скорости от изменения высоты")]
-    [Space(30)]
     [SerializeField]
-    float maxHeightDelta = 15f;
-    [SerializeField]
-    float minHeightDelta = 8f, lerpSpeedModifierRange = 0.5f;
+    Transform cameraFrustrumLimiterObject, player;
     void SelfMoving()
     {
         Vector3 dir = curve.GetDirectionByT(t);
@@ -39,12 +35,13 @@ public class CameraCurveMover : MonoBehaviour
         modifiedTargetPos.y = curve.GetPointByT(t).y;
         Vector3 tptr = modifiedTargetPos - curve.GetPointByT(t);
         float dotDist = Vector3.Dot(tptr, dir);
-        //offset modifying
-        float heightDelta = modifiedTargetPos.y - target.position.y;
-        float lerpSpeedModifier = Mathf.Lerp(1, lerpSpeedModifierRange, Mathf.InverseLerp(minHeightDelta, maxHeightDelta, heightDelta));
-        if (dotDist > offset)
+
+        //checking player in frustrum
+        Vector3 pointerToPlayer = player.position - cameraFrustrumLimiterObject.position;
+        float scalarIsPlayerIn = Vector3.Dot(pointerToPlayer, cameraFrustrumLimiterObject.up);
+        if (dotDist > offset && scalarIsPlayerIn > 0)
         {
-            t = Mathf.Lerp(t, t + (findStep / curve.SegmentsNumber), Time.deltaTime * lerpSpeed * lerpSpeedModifier);
+            t = Mathf.Lerp(t, t + (findStep / curve.SegmentsNumber), Time.deltaTime * lerpSpeed);
         }
 
         //transform.position = curve.GetPointByT(t) + Vector3.back * 6f + Vector3.up * 4f;
