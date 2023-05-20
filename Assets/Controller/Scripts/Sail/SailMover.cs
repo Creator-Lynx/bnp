@@ -157,8 +157,9 @@ public class SailMover : SelfSaver
         handledDirection.Normalize();
 
     }
-    [SerializeField] Vector3 currentVel;
     float sailShapeWeight = 0;
+    [SerializeField]
+    float velocityToTransformScalar;
     void ForceMoveByCurrentDirection()
     {
         float dot = Vector3.Dot(WindDirection.normalized, handledDirection);
@@ -172,8 +173,10 @@ public class SailMover : SelfSaver
         Vector3 resultForceDirection = handledDirection * modifiedDot;
         //Debug.DrawRay(transform.position, WindDirection * 5f, Color.green);
         //Debug.Log(dot);
-        currentVel = Vector3.Project(rig.velocity, transform.forward);
-        if (currentVel.z < 0f) return;
+        //currentVel = Vector3.Project(rig.velocity, transform.forward);
+        //if (currentVel.z < 0f) return;
+        velocityToTransformScalar = Vector3.Dot(rig.velocity, transform.forward);
+        if (velocityToTransformScalar < 0) return;
         rig.AddForce(resultForceDirection * windForce, ForceMode.Force);
         Vector3 torque = Vector3.Cross(Vector3.up, resultForceDirection);
         //rig.AddTorque(torque * windForce / 4f, ForceMode.Force);
