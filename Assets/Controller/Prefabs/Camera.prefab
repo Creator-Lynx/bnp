@@ -76,10 +76,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windDirectionObject: {fileID: 0}
   soundSourceObject: {fileID: 1120489319}
-  minWindForce: 0
-  maxWindForce: 10
-  soundSourceDistanceRange: 2
+  minWindForce: 0.2
+  maxWindForce: 3
+  soundSourceDistanceRange: 3
   windForceValue: 0
+  enableRotationByWind: 1
+  basicLowPassCutoff: 2000
+  maximumLowPassCutoff: 584
+  enableRemaping: 0
+  remapThreasholdInterpolaitonCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enableExperimentalCurve: 0
+  customCutoffCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1120489318
 GameObject:
   m_ObjectHideFlags: 0
