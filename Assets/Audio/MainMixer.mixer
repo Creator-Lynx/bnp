@@ -50,6 +50,28 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-6355587789365851064
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f581588866ff6204683c13dd9adc348e
+  m_EffectName: Compressor
+  m_MixLevel: 7a407dd47381b824888aacefd6d418eb
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 13df1b32d1393894ab5179e5fff76358
+  - m_ParameterName: Attack
+    m_GUID: 4dc03bbab9edc8d46ba3abe07b2416fb
+  - m_ParameterName: Release
+    m_GUID: aeae9546afd4d784a83f23912541c754
+  - m_ParameterName: Make up gain
+    m_GUID: 197477edde2757048aa7f2fd743bbd5f
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-4740294178956755839
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -174,6 +196,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 4052724519802297983}
+  - {fileID: -6355587789365851064}
   m_UserColorIndex: 4
   m_Mute: 0
   m_Solo: 0
@@ -274,19 +297,24 @@ AudioMixerSnapshotController:
   m_SnapshotID: 2392a8776270dd9428c75daff2485bb4
   m_FloatValues:
     dd8a7912ad602a54087fed8d3c6f3283: 3.5
+    13df1b32d1393894ab5179e5fff76358: -20
     a902bb73ecfd6d1448da4cb9ca8a0b50: -0.14711785
     420b72d315d6d95488d47953d945d6e9: -0.16685188
+    d8e675e591d922c47b1a09cc19fda0ab: 5
     58765906b0d80d0458a47adfbe24bbbf: 0
     1f1247269d6effd40a7bb9c47d9965c7: 0.64599997
+    aeae9546afd4d784a83f23912541c754: 120
     21b2e4b67062d214cac8b2358545c8af: 6.5
     522b08487ea311c449911e988e25454f: 0.054
     0be699190f2c3384a9245ea25994d180: -24.500008
     cd2d667a937b7af4e9d9287d238cd1cb: 0.151
+    4dc03bbab9edc8d46ba3abe07b2416fb: 47
     3bf9725be0217394aa585c7a6ae7dac7: 2
     986d86db0aa3a5d4fa48852eddb6c2d9: -20.5
     6d06d68ca40951c4d907d48930cc5f2e: 9.950003
     6eb8f0cc43eff0545b9454c46ea28759: -0.025776565
     c0fc54dc35311e84689b6d0454420a34: -9.332112
+    197477edde2757048aa7f2fd743bbd5f: 0
     522f7bee0d3428048b15de845e113811: -19.20003
     4da8bd9f11dbce5429a54477c9ec705e: 8.5
   m_TransitionOverrides: {}
