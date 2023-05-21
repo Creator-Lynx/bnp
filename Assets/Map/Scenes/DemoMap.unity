@@ -5225,6 +5225,11 @@ PrefabInstance:
       propertyPath: windDirectionObject
       value: 
       objectReference: {fileID: 1708018026}
+    - target: {fileID: 1120489320, guid: 3db94fbb63f2312449ff46d0c670d594, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: af255ae13622cff4c8845dead3cc9599,
+        type: 2}
     - target: {fileID: 2366420742422651342, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
       propertyPath: target
