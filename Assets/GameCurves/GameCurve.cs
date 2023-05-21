@@ -50,14 +50,15 @@ public class GameCurve : MonoBehaviour
     {
         int i = Mathf.FloorToInt(t * segmentsNumber);
         if (i < 0) i = 0;
-        if (i >= segmentsNumber) i = segmentsNumber - 1;
+        if (i > segmentsNumber) i = segmentsNumber;
+        if (i == segmentsNumber) i = i--;
         float dt = t * segmentsNumber - i;
         return Bezie.GetPoint(segments[i].GetPoints(), dt);
     }
     public Vector3 GetDirectionByT(float t)
     {
         int i = Mathf.FloorToInt(t * segmentsNumber);
-        if (i >= segmentsNumber) i = segmentsNumber - 1;
+        if (i == segmentsNumber) i = i--;
         float dt = t * segmentsNumber - i;
         return Bezie.GetDirection(segments[i].GetPoints(), dt);
     }
