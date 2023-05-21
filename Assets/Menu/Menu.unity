@@ -9464,7 +9464,8 @@ MonoBehaviour:
   uiSlider: {fileID: 172652738}
   ambientSlider: {fileID: 1610350476}
   mixer: {fileID: 24100000, guid: b8bbbfb476dcc49498037375b5e5cb94, type: 2}
-  soundsVolumeMultiplier: 40
+  soundsVolumeMultiplier: 25
+  overZeroDBVolume: 5
 --- !u!224 &1104339574 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9113963768067449863, guid: 2b6d3c54dc34dd644ae149dd526f779b,
