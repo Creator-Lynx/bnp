@@ -9,11 +9,11 @@ public class AudioSettings : MonoBehaviour
 
     void Start()
     {
-        mixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume"));
-        mixer.SetFloat("sfxVolume", PlayerPrefs.GetFloat("sfxVolume"));
-        mixer.SetFloat("masterVolume", PlayerPrefs.GetFloat("masterVolume"));
-        mixer.SetFloat("uiVolume", PlayerPrefs.GetFloat("uiVolume"));
-        mixer.SetFloat("ambientVolume", PlayerPrefs.GetFloat("ambientVolume"));
+        mixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume", 0));
+        mixer.SetFloat("sfxVolume", PlayerPrefs.GetFloat("sfxVolume", 0));
+        mixer.SetFloat("masterVolume", PlayerPrefs.GetFloat("masterVolume", 0));
+        mixer.SetFloat("uiVolume", PlayerPrefs.GetFloat("uiVolume", 0));
+        mixer.SetFloat("ambientVolume", PlayerPrefs.GetFloat("ambientVolume", 0));
 
     }
 

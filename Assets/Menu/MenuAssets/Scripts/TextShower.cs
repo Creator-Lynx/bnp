@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,6 +17,9 @@ public class TextShower : MonoBehaviour
     [SerializeField] Image progressBar;
     [SerializeField] GameObject endLoadingText;
     AsyncOperation sceneLoading, sceneLoading1;
+
+    [SerializeField]
+    AudioMixer mixer;
     void Start()
     {
         textComponent = GetComponent<TextMeshProUGUI>();
@@ -25,6 +29,7 @@ public class TextShower : MonoBehaviour
         sceneLoading.allowSceneActivation = false;
         sceneLoading1 = SceneManager.LoadSceneAsync(sceneNameToLoad1, LoadSceneMode.Additive);
         sceneLoading1.allowSceneActivation = false;
+        mixer.SetFloat("uiVolume", PlayerPrefs.GetFloat("uiVolume", 0));
 
     }
 
