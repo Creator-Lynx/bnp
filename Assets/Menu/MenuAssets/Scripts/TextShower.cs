@@ -30,6 +30,7 @@ public class TextShower : MonoBehaviour
         sceneLoading1 = SceneManager.LoadSceneAsync(sceneNameToLoad1, LoadSceneMode.Additive);
         sceneLoading1.allowSceneActivation = false;
         mixer.SetFloat("uiVolume", PlayerPrefs.GetFloat("uiVolume", 0));
+        mixer.SetFloat("masterVolume", PlayerPrefs.GetFloat("masterVolume", 0));
 
     }
 
