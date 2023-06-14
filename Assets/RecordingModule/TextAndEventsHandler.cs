@@ -80,5 +80,33 @@ public class TextAndEventsHandler : MonoBehaviour
         }
     }
 
+    public void MuteMusic(AudioSource source)
+    {
+        StartCoroutine(MuteMusicCor(source, 1.5f));
+    }
+    public IEnumerator MuteMusicCor(AudioSource source, float time)
+    {
+        float timer = time;
+        while (timer > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            timer -= Time.deltaTime;
+            source.volume = Mathf.Lerp(1f, 0.4f, (-timer + time) / time);
+        }
+    }
+    public void UnMuteMusic(AudioSource source)
+    {
+        StartCoroutine(UnMuteMusicCor(source, 1.5f));
+    }
+    public IEnumerator UnMuteMusicCor(AudioSource source, float time)
+    {
+        float timer = time;
+        while (timer > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            timer -= Time.deltaTime;
+            source.volume = Mathf.Lerp(0.4f, 1, (-timer + time) / time);
+        }
+    }
 
 }
