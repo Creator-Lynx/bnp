@@ -5255,6 +5255,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1287269787}
+    - target: {fileID: 7872314201667803726, guid: 3db94fbb63f2312449ff46d0c670d594,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7872314202615758878, guid: 3db94fbb63f2312449ff46d0c670d594,
         type: 3}
       propertyPath: m_Name
@@ -35855,17 +35860,17 @@ PrefabInstance:
     - target: {fileID: 5187233999513507356, guid: f07cbb1e914c98f4b99b0d7383a29d6e,
         type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5187233999513507356, guid: f07cbb1e914c98f4b99b0d7383a29d6e,
         type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5187233999513507356, guid: f07cbb1e914c98f4b99b0d7383a29d6e,
         type: 3}
       propertyPath: ShapeModule.m_Scale.z
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5187233999513507356, guid: f07cbb1e914c98f4b99b0d7383a29d6e,
         type: 3}
@@ -35915,7 +35920,7 @@ PrefabInstance:
     - target: {fileID: 5187233999513507356, guid: f07cbb1e914c98f4b99b0d7383a29d6e,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5187233999513507356, guid: f07cbb1e914c98f4b99b0d7383a29d6e,
         type: 3}
