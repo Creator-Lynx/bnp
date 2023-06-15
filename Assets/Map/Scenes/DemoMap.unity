@@ -36628,6 +36628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dust Prticles
       objectReference: {fileID: 0}
+    - target: {fileID: 8009352960669723226, guid: 38b528e7677351049ae739492fcaacea,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8009352960669723301, guid: 38b528e7677351049ae739492fcaacea,
         type: 3}
       propertyPath: m_RootOrder

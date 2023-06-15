@@ -1659,8 +1659,8 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -6.93
-      minScalar: 1.33
+      scalar: -1.2
+      minScalar: 2.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2098,8 +2098,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.09645128
-          value: 1
+          time: 0.09354594
+          value: 0.35135144
           inSlope: -0.04764691
           outSlope: -0.04764691
           tangentMode: 0
@@ -2473,7 +2473,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -2530,7 +2530,7 @@ ParticleSystem:
     influenceFilter: 0
     influenceMask:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 8
     influenceList: []
   ClampVelocityModule:
     enabled: 0
@@ -10204,7 +10204,7 @@ MonoBehaviour:
   lowerRandomTimer: 1
   upperRandomTimer: 3
   sailControllLerpRate: 7.92
-  currentVel: {x: 0, y: 0, z: 0}
+  velocityToTransformScalar: 0
 --- !u!114 &149326997
 MonoBehaviour:
   m_ObjectHideFlags: 0
